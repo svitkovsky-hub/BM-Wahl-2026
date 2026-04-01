@@ -4,7 +4,7 @@
   "gesamt": 18,
   "globalCandidates": [],
   "globalStats": {
-    "beteiligung": "45.0 %",
+    "beteiligung": "-",
     "berechtigt": 0,
     "waehler": 0,
     "ungueltig": 0
@@ -263,5 +263,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-01T14:27:56.400557+00:00"
+  "fetchedAt": "2026-04-01T14:33:39.433176+00:00"
 }
