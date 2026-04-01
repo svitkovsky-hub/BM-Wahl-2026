@@ -1,13 +1,13 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 0,
+  "ausgezaehlt": 2,
   "gesamt": 18,
   "globalCandidates": [],
   "globalStats": {
+    "beteiligung": "45.0 %",
     "berechtigt": 0,
     "waehler": 0,
-    "ungueltig": 0,
-    "beteiligung": "—"
+    "ungueltig": 0
   },
   "bezirke": [
     {
@@ -19,7 +19,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -33,7 +33,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -47,7 +47,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -61,7 +61,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -75,7 +75,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -89,7 +89,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -103,7 +103,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -117,7 +117,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -131,7 +131,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -145,7 +145,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -159,7 +159,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -173,7 +173,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -187,7 +187,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -201,7 +201,7 @@
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -211,11 +211,11 @@
       "name": "Briefwahl 1",
       "nr": "BW1",
       "ort": "Briefwahl",
-      "adresse": "—",
+      "adresse": "-",
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -225,11 +225,11 @@
       "name": "Briefwahl 2",
       "nr": "BW2",
       "ort": "Briefwahl",
-      "adresse": "—",
+      "adresse": "-",
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -239,11 +239,11 @@
       "name": "Briefwahl 3",
       "nr": "BW3",
       "ort": "Briefwahl",
-      "adresse": "—",
+      "adresse": "-",
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
@@ -253,15 +253,15 @@
       "name": "Briefwahl 4",
       "nr": "BW4",
       "ort": "Briefwahl",
-      "adresse": "—",
+      "adresse": "-",
       "counted": false,
       "time": null,
       "candidates": [],
-      "beteiligung": "—",
+      "beteiligung": "-",
       "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-01T13:54:08.242279Z"
+  "fetchedAt": "2026-04-01T14:22:06.662398+00:00"
 }
