@@ -1,267 +1,194 @@
-{
-  "datum": "24. Dezember 2030",
-  "ausgezaehlt": 0,
-  "gesamt": 18,
-  "globalCandidates": [],
-  "globalStats": {
-    "berechtigt": 0,
-    "waehler": 0,
-    "ungueltig": 0,
-    "beteiligung": "—"
-  },
-  "bezirke": [
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-001.html",
-      "name": "001 Rathaus, Karlstraße 2",
-      "nr": "001",
-      "ort": "Blaubeuren",
-      "adresse": "Karlstraße 2",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-002.html",
-      "name": "002 Johannes-Montini-Haus",
-      "nr": "002",
-      "ort": "Blaubeuren",
-      "adresse": "Karlstraße 53",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-003.html",
-      "name": "003 Johannes-Montini-Haus ZVU",
-      "nr": "003",
-      "ort": "Blaubeuren",
-      "adresse": "Karlstraße 53",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-004.html",
-      "name": "004 Gemeindehaus Gerhausen",
-      "nr": "004",
-      "ort": "Gerhausen",
-      "adresse": "Schulstraße 26",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-005.html",
-      "name": "005 Karl-Spohn-Realschule",
-      "nr": "005",
-      "ort": "Blaubeuren",
-      "adresse": "Helfensteinerstrasse 12",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-006.html",
-      "name": "006 Rathaus Asch",
-      "nr": "006",
-      "ort": "Asch",
-      "adresse": "Bei der Hüle 1",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-007.html",
-      "name": "007 Proberaum Musikverein Beiningen",
-      "nr": "007",
-      "ort": "Beiningen",
-      "adresse": "Im Eichert 3",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-008.html",
-      "name": "008 Feuerwehrgerätehaus Pappelau",
-      "nr": "008",
-      "ort": "Pappelau",
-      "adresse": "Römerstraße 22",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-009.html",
-      "name": "009 Fr. Schulhaus Erstetten",
-      "nr": "009",
-      "ort": "Erstetten",
-      "adresse": "Schleichtalstraße 32",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-010.html",
-      "name": "010 Zehntscheuer Seißen",
-      "nr": "010",
-      "ort": "Seißen",
-      "adresse": "Albstraße 74",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-011.html",
-      "name": "011 Dorfgemeinschaftshaus Sonderbuch",
-      "nr": "011",
-      "ort": "Sonderbuch",
-      "adresse": "Blaubeurer Str. 12",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-012.html",
-      "name": "012 altes Schulhaus Weiler",
-      "nr": "012",
-      "ort": "Weiler",
-      "adresse": "Siedlungsstraße 1",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-013.html",
-      "name": "013 Grundschule Blaubeuren",
-      "nr": "013",
-      "ort": "Blaubeuren",
-      "adresse": "Alberstraße 3",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_stimmbezirk_08425020-014.html",
-      "name": "014 Mehrzweckhalle Seißen",
-      "nr": "014",
-      "ort": "Seißen",
-      "adresse": "Flurstraße 55",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_briefwahlbezirk_08425020-999-1.html",
-      "name": "Briefwahl 1",
-      "nr": "BW1",
-      "ort": "Briefwahl",
-      "adresse": "—",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_briefwahlbezirk_08425020-999-2.html",
-      "name": "Briefwahl 2",
-      "nr": "BW2",
-      "ort": "Briefwahl",
-      "adresse": "—",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_briefwahlbezirk_08425020-999-3.html",
-      "name": "Briefwahl 3",
-      "nr": "BW3",
-      "ort": "Briefwahl",
-      "adresse": "—",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    },
-    {
-      "url": "ergebnisse_briefwahlbezirk_08425020-999-4.html",
-      "name": "Briefwahl 4",
-      "nr": "BW4",
-      "ort": "Briefwahl",
-      "adresse": "—",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "—",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
-    }
-  ],
-  "fetchedAt": "2026-04-01T11:57:41.811615Z"
-}
+name: Wahldaten aktualisieren
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Python-Abhängigkeiten installieren
+        run: pip install requests beautifulsoup4 lxml
+
+      - name: Wahldaten abrufen
+        run: |
+          python3 - <<'PYEOF'
+          import requests
+          import json
+          import re
+          from datetime import datetime, timezone
+          from bs4 import BeautifulSoup
+
+          BASE = "https://wahlergebnisse.komm.one/24/produktion/8425020/999-1337/20301224/buergermeisterwahl_gemeinde/"
+
+          BEZIRKE = [
+            {"url": "ergebnisse_stimmbezirk_08425020-001.html", "name": "001 Rathaus, Karlstraße 2",             "nr": "001", "ort": "Blaubeuren", "adresse": "Karlstraße 2"},
+            {"url": "ergebnisse_stimmbezirk_08425020-002.html", "name": "002 Johannes-Montini-Haus",             "nr": "002", "ort": "Blaubeuren", "adresse": "Karlstraße 53"},
+            {"url": "ergebnisse_stimmbezirk_08425020-003.html", "name": "003 Johannes-Montini-Haus ZVU",         "nr": "003", "ort": "Blaubeuren", "adresse": "Karlstraße 53"},
+            {"url": "ergebnisse_stimmbezirk_08425020-004.html", "name": "004 Gemeindehaus Gerhausen",            "nr": "004", "ort": "Gerhausen",  "adresse": "Schulstraße 26"},
+            {"url": "ergebnisse_stimmbezirk_08425020-005.html", "name": "005 Karl-Spohn-Realschule",             "nr": "005", "ort": "Blaubeuren", "adresse": "Helfensteinerstrasse 12"},
+            {"url": "ergebnisse_stimmbezirk_08425020-006.html", "name": "006 Rathaus Asch",                      "nr": "006", "ort": "Asch",       "adresse": "Bei der Hüle 1"},
+            {"url": "ergebnisse_stimmbezirk_08425020-007.html", "name": "007 Proberaum Musikverein Beiningen",   "nr": "007", "ort": "Beiningen",  "adresse": "Im Eichert 3"},
+            {"url": "ergebnisse_stimmbezirk_08425020-008.html", "name": "008 Feuerwehrgerätehaus Pappelau",      "nr": "008", "ort": "Pappelau",   "adresse": "Römerstraße 22"},
+            {"url": "ergebnisse_stimmbezirk_08425020-009.html", "name": "009 Fr. Schulhaus Erstetten",           "nr": "009", "ort": "Erstetten",  "adresse": "Schleichtalstraße 32"},
+            {"url": "ergebnisse_stimmbezirk_08425020-010.html", "name": "010 Zehntscheuer Seißen",              "nr": "010", "ort": "Seißen",     "adresse": "Albstraße 74"},
+            {"url": "ergebnisse_stimmbezirk_08425020-011.html", "name": "011 Dorfgemeinschaftshaus Sonderbuch",  "nr": "011", "ort": "Sonderbuch", "adresse": "Blaubeurer Str. 12"},
+            {"url": "ergebnisse_stimmbezirk_08425020-012.html", "name": "012 altes Schulhaus Weiler",            "nr": "012", "ort": "Weiler",     "adresse": "Siedlungsstraße 1"},
+            {"url": "ergebnisse_stimmbezirk_08425020-013.html", "name": "013 Grundschule Blaubeuren",            "nr": "013", "ort": "Blaubeuren", "adresse": "Alberstraße 3"},
+            {"url": "ergebnisse_stimmbezirk_08425020-014.html", "name": "014 Mehrzweckhalle Seißen",             "nr": "014", "ort": "Seißen",     "adresse": "Flurstraße 55"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-1.html", "name": "Briefwahl 1", "nr": "BW1", "ort": "Briefwahl", "adresse": "-"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-2.html", "name": "Briefwahl 2", "nr": "BW2", "ort": "Briefwahl", "adresse": "-"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-3.html", "name": "Briefwahl 3", "nr": "BW3", "ort": "Briefwahl", "adresse": "-"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-4.html", "name": "Briefwahl 4", "nr": "BW4", "ort": "Briefwahl", "adresse": "-"},
+          ]
+
+          HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; WahlBot/1.0)"}
+
+          def fetch(url):
+              r = requests.get(url, headers=HEADERS, timeout=15)
+              r.raise_for_status()
+              r.encoding = "utf-8"
+              return r.text
+
+          def parse_seite(html):
+              soup = BeautifulSoup(html, "lxml")
+              text = soup.get_text(" ", strip=True)
+
+              m = re.search(r'Wahlbeteiligung[^\d]*([\d,]+)\s*%', text)
+              beteiligung = (m.group(1).replace(",", ".") + " %") if m else "-"
+
+              stats = {"beteiligung": beteiligung, "berechtigt": 0, "waehler": 0, "ungueltig": 0}
+              best_cands = []
+
+              for table in soup.find_all("table"):
+                  rows = table.find_all("tr")
+                  cands = []
+                  for row in rows:
+                      cells = [td.get_text(strip=True) for td in row.find_all("td")]
+                      if len(cells) < 2:
+                          continue
+                      name = cells[0]
+                      raw = re.sub(r"\D", "", cells[1])
+                      if not raw:
+                          continue
+                      val = int(raw)
+                      pct = None
+                      if len(cells) > 2:
+                          pm = re.search(r"[\d,]+", cells[2])
+                          if pm:
+                              try:
+                                  pct = float(pm.group().replace(",", "."))
+                              except:
+                                  pass
+                      if name == "Wahlberechtigte":
+                          stats["berechtigt"] = val
+                      elif name == "Wählende":
+                          stats["waehler"] = val
+                      elif name == "Ungültige Stimmen":
+                          stats["ungueltig"] = val
+                      elif name and pct is not None and name not in ("Gültige Stimmen", ""):
+                          parts = name.split(",", 1)
+                          cands.append({
+                              "name": parts[0].strip(),
+                              "vorname": parts[1].strip() if len(parts) > 1 else "",
+                              "stimmen": val,
+                              "anteil": round(pct, 1)
+                          })
+                  if len(cands) > len(best_cands):
+                      best_cands = cands
+
+              candidates = sorted(best_cands, key=lambda x: -x["anteil"])
+
+              counted_map = {}
+              for table in soup.find_all("table"):
+                  for row in table.find_all("tr"):
+                      cells = row.find_all("td")
+                      if len(cells) < 2:
+                          continue
+                      link = cells[0].find("a")
+                      if not link:
+                          continue
+                      bname = link.get_text(strip=True)
+                      last = cells[-1].get_text(strip=True)
+                      if re.match(r"^\d{2}:\d{2}$", last):
+                          counted_map[bname] = last
+
+              return candidates, stats, counted_map
+
+          print("Lade Hauptseite...")
+          main_html = fetch(BASE + "ergebnisse.html")
+          global_cands, global_stats, counted_map = parse_seite(main_html)
+
+          text = BeautifulSoup(main_html, "lxml").get_text(" ", strip=True)
+          datum = ""
+          m = re.search(r"(\d{1,2}\.\s+\w+\s+\d{4})", text)
+          if m:
+              datum = m.group(1)
+
+          ausgezaehlt, gesamt = 0, 18
+          m = re.search(r"Ausgez.*Gebiete.*?(\d+).*?von.*?(\d+)", text)
+          if m:
+              ausgezaehlt, gesamt = int(m.group(1)), int(m.group(2))
+
+          print(f"  Datum: {datum}, Ausgezaehlt: {ausgezaehlt}/{gesamt}")
+          print(f"  Kandidaten: {[c['name'] for c in global_cands]}")
+          print(f"  Gezaehlt: {list(counted_map.keys())}")
+
+          result_bezirke = []
+          for bk in BEZIRKE:
+              entry = {
+                  **bk,
+                  "counted": bk["name"] in counted_map,
+                  "time": counted_map.get(bk["name"]),
+                  "candidates": [],
+                  "beteiligung": "-",
+                  "waehler": 0,
+                  "berechtigt": 0,
+                  "ungueltig": 0,
+              }
+              if entry["counted"]:
+                  print(f"  Lade: {bk['name']}")
+                  try:
+                      bk_html = fetch(BASE + bk["url"])
+                      cands, bk_stats, _ = parse_seite(bk_html)
+                      entry["candidates"] = cands
+                      entry["beteiligung"] = bk_stats["beteiligung"]
+                      entry["waehler"] = bk_stats["waehler"]
+                      entry["berechtigt"] = bk_stats["berechtigt"]
+                      entry["ungueltig"] = bk_stats["ungueltig"]
+                      print(f"    OK: {len(cands)} Kandidaten")
+                  except Exception as e:
+                      print(f"    FEHLER: {e}")
+              result_bezirke.append(entry)
+
+          output = {
+              "datum": datum,
+              "ausgezaehlt": ausgezaehlt,
+              "gesamt": gesamt,
+              "globalCandidates": global_cands,
+              "globalStats": global_stats,
+              "bezirke": result_bezirke,
+              "fetchedAt": datetime.now(timezone.utc).isoformat()
+          }
+
+          with open("daten.json", "w", encoding="utf-8") as f:
+              json.dump(output, f, ensure_ascii=False, indent=2)
+
+          print(f"Fertig: {ausgezaehlt}/{gesamt} Bezirke.")
+          PYEOF
+
+      - name: daten.json committen
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add daten.json
+          git diff --staged --quiet || git commit -m "Wahldaten $(date -u '+%H:%M UTC')"
+          git push
