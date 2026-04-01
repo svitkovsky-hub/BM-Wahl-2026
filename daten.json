@@ -10,18 +10,6 @@
       "anteil": 36.0
     },
     {
-      "name": "Mikat",
-      "vorname": "Mirijam",
-      "stimmen": 270,
-      "anteil": 36.0
-    },
-    {
-      "name": "Kaczmarek",
-      "vorname": "Viktor",
-      "stimmen": 250,
-      "anteil": 33.3
-    },
-    {
       "name": "Kaczmarek",
       "vorname": "Viktor",
       "stimmen": 250,
@@ -44,7 +32,11 @@
     "beteiligung": "45,0 %",
     "berechtigt": 1667,
     "waehler": 750,
-    "ungueltig": 0
+    "ungueltig": 0,
+    "stichwahl": [
+      "Mikat",
+      "Kaczmarek"
+    ]
   },
   "bezirke": [
     {
@@ -350,5 +342,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-01T14:37:24.500121+00:00"
+  "fetchedAt": "2026-04-01T14:39:12.664099+00:00"
 }
