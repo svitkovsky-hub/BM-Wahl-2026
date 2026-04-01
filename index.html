@@ -17,8 +17,6 @@
   --T:.6s;
 }
 html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-family:'Barlow',sans-serif;overflow:hidden}
-
-/* ── Layout ── */
 .root{display:grid;grid-template-columns:340px 1fr;height:100vh}
 
 /* ── Left ── */
@@ -122,6 +120,12 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 .neu-dot{width:10px;height:10px;border-radius:50%;background:#000;animation:blink .8s ease infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 
+/* Status */
+.status-chip{position:fixed;top:10px;right:12px;z-index:50;font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase}
+.status-chip.live{background:rgba(46,207,160,.15);color:var(--teal);border:1px solid rgba(46,207,160,.3)}
+.status-chip.wait{background:rgba(245,166,35,.15);color:var(--amber);border:1px solid rgba(245,166,35,.3)}
+.status-chip.err{background:rgba(224,108,58,.15);color:#e06c3a;border:1px solid rgba(224,108,58,.3)}
+
 /* Footer */
 .slide-foot{flex-shrink:0;padding:9px 34px 14px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--div)}
 .nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:60%}
@@ -134,12 +138,6 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 .t-bg{stroke:var(--bg3);stroke-width:2;fill:none}
 .t-arc{stroke:var(--amber);stroke-width:2;fill:none;stroke-linecap:round;transition:stroke-dashoffset .1s linear}
 
-/* Status-Chip oben rechts */
-.status-chip{position:fixed;top:10px;right:12px;z-index:50;font-family:'Space Mono',monospace;font-size:9px;padding:3px 8px;border-radius:3px;letter-spacing:1px;text-transform:uppercase}
-.status-chip.demo{background:rgba(245,166,35,.15);color:var(--amber);border:1px solid rgba(245,166,35,.3)}
-.status-chip.live{background:rgba(46,207,160,.15);color:var(--teal);border:1px solid rgba(46,207,160,.3)}
-.status-chip.err{background:rgba(224,108,58,.15);color:#e06c3a;border:1px solid rgba(224,108,58,.3)}
-
 @media(max-width:860px){.root{grid-template-columns:1fr}.left{display:none}}
 </style>
 </head>
@@ -151,7 +149,7 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
   <div class="neu-dot"></div>
 </div>
 
-<div class="status-chip demo" id="status-chip">Demo</div>
+<div class="status-chip wait" id="status-chip">Lade …</div>
 
 <div class="root">
   <div class="left">
@@ -200,256 +198,86 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 
 <script>
 /* ══════════════════════════════════════════════════════════
-   ▸  KONFIGURATION – hier anpassen
+   KONFIGURATION
 ══════════════════════════════════════════════════════════ */
-const CFG = {
-  /* true  = Demo-Simulation (funktioniert immer, kein Server nötig)
-     false = Echte Daten von komm.one über CORS-Proxy              */
-  DEMO: true,
+const SLIDE_SEC   = 12;   // Sekunden pro Folie
+const REFRESH_SEC = 30;   // Sekunden zwischen JSON-Abrufen
 
-  /* Sekunden pro Folie */
-  SLIDE_SEC: 12,
-
-  /* Sekunden zwischen Daten-Refreshes (echter Modus) */
-  REFRESH_SEC: 30,
-
-  /* Demo: Sekunden bis zum nächsten simulierten Bezirk */
-  DEMO_SEC: 8,
-
-  /* Basis-URL der komm.one-Ergebnisseite */
-  BASE: 'https://wahlergebnisse.komm.one/24/produktion/8425020/999-1337/20301224/buergermeisterwahl_gemeinde/',
-
-  /* CORS-Proxy (wird vor die echte URL gesetzt) */
-  PROXY: 'https://corsproxy.io/?url=',
-};
+/* daten.json liegt im gleichen Ordner – kein CORS-Problem */
+const DATA_URL = './daten.json';
 
 /* ══════════════════════════════════════════════════════════
-   ▸  BEZIRK-LISTE
-══════════════════════════════════════════════════════════ */
-const BEZIRKE = [
-  {url:'ergebnisse_stimmbezirk_08425020-001.html', name:'001 Rathaus, Karlstraße 2',               nr:'001', ort:'Blaubeuren', adresse:'Karlstraße 2'},
-  {url:'ergebnisse_stimmbezirk_08425020-002.html', name:'002 Johannes-Montini-Haus',               nr:'002', ort:'Blaubeuren', adresse:'Karlstraße 53'},
-  {url:'ergebnisse_stimmbezirk_08425020-003.html', name:'003 Johannes-Montini-Haus ZVU',           nr:'003', ort:'Blaubeuren', adresse:'Karlstraße 53'},
-  {url:'ergebnisse_stimmbezirk_08425020-004.html', name:'004 Gemeindehaus Gerhausen',              nr:'004', ort:'Gerhausen',  adresse:'Schulstraße 26'},
-  {url:'ergebnisse_stimmbezirk_08425020-005.html', name:'005 Karl-Spohn-Realschule',               nr:'005', ort:'Blaubeuren', adresse:'Helfensteinerstrasse 12'},
-  {url:'ergebnisse_stimmbezirk_08425020-006.html', name:'006 Rathaus Asch',                        nr:'006', ort:'Asch',       adresse:'Bei der Hüle 1'},
-  {url:'ergebnisse_stimmbezirk_08425020-007.html', name:'007 Proberaum Musikverein Beiningen',     nr:'007', ort:'Beiningen',  adresse:'Im Eichert 3'},
-  {url:'ergebnisse_stimmbezirk_08425020-008.html', name:'008 Feuerwehrgerätehaus Pappelau',        nr:'008', ort:'Pappelau',   adresse:'Römerstraße 22'},
-  {url:'ergebnisse_stimmbezirk_08425020-009.html', name:'009 Fr. Schulhaus Erstetten',             nr:'009', ort:'Erstetten',  adresse:'Schleichtalstraße 32'},
-  {url:'ergebnisse_stimmbezirk_08425020-010.html', name:'010 Zehntscheuer Seißen',                nr:'010', ort:'Seißen',     adresse:'Albstraße 74'},
-  {url:'ergebnisse_stimmbezirk_08425020-011.html', name:'011 Dorfgemeinschaftshaus Sonderbuch',    nr:'011', ort:'Sonderbuch', adresse:'Blaubeurer Str. 12'},
-  {url:'ergebnisse_stimmbezirk_08425020-012.html', name:'012 altes Schulhaus Weiler',              nr:'012', ort:'Weiler',     adresse:'Siedlungsstraße 1'},
-  {url:'ergebnisse_stimmbezirk_08425020-013.html', name:'013 Grundschule Blaubeuren',              nr:'013', ort:'Blaubeuren', adresse:'Alberstraße 3'},
-  {url:'ergebnisse_stimmbezirk_08425020-014.html', name:'014 Mehrzweckhalle Seißen',               nr:'014', ort:'Seißen',     adresse:'Flurstraße 55'},
-  {url:'ergebnisse_briefwahlbezirk_08425020-999-1.html', name:'Briefwahl 1', nr:'BW1', ort:'Briefwahl', adresse:'—'},
-  {url:'ergebnisse_briefwahlbezirk_08425020-999-2.html', name:'Briefwahl 2', nr:'BW2', ort:'Briefwahl', adresse:'—'},
-  {url:'ergebnisse_briefwahlbezirk_08425020-999-3.html', name:'Briefwahl 3', nr:'BW3', ort:'Briefwahl', adresse:'—'},
-  {url:'ergebnisse_briefwahlbezirk_08425020-999-4.html', name:'Briefwahl 4', nr:'BW4', ort:'Briefwahl', adresse:'—'},
-];
-
-/* Demo-Stimmdaten je Bezirk */
-const DEMO_STIMMEN = [
-  [100,80,70,50],[95,85,75,45],[88,82,78,52],[110,75,72,43],
-  [92,90,65,53],[105,78,80,37],[98,84,68,50],[87,91,71,51],
-  [103,79,74,44],[96,86,70,48],[99,81,73,47],[101,83,69,47],
-  [94,88,76,42],[107,77,66,50],[90,82,72,56],[93,85,71,51],
-  [97,80,75,48],[102,84,68,46],
-];
-const DEMO_NAMEN = [
-  {name:'Kaczmarek',vorname:'Viktor'},
-  {name:'Mikat',    vorname:'Mirijam'},
-  {name:'Wähler ben. Personen',vorname:''},
-  {name:'Menholz',  vorname:'Robin'},
-];
-
-/* ══════════════════════════════════════════════════════════
-   ▸  STATE
+   STATE
 ══════════════════════════════════════════════════════════ */
 const G = {
   candidates:[], stichwahl:[],
   beteiligung:'—', waehler:0, berechtigt:0, ungueltig:0,
   ausgezaehlt:0, gesamt:18,
-  updateTime:null, datum:'24. Dezember 2030 · Testwahl',
-  bezirke: BEZIRKE.map(b=>({...b, counted:false, time:null, candidates:[], beteiligung:'—', waehler:0, berechtigt:0, ungueltig:0}))
+  updateTime:null, datum:'Stadt Blaubeuren',
+  bezirke:[]
 };
 
-/* ══════════════════════════════════════════════════════════
-   ▸  DEMO ENGINE
-══════════════════════════════════════════════════════════ */
-let demoIdx = 0;
-
-function demoTick() {
-  if (demoIdx >= G.bezirke.length) return;
-  const bk    = G.bezirke[demoIdx];
-  const data  = DEMO_STIMMEN[demoIdx];
-  const total = data.reduce((a,b)=>a+b, 0);
-
-  bk.counted     = true;
-  bk.time        = nowTime();
-  bk.waehler     = total;
-  bk.berechtigt  = Math.round(total * 2.4);
-  bk.ungueltig   = Math.floor(Math.random() * 3);
-  bk.beteiligung = ((total / bk.berechtigt) * 100).toFixed(1).replace('.', ',') + ' %';
-  bk.candidates  = DEMO_NAMEN.map((n,i) => ({
-    name: n.name, vorname: n.vorname,
-    stimmen: data[i],
-    anteil: +((data[i] / total) * 100).toFixed(1)
-  })).sort((a,b) => b.anteil - a.anteil);
-
-  demoIdx++;
-  recalcGlobal();
-  onNewData([bk]);
-}
+let knownCounted = new Set(); // URLs bereits angezeigter Bezirke
 
 /* ══════════════════════════════════════════════════════════
-   ▸  ECHTER DATENABRUF (mit CORS-Proxy)
+   DATEN LADEN (daten.json – selbe Domain, kein CORS)
 ══════════════════════════════════════════════════════════ */
-async function fetchURL(url) {
-  const proxyURL = CFG.PROXY + encodeURIComponent(url);
-  const r = await fetch(proxyURL, {cache:'no-cache'});
-  if (!r.ok) throw new Error('HTTP ' + r.status);
-  return r.text();
-}
-
-async function loadReal() {
+async function loadData() {
   const chip = document.getElementById('status-chip');
   try {
-    const html     = await fetchURL(CFG.BASE + 'ergebnisse.html');
-    const newBk    = parseMain(html);
+    /* Cache-Buster damit der Browser nicht die alte JSON-Datei nimmt */
+    const r = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
 
-    await Promise.all(newBk.map(async bk => {
-      try {
-        const html2 = await fetchURL(CFG.BASE + bk.url);
-        parseBezirk(html2, bk);
-      } catch(e) { console.warn('Bezirk-Fehler:', bk.name, e.message); }
-    }));
-
-    recalcGlobal();
-    chip.className  = 'status-chip live';
+    chip.className   = 'status-chip live';
     chip.textContent = 'Live';
-    G.updateTime    = new Date();
-    if (newBk.length > 0) onNewData(newBk);
-    else { renderLeft(); refreshFixed(); }
+
+    /* State befüllen */
+    if (d.datum)        G.datum        = d.datum;
+    if (d.ausgezaehlt !== undefined) G.ausgezaehlt = d.ausgezaehlt;
+    if (d.gesamt !== undefined)      G.gesamt      = d.gesamt;
+    if (d.globalStats) {
+      G.beteiligung = d.globalStats.beteiligung || '—';
+      G.waehler     = d.globalStats.waehler     || 0;
+      G.berechtigt  = d.globalStats.berechtigt  || 0;
+      G.ungueltig   = d.globalStats.ungueltig   || 0;
+    }
+    if (d.globalCandidates && d.globalCandidates.length) {
+      G.candidates = d.globalCandidates;
+      G.stichwahl  = G.candidates.slice(0,2).map(c=>c.name);
+    }
+    if (d.bezirke) G.bezirke = d.bezirke;
+
+    G.updateTime = new Date(d.fetchedAt || Date.now());
+
+    /* Neu ausgezählte Bezirke finden */
+    const newlyDone = G.bezirke.filter(b =>
+      b.counted && b.candidates && b.candidates.length > 0 && !knownCounted.has(b.url)
+    );
+
+    renderLeft();
+    refreshFixed();
+
+    if (newlyDone.length > 0) {
+      newlyDone.forEach(b => knownCounted.add(b.url));
+      onNewData(newlyDone);
+    }
+
+    document.getElementById('pulse').style.background = 'var(--teal)';
 
   } catch(e) {
-    console.warn('Datenabruf fehlgeschlagen:', e.message);
-    chip.className  = 'status-chip err';
+    console.warn('Ladefehler:', e.message);
+    chip.className   = 'status-chip err';
     chip.textContent = 'Fehler';
   }
 }
 
 /* ══════════════════════════════════════════════════════════
-   ▸  HTML-PARSER
-══════════════════════════════════════════════════════════ */
-function parseMain(html) {
-  const doc = new DOMParser().parseFromString(html, 'text/html');
-  const txt = doc.body.innerText;
-  const mD  = txt.match(/(\d{1,2}\.\s+\w+\s+\d{4})/); if(mD) G.datum = mD[1];
-  const mA  = txt.match(/Ausgezählte Gebiete:\s*(\d+)\s*von\s*(\d+)/);
-  if(mA){ G.ausgezaehlt=+mA[1]; G.gesamt=+mA[2]; }
-  const mBet = txt.match(/Wahlbeteiligung[^0-9]*([\d,]+\s*%)/);
-  if(mBet) G.beteiligung = mBet[1];
-
-  let bestCands = [];
-  doc.querySelectorAll('table').forEach(tbl=>{
-    const cands=[];
-    tbl.querySelectorAll('tr').forEach(r=>{
-      const cells=[...r.querySelectorAll('td')];
-      if(cells.length<2)return;
-      const n=cells[0].textContent.trim();
-      const v=parseInt(cells[1].textContent.replace(/\D/g,''));
-      const p=parseFloat((cells[2]||{}).textContent?.replace(',','.'));
-      if(n==='Wahlberechtigte'){G.berechtigt=v;return}
-      if(n==='Wählende'){G.waehler=v;return}
-      if(n==='Ungültige Stimmen'){G.ungueltig=v;return}
-      if(n&&!isNaN(v)&&!isNaN(p))cands.push({name:n,stimmen:v,anteil:p});
-    });
-    if(cands.length>bestCands.length)bestCands=cands;
-  });
-
-  if(bestCands.length){
-    G.candidates=bestCands.map(c=>{
-      const p=c.name.split(',').map(s=>s.trim());
-      return{name:p[0],vorname:p[1]||'',stimmen:c.stimmen,anteil:c.anteil};
-    }).sort((a,b)=>b.anteil-a.anteil);
-    G.stichwahl=G.candidates.slice(0,2).map(c=>c.name);
-  }
-
-  // Welche Bezirke sind neu ausgezählt?
-  const newlyDone=[];
-  doc.querySelectorAll('table tr').forEach(r=>{
-    const cells=[...r.querySelectorAll('td')];
-    if(cells.length<2)return;
-    const a=cells[0].querySelector('a'); if(!a)return;
-    const rn=a.textContent.trim();
-    const zeit=cells[cells.length-1].textContent.trim();
-    if(zeit.match(/^\d{2}:\d{2}$/)){
-      const bk=G.bezirke.find(b=>b.name===rn);
-      if(bk&&!bk.counted){bk.counted=true;bk.time=zeit;newlyDone.push(bk);}
-    }
-  });
-  return newlyDone;
-}
-
-function parseBezirk(html, bk) {
-  const doc=new DOMParser().parseFromString(html,'text/html');
-  const txt=doc.body.innerText;
-  const mB=txt.match(/Wahlbeteiligung[^0-9]*([\d,]+\s*%)/);
-  if(mB)bk.beteiligung=mB[1];
-  let best=[];
-  doc.querySelectorAll('table').forEach(tbl=>{
-    const c=[];
-    tbl.querySelectorAll('tr').forEach(r=>{
-      const cells=[...r.querySelectorAll('td')];
-      if(cells.length<2)return;
-      const n=cells[0].textContent.trim();
-      const v=parseInt(cells[1].textContent.replace(/\D/g,''));
-      const p=parseFloat((cells[2]||{}).textContent?.replace(',','.'));
-      if(n==='Wahlberechtigte'){bk.berechtigt=v;return}
-      if(n==='Wählende'){bk.waehler=v;return}
-      if(n==='Ungültige Stimmen'){bk.ungueltig=v;return}
-      if(n&&!isNaN(v)&&!isNaN(p))c.push({name:n,stimmen:v,anteil:p});
-    });
-    if(c.length>best.length)best=c;
-  });
-  if(best.length){
-    bk.candidates=best.map(c=>{
-      const p=c.name.split(',').map(s=>s.trim());
-      return{name:p[0],vorname:p[1]||'',stimmen:c.stimmen,anteil:c.anteil};
-    }).sort((a,b)=>b.anteil-a.anteil);
-    bk.counted=true;
-  }
-}
-
-/* ══════════════════════════════════════════════════════════
-   ▸  GLOBALES ERGEBNIS BERECHNEN
-══════════════════════════════════════════════════════════ */
-function recalcGlobal() {
-  const done=G.bezirke.filter(b=>b.counted&&b.candidates.length);
-  G.ausgezaehlt=done.length;
-  if(!done.length)return;
-  const names=[...new Set(done.flatMap(b=>b.candidates.map(c=>c.name)))];
-  const totals={};
-  names.forEach(n=>totals[n]=0);
-  done.forEach(bk=>bk.candidates.forEach(c=>{if(totals[c.name]!==undefined)totals[c.name]+=c.stimmen;}));
-  const grand=Object.values(totals).reduce((a,b)=>a+b,0);
-  G.candidates=names.map(n=>{
-    const ex=done[0].candidates.find(c=>c.name===n)||{};
-    return{name:n,vorname:ex.vorname||'',stimmen:totals[n],anteil:grand?+((totals[n]/grand)*100).toFixed(1):0};
-  }).sort((a,b)=>b.anteil-a.anteil);
-  G.stichwahl=G.candidates.slice(0,2).map(c=>c.name);
-  G.waehler=done.reduce((s,b)=>s+(b.waehler||0),0);
-  G.berechtigt=done.reduce((s,b)=>s+(b.berechtigt||0),0);
-  G.ungueltig=done.reduce((s,b)=>s+(b.ungueltig||0),0);
-  const bet=G.berechtigt>0?(G.waehler/G.berechtigt*100).toFixed(1):'—';
-  G.beteiligung=bet!=='—'?bet.replace('.',',')+' %':'—';
-  G.updateTime=new Date();
-}
-
-/* ══════════════════════════════════════════════════════════
-   ▸  SLIDES ENGINE
+   SLIDES ENGINE
 ══════════════════════════════════════════════════════════ */
 let slides=[], currentIdx=0, timerStart=Date.now(), slideTimer=null;
+const SLIDE_MS = SLIDE_SEC * 1000;
 
 function initSlides(){
   document.getElementById('slides-wrap').innerHTML='';
@@ -464,8 +292,6 @@ function initSlides(){
 function addSlide(type,bk){
   const el=document.createElement('div');
   el.className='slide';
-  el.dataset.type=type;
-  if(bk)el.dataset.bkUrl=bk.url;
   renderSlideContent(el,type,bk);
   document.getElementById('slides-wrap').appendChild(el);
   return{el,type,bk,isNew:false};
@@ -484,10 +310,8 @@ function refreshFixed(){
 }
 
 function onNewData(newBezirke){
-  renderLeft();
-  refreshFixed();
   const added=[];
-  newBezirke.filter(bk=>bk.candidates.length>0).forEach(bk=>{
+  newBezirke.filter(bk=>bk.candidates&&bk.candidates.length>0).forEach(bk=>{
     const exists=slides.find(s=>s.bk&&s.bk.url===bk.url);
     if(!exists){
       const s=addSlide('bezirk',bk);
@@ -502,17 +326,13 @@ function onNewData(newBezirke){
   rebuildNav();
   if(added.length>0){
     showNeuBanner(newBezirke);
-    // Neuen Slide nach kurzem Delay zeigen
     clearTimeout(slideTimer);
     slideTimer=setTimeout(()=>{
       goToSlide(slides.indexOf(added[0]));
       startAutoAdvance();
-    }, Math.min(SLIDE_MS - (Date.now()-timerStart), 3000));
+    }, Math.min(SLIDE_MS-(Date.now()-timerStart), 3000));
   }
-  document.getElementById('pulse').style.background='var(--teal)';
 }
-
-const SLIDE_MS = CFG.SLIDE_SEC * 1000;
 
 function startAutoAdvance(){
   clearTimeout(slideTimer);
@@ -532,14 +352,15 @@ function goToSlide(idx){
   currentIdx=idx;
   timerStart=Date.now();
   rebuildNav();
-  updateFootTxt();
+  document.getElementById('foot-txt').textContent='Folie '+(currentIdx+1)+' / '+slides.length;
   setTimeout(()=>animateBars(slides[idx].el),200);
 }
 
 function activateSlide(idx,instant){
   slides.forEach((s,i)=>s.el.classList.toggle('active',i===idx));
   currentIdx=idx; timerStart=Date.now();
-  rebuildNav(); updateFootTxt();
+  rebuildNav();
+  document.getElementById('foot-txt').textContent='Folie '+(idx+1)+' / '+slides.length;
   setTimeout(()=>animateBars(slides[idx].el),instant?50:200);
 }
 
@@ -548,13 +369,8 @@ function rebuildNav(){
     let cls='nd';
     if(i===currentIdx)cls+=' active';
     else if(s.isNew)cls+=' isnew';
-    const title=s.bk?s.bk.name:s.type;
-    return `<div class="${cls}" title="${title}"></div>`;
+    return`<div class="${cls}"></div>`;
   }).join('');
-  updateFootTxt();
-}
-
-function updateFootTxt(){
   document.getElementById('foot-txt').textContent='Folie '+(currentIdx+1)+' / '+slides.length;
 }
 
@@ -564,7 +380,7 @@ function animateBars(el){
 }
 
 /* ══════════════════════════════════════════════════════════
-   ▸  NEU-BANNER
+   NEU-BANNER
 ══════════════════════════════════════════════════════════ */
 let bannerT=null;
 function showNeuBanner(bezirke){
@@ -578,7 +394,7 @@ function showNeuBanner(bezirke){
 }
 
 /* ══════════════════════════════════════════════════════════
-   ▸  HTML BUILDER
+   HTML BUILDER
 ══════════════════════════════════════════════════════════ */
 function htmlGesamt(){
   if(!G.candidates.length)return`<div class="slide-lbl">Gesamtergebnis</div><div style="color:var(--muted);font-size:16px;margin-top:60px;text-align:center">Warte auf erste Ergebnisse …</div>`;
@@ -606,13 +422,13 @@ function htmlAuszaehlung(){
 }
 
 function htmlBezirk(bk){
-  if(!bk.candidates.length)return`<div class="slide-lbl">Bezirk ${bk.nr}</div><div style="color:var(--muted)">Keine Daten</div>`;
+  if(!bk.candidates||!bk.candidates.length)return`<div class="slide-lbl">Bezirk ${bk.nr}</div><div style="color:var(--muted)">Keine Daten</div>`;
   const max=Math.max(...bk.candidates.map(c=>c.anteil),1);
   const gMax=G.candidates.length?Math.max(...G.candidates.map(c=>c.anteil),1):1;
   const cands=bk.candidates.map((c,i)=>`<div class="bz-row">
     <div class="bz-name">${c.name}${c.vorname?`<br><span class="vn">${c.vorname}</span>`:''}</div>
     <div class="bz-track"><div class="bz-fill c${i}" data-pct="${(c.anteil/max*100).toFixed(1)}"><span class="bz-pct">${c.anteil.toFixed(1).replace('.',',')} %</span></div></div>
-    <div class="bz-stim">${c.stimmen.toLocaleString('de')} St.</div>
+    <div class="bz-stim">${(c.stimmen||0).toLocaleString('de')} St.</div>
   </div>`).join('');
 
   const cmpRows=G.ausgezaehlt>1?bk.candidates.map((c,i)=>{
@@ -642,7 +458,7 @@ function htmlBezirk(bk){
 }
 
 /* ══════════════════════════════════════════════════════════
-   ▸  LINKE LEISTE
+   LINKE LEISTE
 ══════════════════════════════════════════════════════════ */
 function renderLeft(){
   document.getElementById('l-datum').textContent=G.datum||'—';
@@ -669,34 +485,17 @@ function renderLeft(){
 }
 
 /* ══════════════════════════════════════════════════════════
-   ▸  TIMER RING
+   TIMER RING
 ══════════════════════════════════════════════════════════ */
 const arc=document.getElementById('t-arc');
 setInterval(()=>{const p=Math.min((Date.now()-timerStart)/SLIDE_MS,1);if(arc)arc.setAttribute('stroke-dashoffset',(62.8*(1-p)).toFixed(2));},100);
 
 /* ══════════════════════════════════════════════════════════
-   ▸  HILFSFUNKTIONEN
-══════════════════════════════════════════════════════════ */
-function nowTime(){return new Date().toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit'});}
-
-/* ══════════════════════════════════════════════════════════
-   ▸  START
+   START
 ══════════════════════════════════════════════════════════ */
 initSlides();
-renderLeft();
-
-if(CFG.DEMO){
-  document.getElementById('status-chip').className='status-chip demo';
-  document.getElementById('status-chip').textContent='Demo';
-  // Sofort starten + Intervall
-  setTimeout(demoTick, 1500);
-  setInterval(demoTick, CFG.DEMO_SEC * 1000);
-} else {
-  document.getElementById('status-chip').className='status-chip live';
-  document.getElementById('status-chip').textContent='Lade …';
-  loadReal();
-  setInterval(loadReal, CFG.REFRESH_SEC * 1000);
-}
+loadData();
+setInterval(loadData, REFRESH_SEC * 1000);
 </script>
 </body>
 </html>
