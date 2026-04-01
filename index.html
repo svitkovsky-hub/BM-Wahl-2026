@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bürgermeisterwahl Blaubeuren</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root {
+  --bg:      #0A0C10;
+  --bg2:     #10131A;
+  --bg3:     #181C26;
+  --bg4:     #1F2433;
+  --div:     rgba(255,255,255,0.07);
+  --text:    #EEF0F7;
+  --muted:   #6B7590;
+  --dim:     #3A4260;
+  --amber:   #F5A623;
+  --amber2:  #7A5010;
+  --blue:    #4BA8F0;
+  --blue2:   #1A3F6F;
+  --teal:    #2ECFA0;
+  --teal2:   #0C5240;
+  --slate:   #8899BB;
+  --slate2:  #2A3450;
+  --slide-t: 0.6s;
+}
+
+html,body{width:100%;height:100%;background:var(--bg);color:var(--text);
+  font-family:'Barlow',sans-serif;overflow:hidden}
+
+/* ══ ROOT LAYOUT ══════════════════════════════════════════════ */
+.root{
+  display:grid;
+  grid-template-columns:340px 1fr;
+  height:100vh;
+}
+
+/* ══ LEFT PANEL ════════════════════════════════════════════════ */
+.left{
+  background:var(--bg2);
+  border-right:1px solid var(--div);
+  display:flex;flex-direction:column;
+  padding:26px 24px 18px;
+  overflow:hidden;
+}
+
+.logo-row{display:flex;align-items:center;gap:9px;margin-bottom:18px}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--amber);
+  box-shadow:0 0 8px var(--amber);flex-shrink:0}
+.logo-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;
+  font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber)}
+
+.left-title{font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(20px,2vw,28px);font-weight:900;line-height:1;
+  color:var(--text);letter-spacing:-0.5px;margin-bottom:3px}
+.left-sub{font-family:'Barlow Condensed',sans-serif;
+  font-size:14px;font-weight:300;color:var(--muted);margin-bottom:18px}
+
+.ldiv{height:1px;background:var(--div);margin:0 -24px;margin-bottom:14px}
+
+.lh{font-size:9px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+
+/* Mini-Balken */
+.mini-cand{margin-bottom:13px}
+.mini-hdr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.mini-name{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+.mini-sub{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:300;color:var(--muted)}
+.mini-pct{font-family:'Space Mono',monospace;font-size:13px;font-weight:700}
+.mini-pct.c0{color:var(--amber)}.mini-pct.c1{color:var(--blue)}
+.mini-pct.c2{color:var(--teal)}.mini-pct.c3{color:var(--slate)}
+.mini-track{height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.mini-fill{height:100%;border-radius:3px;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.mini-fill.c0{background:var(--amber)}.mini-fill.c1{background:var(--blue)}
+.mini-fill.c2{background:var(--teal)}.mini-fill.c3{background:var(--slate)}
+.mini-st{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted);margin-top:2px}
+
+.stw-tag{display:inline-block;font-size:8px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;padding:1px 5px;border-radius:2px;
+  background:var(--amber);color:#000;margin-left:5px;vertical-align:middle}
+
+/* Stat-Tiles */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:2px}
+.stat-tile{background:var(--bg3);border-radius:5px;padding:9px 11px}
+.stl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.stv{font-family:'Space Mono',monospace;font-size:17px;font-weight:700;color:var(--text);line-height:1}
+.stv.amber{color:var(--amber)}
+
+/* Fortschritt */
+.prog{margin-top:13px}
+.prog-hdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.prog-track{height:4px;background:var(--bg4);border-radius:2px;overflow:hidden}
+.prog-fill{height:100%;background:var(--amber);border-radius:2px;transition:width 1s ease}
+
+/* Linke Fußzeile */
+.left-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--div);
+  display:flex;align-items:center;justify-content:space-between}
+.upd{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(46,207,160,.5)}50%{opacity:.6;box-shadow:0 0 0 4px rgba(46,207,160,0)}}
+
+/* ══ RIGHT PANEL ════════════════════════════════════════════════ */
+.right{display:flex;flex-direction:column;overflow:hidden;position:relative}
+
+/* ── Slides ────────────────────────────────────────────────── */
+.slides-wrap{flex:1;position:relative;overflow:hidden}
+
+.slide{
+  position:absolute;inset:0;
+  padding:26px 34px 20px;
+  opacity:0;transform:translateX(40px);
+  transition:opacity var(--slide-t) ease,transform var(--slide-t) ease;
+  pointer-events:none;overflow:hidden;
+}
+.slide.active{opacity:1;transform:translateX(0);pointer-events:all}
+.slide.exit{opacity:0;transform:translateX(-40px)}
+
+.slide-lbl{font-size:9px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:14px;
+  display:flex;align-items:center;gap:8px}
+.slide-lbl::after{content:'';flex:1;height:1px;background:var(--div)}
+
+/* ── Slide: Gesamtergebnis ─── */
+.g-cand{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.g-rank{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted);width:16px;flex-shrink:0}
+.g-name{font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(17px,2.3vw,30px);font-weight:800;
+  line-height:1;min-width:190px;flex-shrink:0}
+.g-name .vn{font-weight:300;color:var(--muted)}
+.g-track{flex:1;height:50px;background:var(--bg3);border-radius:5px;overflow:hidden}
+.g-fill{height:100%;border-radius:5px;width:0;
+  display:flex;align-items:center;padding:0 13px;
+  transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.g-fill.c0{background:linear-gradient(90deg,var(--amber2),var(--amber))}
+.g-fill.c1{background:linear-gradient(90deg,var(--blue2),var(--blue))}
+.g-fill.c2{background:linear-gradient(90deg,var(--teal2),var(--teal))}
+.g-fill.c3{background:linear-gradient(90deg,var(--slate2),var(--slate))}
+.g-pct{font-family:'Space Mono',monospace;font-size:15px;font-weight:700;
+  color:rgba(0,0,0,.8);white-space:nowrap;opacity:0;transition:opacity .4s ease .9s}
+.g-pct.vis{opacity:1}
+.g-stim{font-family:'Space Mono',monospace;font-size:13px;
+  color:var(--muted);min-width:85px;text-align:right;flex-shrink:0}
+
+/* ── Slide: Auszählung ─── */
+.bk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));
+  gap:7px;align-content:start;max-height:calc(100vh - 160px);overflow:hidden}
+.bk-card{background:var(--bg2);border:1px solid var(--div);
+  border-radius:6px;padding:9px 12px;
+  display:flex;align-items:flex-start;gap:9px;
+  transition:border-color .6s,background .6s}
+.bk-card.done{background:rgba(245,166,35,.06);border-color:rgba(245,166,35,.3)}
+.bk-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:3px;
+  background:var(--bg4);border:1.5px solid var(--dim);transition:all .6s}
+.bk-card.done .bk-dot{background:var(--amber);border-color:var(--amber);
+  box-shadow:0 0 6px rgba(245,166,35,.5)}
+.bk-name{font-size:11px;font-weight:500;line-height:1.3}
+.bk-card:not(.done) .bk-name{color:var(--muted)}
+.bk-time{font-family:'Space Mono',monospace;font-size:10px;color:var(--amber);margin-top:1px}
+
+/* ── Slide: Einzelbezirk ─── */
+.bz-ort{font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(20px,2.6vw,36px);font-weight:800;
+  line-height:1;color:var(--text);margin-bottom:2px}
+.bz-addr{font-size:12px;color:var(--muted);margin-bottom:16px}
+.bz-stats{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.bs{background:var(--bg3);border-radius:5px;padding:8px 13px}
+.bsl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.bsv{font-family:'Space Mono',monospace;font-size:16px;font-weight:700;color:var(--text);line-height:1}
+.bsv.amber{color:var(--amber)}
+
+.bz-cands{display:flex;flex-direction:column;gap:11px}
+.bz-row{display:flex;align-items:center;gap:13px}
+.bz-name{font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(14px,1.7vw,22px);font-weight:700;
+  min-width:170px;flex-shrink:0;line-height:1.1}
+.bz-name .vn{font-weight:300;color:var(--muted)}
+.bz-track{flex:1;height:40px;background:var(--bg3);border-radius:4px;overflow:hidden}
+.bz-fill{height:100%;border-radius:4px;width:0;
+  display:flex;align-items:center;padding:0 11px;
+  transition:width 1.3s cubic-bezier(.4,0,.2,1)}
+.bz-fill.c0{background:linear-gradient(90deg,var(--amber2),var(--amber))}
+.bz-fill.c1{background:linear-gradient(90deg,var(--blue2),var(--blue))}
+.bz-fill.c2{background:linear-gradient(90deg,var(--teal2),var(--teal))}
+.bz-fill.c3{background:linear-gradient(90deg,var(--slate2),var(--slate))}
+.bz-pct{font-family:'Space Mono',monospace;font-size:12px;font-weight:700;
+  color:rgba(0,0,0,.8);white-space:nowrap;opacity:0;transition:opacity .4s ease .8s}
+.bz-pct.vis{opacity:1}
+.bz-stim{font-family:'Space Mono',monospace;font-size:12px;
+  color:var(--muted);min-width:70px;text-align:right;flex-shrink:0}
+
+/* Vergleich */
+.cmp{margin-top:16px}
+.cmp-title{font-size:9px;font-weight:700;letter-spacing:2px;
+  text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cmp-row{display:flex;align-items:center;gap:9px;margin-bottom:7px}
+.cmp-name{font-size:11px;font-weight:600;min-width:100px;flex-shrink:0;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp-bars{flex:1;display:flex;flex-direction:column;gap:3px}
+.cmp-bar{height:7px;border-radius:2px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
+.cmp-bar.loc.c0{background:var(--amber)}.cmp-bar.loc.c1{background:var(--blue)}
+.cmp-bar.loc.c2{background:var(--teal)}.cmp-bar.loc.c3{background:var(--slate)}
+.cmp-bar.glob{background:var(--dim);opacity:.5}
+.cmp-pcts{font-family:'Space Mono',monospace;font-size:10px;
+  min-width:80px;text-align:right;color:var(--muted)}
+
+/* ── NEU-Banner ──────────────────────────────────────────────── */
+.neu-banner{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:var(--teal);color:#000;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;
+  padding:10px 24px;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  transform:translateY(-100%);
+  transition:transform .4s cubic-bezier(.4,0,.2,1);
+  pointer-events:none;
+}
+.neu-banner.show{transform:translateY(0)}
+.neu-dot{width:10px;height:10px;border-radius:50%;background:#000;animation:blink .8s ease infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── Footer ──────────────────────────────────────────────────── */
+.slide-foot{
+  flex-shrink:0;padding:9px 34px 14px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--div);
+}
+.nav-dots{display:flex;gap:5px;align-items:center;flex-wrap:wrap;max-width:60%}
+.nd{width:5px;height:5px;border-radius:50%;
+  background:var(--dim);transition:background .3s,width .3s;flex-shrink:0}
+.nd.active{background:var(--amber);width:16px;border-radius:3px}
+.nd.new-slide{background:var(--teal)}
+
+.foot-right{display:flex;align-items:center;gap:12px}
+.foot-txt{font-family:'Space Mono',monospace;font-size:10px;color:var(--muted)}
+
+/* Timer */
+.t-wrap{width:26px;height:26px}
+.t-wrap svg{transform:rotate(-90deg)}
+.t-bg{stroke:var(--bg3);stroke-width:2;fill:none}
+.t-arc{stroke:var(--amber);stroke-width:2;fill:none;stroke-linecap:round;transition:stroke-dashoffset .1s linear}
+
+@media(max-width:860px){.root{grid-template-columns:1fr}.left{display:none}}
+@media(max-width:520px){.slide{padding:16px 16px 12px}.g-name{min-width:130px}}
+</style>
+</head>
+<body>
+
+<!-- NEU-Banner -->
+<div class="neu-banner" id="neu-banner">
+  <div class="neu-dot"></div>
+  <span id="neu-text">Neues Ergebnis eingetroffen</span>
+  <div class="neu-dot"></div>
+</div>
+
+<div class="root">
+
+  <!-- ══ LINKS: Gesamtergebnis (permanent) ══ -->
+  <div class="left">
+    <div class="logo-row">
+      <div class="logo-dot"></div>
+      <div class="logo-label">Live-Ergebnisse</div>
+    </div>
+    <div class="left-title">Bürgermeisterwahl</div>
+    <div class="left-sub" id="l-datum">Stadt Blaubeuren</div>
+    <div class="ldiv"></div>
+    <div class="lh">Gesamtergebnis</div>
+    <div id="mini-cands"></div>
+    <div class="ldiv" style="margin-top:6px;margin-bottom:12px"></div>
+    <div class="stat-grid">
+      <div class="stat-tile"><div class="stl">Beteiligung</div><div class="stv amber" id="l-bet">—</div></div>
+      <div class="stat-tile"><div class="stl">Wählende</div><div class="stv" id="l-wae">—</div></div>
+      <div class="stat-tile"><div class="stl">Berechtigt</div><div class="stv" id="l-ber">—</div></div>
+      <div class="stat-tile"><div class="stl">Ungültig</div><div class="stv" id="l-ung">—</div></div>
+    </div>
+    <div class="prog">
+      <div class="prog-hdr">
+        <span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted)">Auszählung</span>
+        <span style="font-family:'Space Mono',monospace;font-size:11px;color:var(--amber)" id="l-ausz-txt">0 / 0</span>
+      </div>
+      <div class="prog-track"><div class="prog-fill" id="l-ausz-bar" style="width:0%"></div></div>
+    </div>
+    <div class="left-foot">
+      <div class="upd" id="l-upd">Stand: —</div>
+      <div class="pulse" id="pulse" style="background:var(--muted)"></div>
+    </div>
+  </div>
+
+  <!-- ══ RECHTS: Slides ══ -->
+  <div class="right">
+    <div class="slides-wrap" id="slides-wrap"></div>
+    <div class="slide-foot">
+      <div class="nav-dots" id="nav-dots"></div>
+      <div class="foot-right">
+        <div class="foot-txt" id="foot-txt">—</div>
+        <div class="t-wrap">
+          <svg width="26" height="26" viewBox="0 0 26 26">
+            <circle class="t-bg" cx="13" cy="13" r="10"/>
+            <circle class="t-arc" id="t-arc" cx="13" cy="13" r="10"
+              stroke-dasharray="62.8" stroke-dashoffset="0"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   KONFIGURATION
+══════════════════════════════════════════════════════════ */
+const BASE       = 'https://wahlergebnisse.komm.one/24/produktion/8425020/999-1337/20301224/buergermeisterwahl_gemeinde/';
+const SLIDE_MS   = 12000;   // ms pro Folie
+const REFRESH_MS = 30000;   // Daten-Refresh (30 Sek.)
+
+/* Demo-Modus: true = simuliert nach und nach eintreffende Bezirke (zum Testen) */
+const DEMO_MODE  = false;
+const DEMO_INTERVAL_MS = 8000; // alle 8 Sek. ein neues Ergebnis (Demo)
+
+/* Alle Bezirke */
+const ALL_BEZIRKE = [
+  {url:'ergebnisse_stimmbezirk_08425020-001.html', name:'001 Rathaus, Karlstraße 2',               nr:'001', ort:'Blaubeuren', adresse:'Karlstraße 2'},
+  {url:'ergebnisse_stimmbezirk_08425020-002.html', name:'002 Johannes-Montini-Haus',               nr:'002', ort:'Blaubeuren', adresse:'Karlstraße 53'},
+  {url:'ergebnisse_stimmbezirk_08425020-003.html', name:'003 Johannes-Montini-Haus ZVU',           nr:'003', ort:'Blaubeuren', adresse:'Karlstraße 53'},
+  {url:'ergebnisse_stimmbezirk_08425020-004.html', name:'004 Gemeindehaus Gerhausen',              nr:'004', ort:'Gerhausen',  adresse:'Schulstraße 26'},
+  {url:'ergebnisse_stimmbezirk_08425020-005.html', name:'005 Karl-Spohn-Realschule',               nr:'005', ort:'Blaubeuren', adresse:'Helfensteinerstrasse 12'},
+  {url:'ergebnisse_stimmbezirk_08425020-006.html', name:'006 Rathaus Asch',                        nr:'006', ort:'Asch',       adresse:'Bei der Hüle 1'},
+  {url:'ergebnisse_stimmbezirk_08425020-007.html', name:'007 Proberaum Musikverein Beiningen',     nr:'007', ort:'Beiningen',  adresse:'Im Eichert 3'},
+  {url:'ergebnisse_stimmbezirk_08425020-008.html', name:'008 Feuerwehrgerätehaus Pappelau',        nr:'008', ort:'Pappelau',   adresse:'Römerstraße 22'},
+  {url:'ergebnisse_stimmbezirk_08425020-009.html', name:'009 Fr. Schulhaus Erstetten',             nr:'009', ort:'Erstetten',  adresse:'Schleichtalstraße 32'},
+  {url:'ergebnisse_stimmbezirk_08425020-010.html', name:'010 Zehntscheuer Seißen',                nr:'010', ort:'Seißen',     adresse:'Albstraße 74'},
+  {url:'ergebnisse_stimmbezirk_08425020-011.html', name:'011 Dorfgemeinschaftshaus Sonderbuch',    nr:'011', ort:'Sonderbuch', adresse:'Blaubeurer Str. 12'},
+  {url:'ergebnisse_stimmbezirk_08425020-012.html', name:'012 altes Schulhaus Weiler',              nr:'012', ort:'Weiler',     adresse:'Siedlungsstraße 1'},
+  {url:'ergebnisse_stimmbezirk_08425020-013.html', name:'013 Grundschule Blaubeuren',              nr:'013', ort:'Blaubeuren', adresse:'Alberstraße 3'},
+  {url:'ergebnisse_stimmbezirk_08425020-014.html', name:'014 Mehrzweckhalle Seißen',               nr:'014', ort:'Seißen',     adresse:'Flurstraße 55'},
+  {url:'ergebnisse_briefwahlbezirk_08425020-999-1.html', name:'Briefwahl 1', nr:'BW1', ort:'Briefwahl', adresse:'—'},
+  {url:'ergebnisse_briefwahlbezirk_08425020-999-2.html', name:'Briefwahl 2', nr:'BW2', ort:'Briefwahl', adresse:'—'},
+  {url:'ergebnisse_briefwahlbezirk_08425020-999-3.html', name:'Briefwahl 3', nr:'BW3', ort:'Briefwahl', adresse:'—'},
+  {url:'ergebnisse_briefwahlbezirk_08425020-999-4.html', name:'Briefwahl 4', nr:'BW4', ort:'Briefwahl', adresse:'—'},
+];
+
+/* Demo-Testdaten: simulierte Ergebnisse je Bezirk (leicht variierend) */
+const DEMO_DATA = [
+  [100,80,70,50],[95,85,75,45],[88,82,78,52],[110,75,72,43],
+  [92,90,65,53],[105,78,80,37],[98,84,68,50],[87,91,71,51],
+  [103,79,74,44],[96,86,70,48],[99,81,73,47],[101,83,69,47],
+  [94,88,76,42],[107,77,66,50],[90,82,72,56],[93,85,71,51],
+  [97,80,75,48],[102,84,68,46],
+];
+
+/* ══════════════════════════════════════════════════════════
+   GLOBAL STATE
+══════════════════════════════════════════════════════════ */
+const G = {
+  candidates:  [],
+  stichwahl:   [],
+  beteiligung: '—',
+  waehler: 0, berechtigt: 0, ungueltig: 0,
+  ausgezaehlt: 0, gesamt: 18,
+  updateTime:  null,
+  datum:       '24. Dezember 2030 · Testwahl',
+  bezirke: ALL_BEZIRKE.map(b => ({
+    ...b, counted:false, time:null,
+    candidates:[], beteiligung:'—',
+    waehler:0, berechtigt:0, ungueltig:0
+  }))
+};
+
+/* Basis-Kandidaten für Demo */
+const BASE_CANDS = [
+  {name:'Kaczmarek', vorname:'Viktor',  anteil:33.3},
+  {name:'Mikat',     vorname:'Mirijam', anteil:26.7},
+  {name:'Wähler ben. Personen', vorname:'', anteil:23.3},
+  {name:'Menholz',   vorname:'Robin',   anteil:16.7},
+];
+
+/* ══════════════════════════════════════════════════════════
+   DEMO-SIMULATION
+══════════════════════════════════════════════════════════ */
+let demoIdx = 0;
+function demoTick() {
+  if (demoIdx >= ALL_BEZIRKE.length) return;
+  const bk   = G.bezirke[demoIdx];
+  const data = DEMO_DATA[demoIdx];
+  const total = data.reduce((a,b)=>a+b,0);
+
+  bk.counted  = true;
+  bk.time     = now();
+  bk.waehler  = total;
+  bk.berechtigt = Math.round(total * 2.4);
+  bk.ungueltig  = Math.floor(Math.random()*3);
+  bk.beteiligung = ((total / bk.berechtigt)*100).toFixed(1).replace('.',',') + ' %';
+  bk.candidates = BASE_CANDS.map((c,i) => ({
+    name:c.name, vorname:c.vorname,
+    stimmen: data[i],
+    anteil: +((data[i]/total)*100).toFixed(1)
+  })).sort((a,b)=>b.anteil-a.anteil);
+
+  // Gesamtstimmen neu berechnen
+  recalcGlobal();
+
+  demoIdx++;
+  onNewData([bk]);
+}
+
+function recalcGlobal() {
+  const counted = G.bezirke.filter(b=>b.counted && b.candidates.length>0);
+  G.ausgezaehlt = counted.length;
+  if (!counted.length) return;
+
+  const names = BASE_CANDS.map(c=>c.name);
+  const totals = {};
+  names.forEach(n => totals[n]=0);
+  counted.forEach(bk => bk.candidates.forEach(c => { if(totals[c.name]!==undefined) totals[c.name]+=c.stimmen; }));
+
+  const grand = Object.values(totals).reduce((a,b)=>a+b,0);
+  G.candidates = names.map((n,i)=>({
+    name:n, vorname:BASE_CANDS[i].vorname,
+    stimmen: totals[n],
+    anteil: grand>0 ? +((totals[n]/grand)*100).toFixed(1) : 0
+  })).sort((a,b)=>b.anteil-a.anteil);
+
+  G.stichwahl = G.candidates.slice(0,2).map(c=>c.name);
+  G.waehler   = counted.reduce((s,b)=>s+(b.waehler||0),0);
+  G.berechtigt= counted.reduce((s,b)=>s+(b.berechtigt||0),0);
+  G.ungueltig = counted.reduce((s,b)=>s+(b.ungueltig||0),0);
+  const bet = G.berechtigt > 0 ? (G.waehler/G.berechtigt*100).toFixed(1) : '—';
+  G.beteiligung = bet !== '—' ? bet.replace('.',',')+' %' : '—';
+  G.updateTime = new Date();
+}
+
+function now() {
+  return new Date().toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit'});
+}
+
+/* ══════════════════════════════════════════════════════════
+   HTML PARSER (echter Modus)
+══════════════════════════════════════════════════════════ */
+function parseMain(html) {
+  const doc = new DOMParser().parseFromString(html,'text/html');
+  const txt = doc.body.innerText;
+
+  const mD = txt.match(/(\d{1,2}\.\s+\w+\s+\d{4})/);
+  if (mD) G.datum = mD[1];
+
+  const mA = txt.match(/Ausgezählte Gebiete:\s*(\d+)\s*von\s*(\d+)/);
+  if (mA) { G.ausgezaehlt=+mA[1]; G.gesamt=+mA[2]; }
+
+  const mB = txt.match(/Wahlbeteiligung[^0-9]*([\d,]+\s*%)/);
+  if (mB) G.beteiligung = mB[1];
+
+  let bestCands=[];
+  doc.querySelectorAll('table').forEach(tbl=>{
+    const cands=[];
+    [...tbl.querySelectorAll('tr')].forEach(r=>{
+      const cells=[...r.querySelectorAll('td')];
+      if(cells.length<2)return;
+      const name=cells[0].textContent.trim();
+      const val=parseInt(cells[1].textContent.replace(/\D/g,''));
+      const pct=parseFloat((cells[2]||{}).textContent?.replace(',','.'));
+      if(name==='Wahlberechtigte'){G.berechtigt=val;return}
+      if(name==='Wählende'){G.waehler=val;return}
+      if(name==='Ungültige Stimmen'){G.ungueltig=val;return}
+      if(name&&!isNaN(val)&&!isNaN(pct))cands.push({name,stimmen:val,anteil:pct});
+    });
+    if(cands.length>bestCands.length)bestCands=cands;
+  });
+
+  if(bestCands.length){
+    G.candidates=bestCands.map(c=>{
+      const p=c.name.split(',').map(s=>s.trim());
+      return{name:p[0],vorname:p[1]||'',stimmen:c.stimmen,anteil:c.anteil};
+    }).sort((a,b)=>b.anteil-a.anteil);
+    G.stichwahl=G.candidates.slice(0,2).map(c=>c.name);
+  }
+
+  // Ankunftstafel: welche Bezirke sind ausgezählt?
+  const newlyDone=[];
+  doc.querySelectorAll('table tr').forEach(r=>{
+    const cells=[...r.querySelectorAll('td')];
+    if(cells.length<2)return;
+    const a=cells[0].querySelector('a');
+    if(!a)return;
+    const rname=a.textContent.trim();
+    const zeit=cells[cells.length-1].textContent.trim();
+    if(zeit.match(/^\d{2}:\d{2}$/)){
+      const bk=G.bezirke.find(b=>b.name===rname);
+      if(bk&&!bk.counted){bk.time=zeit;newlyDone.push(bk);}
+      else if(bk){bk.counted=true;bk.time=zeit;}
+    }
+  });
+  return newlyDone;
+}
+
+function parseBezirk(html, bk) {
+  const doc=new DOMParser().parseFromString(html,'text/html');
+  const txt=doc.body.innerText;
+  const mB=txt.match(/Wahlbeteiligung[^0-9]*([\d,]+\s*%)/);
+  if(mB)bk.beteiligung=mB[1];
+  let bestCands=[];
+  doc.querySelectorAll('table').forEach(tbl=>{
+    const cands=[];
+    [...tbl.querySelectorAll('tr')].forEach(r=>{
+      const cells=[...r.querySelectorAll('td')];
+      if(cells.length<2)return;
+      const name=cells[0].textContent.trim();
+      const val=parseInt(cells[1].textContent.replace(/\D/g,''));
+      const pct=parseFloat((cells[2]||{}).textContent?.replace(',','.'));
+      if(name==='Wahlberechtigte'){bk.berechtigt=val;return}
+      if(name==='Wählende'){bk.waehler=val;return}
+      if(name==='Ungültige Stimmen'){bk.ungueltig=val;return}
+      if(name&&!isNaN(val)&&!isNaN(pct))cands.push({name,stimmen:val,anteil:pct});
+    });
+    if(cands.length>bestCands.length)bestCands=cands;
+  });
+  if(bestCands.length){
+    bk.candidates=bestCands.map(c=>{
+      const p=c.name.split(',').map(s=>s.trim());
+      return{name:p[0],vorname:p[1]||'',stimmen:c.stimmen,anteil:c.anteil};
+    }).sort((a,b)=>b.anteil-a.anteil);
+    bk.counted=true;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   DATENABRUF (echter Modus)
+══════════════════════════════════════════════════════════ */
+async function fetchOne(url) {
+  const r=await fetch(url,{mode:'cors',cache:'no-cache'});
+  if(!r.ok)throw new Error(r.status);
+  return r.text();
+}
+
+async function loadReal() {
+  let newlyDone=[];
+  try{
+    const html=await fetchOne(BASE+'ergebnisse.html');
+    newlyDone=parseMain(html)||[];
+  }catch(e){console.warn('CORS/Fetch-Fehler:',e.message);return;}
+
+  await Promise.all(newlyDone.map(async bk=>{
+    try{
+      const html=await fetchOne(BASE+bk.url);
+      parseBezirk(html,bk);
+    }catch(e){}
+  }));
+
+  G.updateTime=new Date();
+  if(newlyDone.length>0) onNewData(newlyDone);
+  else renderLeft();
+}
+
+/* ══════════════════════════════════════════════════════════
+   SLIDES ENGINE  ←←← KERNSTÜCK
+══════════════════════════════════════════════════════════ */
+
+/* Feste Slides (immer vorhanden): Index 0 = Gesamt, Index 1 = Auszählung */
+const FIXED_SLIDE_COUNT = 2;
+
+let slides      = [];   // [{el, type, bkUrl?}]
+let currentIdx  = 0;
+let timerStart  = Date.now();
+let slideTimer  = null;
+
+/* Initialer Aufbau */
+function initSlides() {
+  const wrap = document.getElementById('slides-wrap');
+  wrap.innerHTML = '';
+  slides = [];
+
+  // Slide 0: Gesamtergebnis
+  slides.push(addSlide('gesamt', null));
+  // Slide 1: Auszählungsstand
+  slides.push(addSlide('auszaehlung', null));
+
+  rebuildNav();
+  activateSlide(0, true);
+  startAutoAdvance();
+}
+
+/* Einen neuen Slide-DOM-Knoten erzeugen und anhängen */
+function addSlide(type, bk) {
+  const el = document.createElement('div');
+  el.className = 'slide';
+  el.dataset.type = type;
+  if (bk) el.dataset.bkUrl = bk.url;
+  renderSlideContent(el, type, bk);
+  document.getElementById('slides-wrap').appendChild(el);
+  return { el, type, bk };
+}
+
+/* Inhalt eines Slides (neu) rendern */
+function renderSlideContent(el, type, bk) {
+  if (type==='gesamt')      el.innerHTML = htmlGesamt();
+  else if(type==='auszaehlung') el.innerHTML = htmlAuszaehlung();
+  else if(bk)               el.innerHTML = htmlBezirk(bk);
+}
+
+/* Wenn neue Bezirke eingehen */
+function onNewData(newBezirke) {
+  // 1. Linke Leiste aktualisieren
+  renderLeft();
+
+  // 2. Feste Slides neu rendern (Inhalt aktualisieren, Position beibehalten)
+  refreshFixedSlides();
+
+  // 3. Neue Bezirk-Slides hinzufügen
+  const addedSlides = [];
+  newBezirke.filter(bk=>bk.candidates.length>0).forEach(bk => {
+    // Schon vorhanden?
+    const exists = slides.find(s=>s.bk && s.bk.url===bk.url);
+    if (!exists) {
+      const s = addSlide('bezirk', bk);
+      slides.push(s);
+      addedSlides.push(s);
+    } else {
+      // Nur Inhalt aktualisieren
+      renderSlideContent(exists.el, 'bezirk', bk);
+    }
+  });
+
+  // 4. Nav neu bauen
+  rebuildNav();
+
+  // 5. Banner zeigen falls neue Slides
+  if (addedSlides.length > 0) {
+    showNeuBanner(newBezirke);
+    // Nach aktuellem Slide direkt den neuen einschleusen
+    scheduleNewSlide(addedSlides[0]);
+  }
+
+  document.getElementById('pulse').style.background='var(--teal)';
+}
+
+/* Feste Slides neu befüllen ohne Positionswechsel */
+function refreshFixedSlides() {
+  if (slides[0]) renderSlideContent(slides[0].el, 'gesamt', null);
+  if (slides[1]) renderSlideContent(slides[1].el, 'auszaehlung', null);
+  // Falls aktueller Slide einer der festen ist: Balken neu starten
+  if (currentIdx < FIXED_SLIDE_COUNT) {
+    setTimeout(()=>animateBars(slides[currentIdx].el), 100);
+  }
+}
+
+/* Direkt nach aktuellem Slide einen neuen einstreuen */
+function scheduleNewSlide(newSlide) {
+  clearTimeout(slideTimer);
+  const delay = Math.max(0, SLIDE_MS - (Date.now() - timerStart));
+  slideTimer = setTimeout(() => {
+    goToSlide(slides.indexOf(newSlide));
+    startAutoAdvance();
+  }, Math.min(delay, 3000)); // max. 3 Sek. warten
+}
+
+/* Auto-Advance */
+function startAutoAdvance() {
+  clearTimeout(slideTimer);
+  slideTimer = setTimeout(() => {
+    goToSlide((currentIdx + 1) % slides.length);
+    startAutoAdvance();
+  }, SLIDE_MS);
+}
+
+function goToSlide(idx) {
+  if (idx === currentIdx || !slides[idx]) return;
+  const prev = slides[currentIdx];
+  const next = slides[idx];
+
+  prev.el.classList.add('exit');
+  prev.el.classList.remove('active');
+  setTimeout(()=>prev.el.classList.remove('exit'), 700);
+
+  next.el.classList.add('active');
+  currentIdx = idx;
+
+  timerStart = Date.now();
+  rebuildNav();
+  document.getElementById('foot-txt').textContent =
+    'Folie '+(currentIdx+1)+' / '+slides.length;
+
+  setTimeout(()=>animateBars(next.el), 200);
+}
+
+function activateSlide(idx, instant) {
+  slides.forEach((s,i)=>s.el.classList.toggle('active',i===idx));
+  currentIdx = idx;
+  timerStart = Date.now();
+  rebuildNav();
+  document.getElementById('foot-txt').textContent =
+    'Folie '+(idx+1)+' / '+slides.length;
+  setTimeout(()=>animateBars(slides[idx].el), instant?50:200);
+}
+
+function rebuildNav() {
+  const cont = document.getElementById('nav-dots');
+  cont.innerHTML = slides.map((s,i)=>{
+    const isNew = s.isNew ? ' new-slide' : '';
+    return `<div class="nd${i===currentIdx?' active':''}${isNew}" title="${s.bk?s.bk.name:s.type}"></div>`;
+  }).join('');
+  document.getElementById('foot-txt').textContent =
+    'Folie '+(currentIdx+1)+' / '+slides.length;
+}
+
+function animateBars(el) {
+  el.querySelectorAll('[data-pct]').forEach(bar=>{
+    bar.style.width = bar.dataset.pct+'%';
+    const p=bar.querySelector('.g-pct,.bz-pct');
+    if(p)p.classList.add('vis');
+  });
+  el.querySelectorAll('[data-cmp]').forEach(bar=>{
+    bar.style.width = bar.dataset.cmp+'%';
+  });
+}
+
+/* ══════════════════════════════════════════════════════════
+   NEU-BANNER
+══════════════════════════════════════════════════════════ */
+let bannerTimer=null;
+function showNeuBanner(bezirke) {
+  const b=document.getElementById('neu-banner');
+  const names=bezirke.map(bk=>bk.ort).join(', ');
+  document.getElementById('neu-text').textContent =
+    bezirke.length===1
+      ? `Neues Ergebnis: ${names}`
+      : `${bezirke.length} neue Ergebnisse: ${names}`;
+  b.classList.add('show');
+  clearTimeout(bannerTimer);
+  bannerTimer=setTimeout(()=>b.classList.remove('show'), 5000);
+}
+
+/* ══════════════════════════════════════════════════════════
+   HTML BUILDER
+══════════════════════════════════════════════════════════ */
+function htmlGesamt() {
+  if (!G.candidates.length) return '<div class="slide-lbl">Gesamtergebnis</div><div style="color:var(--muted);font-size:14px;margin-top:40px">Warte auf erste Ergebnisse …</div>';
+  const max=Math.max(...G.candidates.map(c=>c.anteil),1);
+  const rows=G.candidates.map((c,i)=>{
+    const bpct=(c.anteil/max*100).toFixed(1);
+    const isSt=G.stichwahl.includes(c.name);
+    return `<div class="g-cand">
+      <div class="g-rank">${i+1}</div>
+      <div class="g-name">${c.name}${isSt?'<span class="stw-tag">Stichwahl</span>':''}${c.vorname?`<br><span class="vn">${c.vorname}</span>`:''}
+      </div>
+      <div class="g-track">
+        <div class="g-fill c${i}" data-pct="${bpct}">
+          <span class="g-pct">${c.anteil.toFixed(1).replace('.',',')} %</span>
+        </div>
+      </div>
+      <div class="g-stim">${c.stimmen.toLocaleString('de')} St.</div>
+    </div>`;
+  }).join('');
+  return `<div class="slide-lbl">Gesamtergebnis · ${G.ausgezaehlt} von ${G.gesamt} Gebieten</div>${rows}`;
+}
+
+function htmlAuszaehlung() {
+  const cards=G.bezirke.map(b=>`
+    <div class="bk-card${b.counted?' done':''}">
+      <div class="bk-dot"></div>
+      <div>
+        <div class="bk-name">${b.name}</div>
+        ${b.counted&&b.time?`<div class="bk-time">${b.time} Uhr</div>`:''}
+      </div>
+    </div>`).join('');
+  return `<div class="slide-lbl">Auszählungsstand</div><div class="bk-grid">${cards}</div>`;
+}
+
+function htmlBezirk(bk) {
+  if (!bk.candidates.length) return `<div class="slide-lbl">Bezirk ${bk.nr}</div><div style="color:var(--muted)">Keine Daten</div>`;
+  const max=Math.max(...bk.candidates.map(c=>c.anteil),1);
+  const gMax=G.candidates.length?Math.max(...G.candidates.map(c=>c.anteil),1):1;
+
+  const cands=bk.candidates.map((c,i)=>{
+    const bpct=(c.anteil/max*100).toFixed(1);
+    return `<div class="bz-row">
+      <div class="bz-name">${c.name}${c.vorname?`<br><span class="vn">${c.vorname}</span>`:''}</div>
+      <div class="bz-track">
+        <div class="bz-fill c${i}" data-pct="${bpct}">
+          <span class="bz-pct">${c.anteil.toFixed(1).replace('.',',')} %</span>
+        </div>
+      </div>
+      <div class="bz-stim">${c.stimmen.toLocaleString('de')} St.</div>
+    </div>`;
+  }).join('');
+
+  const cmpRows=G.candidates.length ? bk.candidates.map((c,i)=>{
+    const gc=G.candidates.find(g=>g.name===c.name);
+    const lPct=(c.anteil/max*100).toFixed(1);
+    const gPct=gc?(gc.anteil/gMax*100).toFixed(1):0;
+    const diff=gc?(c.anteil-gc.anteil):null;
+    const diffStr=diff!==null?(diff>=0?'+':'')+(diff.toFixed(1).replace('.',','))+' %':'';
+    const diffCol=diff>=0?'var(--teal)':'#e06c3a';
+    return `<div class="cmp-row">
+      <div class="cmp-name">${c.name}</div>
+      <div class="cmp-bars">
+        <div class="cmp-bar loc c${i}" data-cmp="${lPct}"></div>
+        ${gc?`<div class="cmp-bar glob" data-cmp="${gPct}"></div>`:''}
+      </div>
+      <div class="cmp-pcts">${c.anteil.toFixed(1).replace('.',',')} % <span style="color:${diffCol}">${diffStr}</span></div>
+    </div>`;
+  }).join('') : '';
+
+  const cmpSection=G.ausgezaehlt>1?`
+    <div class="cmp">
+      <div class="cmp-title">Vergleich mit Gesamtergebnis <span style="opacity:.5;font-weight:400">(oben=Bezirk · unten=Gesamt)</span></div>
+      ${cmpRows}
+    </div>`:'';
+
+  return `
+    <div class="slide-lbl">Wahlbezirk ${bk.nr} · ${bk.time?bk.time+' Uhr':'ausgezählt'}</div>
+    <div class="bz-ort">${bk.ort}</div>
+    <div class="bz-addr">${bk.name}</div>
+    <div class="bz-stats">
+      <div class="bs"><div class="bsl">Beteiligung</div><div class="bsv amber">${bk.beteiligung}</div></div>
+      <div class="bs"><div class="bsl">Wählende</div><div class="bsv">${(bk.waehler||0).toLocaleString('de')}</div></div>
+      <div class="bs"><div class="bsl">Berechtigt</div><div class="bsv">${(bk.berechtigt||0).toLocaleString('de')}</div></div>
+    </div>
+    <div class="bz-cands">${cands}</div>
+    ${cmpSection}`;
+}
+
+/* ══════════════════════════════════════════════════════════
+   LINKE LEISTE
+══════════════════════════════════════════════════════════ */
+function renderLeft() {
+  document.getElementById('l-datum').textContent   = G.datum||'—';
+  document.getElementById('l-bet').textContent     = G.beteiligung;
+  document.getElementById('l-wae').textContent     = G.waehler?G.waehler.toLocaleString('de'):'—';
+  document.getElementById('l-ber').textContent     = G.berechtigt?G.berechtigt.toLocaleString('de'):'—';
+  document.getElementById('l-ung').textContent     = G.ungueltig!==undefined?G.ungueltig.toLocaleString('de'):'—';
+  document.getElementById('l-ausz-txt').textContent= G.ausgezaehlt+' / '+G.gesamt;
+  const pct=G.gesamt>0?(G.ausgezaehlt/G.gesamt*100):0;
+  document.getElementById('l-ausz-bar').style.width= pct.toFixed(1)+'%';
+  if(G.updateTime) document.getElementById('l-upd').textContent=
+    'Stand '+G.updateTime.toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+
+  const cont=document.getElementById('mini-cands');
+  if(!G.candidates.length){cont.innerHTML='<div style="color:var(--muted);font-size:12px">Warte auf Ergebnisse …</div>';return;}
+  const max=Math.max(...G.candidates.map(c=>c.anteil),1);
+  cont.innerHTML=G.candidates.map((c,i)=>{
+    const bpct=(c.anteil/max*100).toFixed(1);
+    const isSt=G.stichwahl.includes(c.name);
+    return `<div class="mini-cand">
+      <div class="mini-hdr">
+        <div><span class="mini-name">${c.name}</span>${c.vorname?`<span class="mini-sub"> ${c.vorname}</span>`:''}${isSt?'<span class="stw-tag">Stichw.</span>':''}</div>
+        <div class="mini-pct c${i}">${c.anteil.toFixed(1).replace('.',',')} %</div>
+      </div>
+      <div class="mini-track"><div class="mini-fill c${i}" id="mf-${i}" style="width:0%"></div></div>
+      <div class="mini-st">${c.stimmen.toLocaleString('de')} Stimmen</div>
+    </div>`;
+  }).join('');
+  setTimeout(()=>G.candidates.forEach((_,i)=>{
+    const b=document.getElementById('mf-'+i);
+    if(b)b.style.width=((G.candidates[i].anteil/max*100).toFixed(1))+'%';
+  }),200);
+}
+
+/* ══════════════════════════════════════════════════════════
+   TIMER RING
+══════════════════════════════════════════════════════════ */
+const arc=document.getElementById('t-arc');
+setInterval(()=>{
+  const p=Math.min((Date.now()-timerStart)/SLIDE_MS,1);
+  if(arc)arc.setAttribute('stroke-dashoffset',(62.8*(1-p)).toFixed(2));
+},100);
+
+/* ══════════════════════════════════════════════════════════
+   START
+══════════════════════════════════════════════════════════ */
+initSlides();
+renderLeft();
+
+if (DEMO_MODE) {
+  // Demo: erstes Ergebnis sofort, dann alle DEMO_INTERVAL_MS
+  setTimeout(()=>{demoTick();},1500);
+  setInterval(demoTick, DEMO_INTERVAL_MS);
+} else {
+  // Echter Modus: CORS-Abruf
+  loadReal();
+  setInterval(loadReal, REFRESH_MS);
+}
+</script>
+</body>
+</html>
