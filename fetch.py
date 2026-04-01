@@ -63,7 +63,22 @@ def parse_seite(html, label=""):
             if any(cells):
                 print(f"    Zeile: {cells}")
 
-    stats = {"beteiligung": "-", "berechtigt": 0, "waehler": 0, "ungueltig": 0}
+    stichwahl = []
+    for tbl in tables:
+        rows = tbl.find_all("tr")
+        if not rows:
+            continue
+        header = [clean(td.get_text()) for td in rows[0].find_all(["th","td"])]
+        if header and header[0] == "Stichwahlteilnehmer/in":
+            for row in rows[1:]:
+                tds = row.find_all(["td","th"])
+                if tds:
+                    name = clean(tds[0].get_text())
+                    parts = name.split(",", 1)
+                    if parts[0].strip():
+                        stichwahl.append(parts[0].strip())
+
+    stats = {"beteiligung": "-", "berechtigt": 0, "waehler": 0, "ungueltig": 0, "stichwahl": stichwahl}
     candidates = []
     counted_map = {}
 
@@ -73,8 +88,13 @@ def parse_seite(html, label=""):
             continue
         header = [clean(td.get_text()) for td in rows[0].find_all(["th","td"])]
 
+        # Stichwahltabelle – nur Namen merken, keine Kandidaten daraus
+        if header and header[0] == "Stichwahlteilnehmer/in":
+            print(f"  -> Stichwahltabelle erkannt (wird übersprungen)")
+            continue
+
         # Ergebnistabelle
-        if header and header[0] in ("Direktkandidat/in", "Stichwahlteilnehmer/in"):
+        if header and header[0] == "Direktkandidat/in":
             print(f"  -> Ergebnistabelle erkannt (Header[0]='{header[0]}')")
             for row in rows[1:]:
                 tds = row.find_all(["td","th"])
