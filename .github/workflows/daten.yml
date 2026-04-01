@@ -1,0 +1,189 @@
+name: Wahldaten aktualisieren
+
+on:
+  schedule:
+    # Alle 5 Minuten (GitHub erlaubt minimal 5 Min.)
+    - cron: '*/5 * * * *'
+  # Auch manuell auslösbar
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Wahldaten abrufen und als JSON speichern
+        run: |
+          python3 << 'EOF'
+          import urllib.request
+          import json
+          import re
+          from html.parser import HTMLParser
+
+          BASE = "https://wahlergebnisse.komm.one/24/produktion/8425020/999-1337/20301224/buergermeisterwahl_gemeinde/"
+
+          BEZIRKE = [
+            {"url": "ergebnisse_stimmbezirk_08425020-001.html", "name": "001 Rathaus, Karlstraße 2",               "nr": "001", "ort": "Blaubeuren", "adresse": "Karlstraße 2"},
+            {"url": "ergebnisse_stimmbezirk_08425020-002.html", "name": "002 Johannes-Montini-Haus",               "nr": "002", "ort": "Blaubeuren", "adresse": "Karlstraße 53"},
+            {"url": "ergebnisse_stimmbezirk_08425020-003.html", "name": "003 Johannes-Montini-Haus ZVU",           "nr": "003", "ort": "Blaubeuren", "adresse": "Karlstraße 53"},
+            {"url": "ergebnisse_stimmbezirk_08425020-004.html", "name": "004 Gemeindehaus Gerhausen",              "nr": "004", "ort": "Gerhausen",  "adresse": "Schulstraße 26"},
+            {"url": "ergebnisse_stimmbezirk_08425020-005.html", "name": "005 Karl-Spohn-Realschule",               "nr": "005", "ort": "Blaubeuren", "adresse": "Helfensteinerstrasse 12"},
+            {"url": "ergebnisse_stimmbezirk_08425020-006.html", "name": "006 Rathaus Asch",                        "nr": "006", "ort": "Asch",       "adresse": "Bei der Hüle 1"},
+            {"url": "ergebnisse_stimmbezirk_08425020-007.html", "name": "007 Proberaum Musikverein Beiningen",     "nr": "007", "ort": "Beiningen",  "adresse": "Im Eichert 3"},
+            {"url": "ergebnisse_stimmbezirk_08425020-008.html", "name": "008 Feuerwehrgerätehaus Pappelau",        "nr": "008", "ort": "Pappelau",   "adresse": "Römerstraße 22"},
+            {"url": "ergebnisse_stimmbezirk_08425020-009.html", "name": "009 Fr. Schulhaus Erstetten",             "nr": "009", "ort": "Erstetten",  "adresse": "Schleichtalstraße 32"},
+            {"url": "ergebnisse_stimmbezirk_08425020-010.html", "name": "010 Zehntscheuer Seißen",                "nr": "010", "ort": "Seißen",     "adresse": "Albstraße 74"},
+            {"url": "ergebnisse_stimmbezirk_08425020-011.html", "name": "011 Dorfgemeinschaftshaus Sonderbuch",    "nr": "011", "ort": "Sonderbuch", "adresse": "Blaubeurer Str. 12"},
+            {"url": "ergebnisse_stimmbezirk_08425020-012.html", "name": "012 altes Schulhaus Weiler",              "nr": "012", "ort": "Weiler",     "adresse": "Siedlungsstraße 1"},
+            {"url": "ergebnisse_stimmbezirk_08425020-013.html", "name": "013 Grundschule Blaubeuren",              "nr": "013", "ort": "Blaubeuren", "adresse": "Alberstraße 3"},
+            {"url": "ergebnisse_stimmbezirk_08425020-014.html", "name": "014 Mehrzweckhalle Seißen",               "nr": "014", "ort": "Seißen",     "adresse": "Flurstraße 55"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-1.html", "name": "Briefwahl 1", "nr": "BW1", "ort": "Briefwahl", "adresse": "—"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-2.html", "name": "Briefwahl 2", "nr": "BW2", "ort": "Briefwahl", "adresse": "—"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-3.html", "name": "Briefwahl 3", "nr": "BW3", "ort": "Briefwahl", "adresse": "—"},
+            {"url": "ergebnisse_briefwahlbezirk_08425020-999-4.html", "name": "Briefwahl 4", "nr": "BW4", "ort": "Briefwahl", "adresse": "—"},
+          ]
+
+          def fetch(url):
+              req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+              with urllib.request.urlopen(req, timeout=10) as r:
+                  return r.read().decode("utf-8", errors="replace")
+
+          def parse_table(html):
+              """Extrahiert Kandidaten + Statistik aus einer komm.one-Ergebnisseite."""
+              candidates = []
+              stats = {"berechtigt": 0, "waehler": 0, "ungueltig": 0, "beteiligung": "—"}
+
+              # Beteiligung
+              m = re.search(r'Wahlbeteiligung[^\d]*([\d,]+)\s*%', html)
+              if m:
+                  stats["beteiligung"] = m.group(1).replace(",", ".").strip() + " %"
+
+              # Tabellen nach Kandidaten durchsuchen
+              rows = re.findall(r'<tr[^>]*>(.*?)</tr>', html, re.DOTALL)
+              best = []
+              for row in rows:
+                  cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
+                  cells = [re.sub(r'<[^>]+>', '', c).strip() for c in cells]
+                  if len(cells) < 2:
+                      continue
+                  name = cells[0]
+                  raw_val = re.sub(r'\D', '', cells[1])
+                  val = int(raw_val) if raw_val else None
+                  if val is None:
+                      continue
+                  pct_str = cells[2].replace(',', '.').replace('%','').strip() if len(cells) > 2 else ''
+                  try:
+                      pct = float(pct_str)
+                  except:
+                      pct = None
+
+                  if name == "Wahlberechtigte":
+                      stats["berechtigt"] = val
+                  elif name == "Wählende":
+                      stats["waehler"] = val
+                  elif name == "Ungültige Stimmen":
+                      stats["ungueltig"] = val
+                  elif name and pct is not None and name not in ("Gültige Stimmen",):
+                      parts = name.split(",", 1)
+                      best.append({
+                          "name": parts[0].strip(),
+                          "vorname": parts[1].strip() if len(parts) > 1 else "",
+                          "stimmen": val,
+                          "anteil": round(pct, 1)
+                      })
+
+              if best:
+                  candidates = sorted(best, key=lambda x: -x["anteil"])
+
+              return candidates, stats
+
+          # Hauptseite laden
+          print("Lade Hauptseite...")
+          main_html = fetch(BASE + "ergebnisse.html")
+
+          # Datum + Auszählungsstand
+          datum = ""
+          m = re.search(r'(\d{1,2}\.\s+\w+\s+\d{4})', main_html)
+          if m:
+              datum = m.group(1)
+
+          ausgezaehlt, gesamt = 0, 18
+          m = re.search(r'Ausgezählte Gebiete:\s*(\d+)\s*von\s*(\d+)', main_html)
+          if m:
+              ausgezaehlt, gesamt = int(m.group(1)), int(m.group(2))
+
+          # Welche Bezirke sind ausgezählt? (Ankunftstafel)
+          counted_map = {}
+          for m in re.finditer(r'ergebnisse_(?:stimmbezirk|briefwahlbezirk)[^"]+\.html[^>]*>([^<]+)<.*?(\d{2}:\d{2})', main_html, re.DOTALL):
+              pass  # Komplexer, besser via Tabelle
+
+          # Auszählungsstand-Tabelle
+          rows = re.findall(r'<tr[^>]*>(.*?)</tr>', main_html, re.DOTALL)
+          for row in rows:
+              cells = re.findall(r'<td[^>]*>(.*?)</td>', row, re.DOTALL)
+              if len(cells) < 2:
+                  continue
+              link = re.search(r'href="([^"]+)"[^>]*>([^<]+)', cells[0])
+              if not link:
+                  continue
+              bname = link.group(2).strip()
+              time_m = re.search(r'(\d{2}:\d{2})', cells[-1])
+              if time_m:
+                  counted_map[bname] = time_m.group(1)
+
+          # Gesamtergebnis aus Hauptseite
+          global_cands, global_stats = parse_table(main_html)
+
+          # Bezirke einzeln abrufen
+          result_bezirke = []
+          for bk in BEZIRKE:
+              entry = {**bk, "counted": False, "time": None,
+                       "candidates": [], "beteiligung": "—",
+                       "waehler": 0, "berechtigt": 0, "ungueltig": 0}
+
+              if bk["name"] in counted_map:
+                  entry["counted"] = True
+                  entry["time"] = counted_map[bk["name"]]
+                  print(f"  Lade Bezirk: {bk['name']}")
+                  try:
+                      bk_html = fetch(BASE + bk["url"])
+                      cands, stats = parse_table(bk_html)
+                      entry["candidates"] = cands
+                      entry["beteiligung"] = stats["beteiligung"]
+                      entry["waehler"] = stats["waehler"]
+                      entry["berechtigt"] = stats["berechtigt"]
+                      entry["ungueltig"] = stats["ungueltig"]
+                  except Exception as e:
+                      print(f"    Fehler: {e}")
+
+              result_bezirke.append(entry)
+
+          output = {
+              "datum": datum,
+              "ausgezaehlt": ausgezaehlt,
+              "gesamt": gesamt,
+              "globalCandidates": global_cands,
+              "globalStats": global_stats,
+              "bezirke": result_bezirke,
+              "fetchedAt": __import__('datetime').datetime.utcnow().isoformat() + "Z"
+          }
+
+          with open("daten.json", "w", encoding="utf-8") as f:
+              json.dump(output, f, ensure_ascii=False, indent=2)
+
+          print(f"Fertig: {ausgezaehlt}/{gesamt} Bezirke ausgezählt")
+          EOF
+
+      - name: JSON committen und pushen
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add daten.json
+          # Nur committen wenn sich etwas geändert hat
+          git diff --staged --quiet || git commit -m "Wahldaten aktualisiert $(date -u '+%H:%M:%S UTC')"
+          git push
