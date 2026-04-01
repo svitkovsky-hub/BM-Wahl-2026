@@ -77,7 +77,7 @@ def parse_seite(html, label=""):
         if header and header[0] in ("Direktkandidat/in", "Stichwahlteilnehmer/in"):
             print(f"  -> Ergebnistabelle erkannt (Header[0]='{header[0]}')")
             for row in rows[1:]:
-                tds = row.find_all("td")
+                tds = row.find_all(["td","th"])
                 if len(tds) < 2:
                     continue
                 name = clean(tds[0].get_text())
@@ -109,7 +109,7 @@ def parse_seite(html, label=""):
         elif len(header) >= 3 and "Auszählungsstand" in (header[1] if len(header) > 1 else ""):
             print(f"  -> Auszählungstabelle erkannt")
             for row in rows[1:]:
-                tds = row.find_all("td")
+                tds = row.find_all(["td","th"])
                 if len(tds) < 3:
                     continue
                 link = tds[0].find("a")
