@@ -2,11 +2,48 @@
   "datum": "24. Dezember 2030",
   "ausgezaehlt": 2,
   "gesamt": 18,
-  "globalCandidates": [],
+  "globalCandidates": [
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 270,
+      "anteil": 36.0
+    },
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 270,
+      "anteil": 36.0
+    },
+    {
+      "name": "Kaczmarek",
+      "vorname": "Viktor",
+      "stimmen": 250,
+      "anteil": 33.3
+    },
+    {
+      "name": "Kaczmarek",
+      "vorname": "Viktor",
+      "stimmen": 250,
+      "anteil": 33.3
+    },
+    {
+      "name": "Menholz",
+      "vorname": "Robin",
+      "stimmen": 150,
+      "anteil": 20.0
+    },
+    {
+      "name": "Wähler benannte Personen",
+      "vorname": "",
+      "stimmen": 80,
+      "anteil": 10.7
+    }
+  ],
   "globalStats": {
-    "beteiligung": "-",
-    "berechtigt": 0,
-    "waehler": 0,
+    "beteiligung": "45,0 %",
+    "berechtigt": 1667,
+    "waehler": 750,
     "ungueltig": 0
   },
   "bezirke": [
@@ -16,12 +53,37 @@
       "nr": "001",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "10:27",
+      "candidates": [
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 100,
+          "anteil": 33.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 80,
+          "anteil": 26.7
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 70,
+          "anteil": 23.3
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 50,
+          "anteil": 16.7
+        }
+      ],
+      "beteiligung": "41,6 %",
+      "waehler": 300,
+      "berechtigt": 721,
       "ungueltig": 0
     },
     {
@@ -30,12 +92,37 @@
       "nr": "002",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "11:05",
+      "candidates": [
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 190,
+          "anteil": 42.2
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 150,
+          "anteil": 33.3
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 100,
+          "anteil": 22.2
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 10,
+          "anteil": 2.2
+        }
+      ],
+      "beteiligung": "47,6 %",
+      "waehler": 450,
+      "berechtigt": 946,
       "ungueltig": 0
     },
     {
@@ -263,5 +350,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-01T14:35:49.241415+00:00"
+  "fetchedAt": "2026-04-01T14:37:24.500121+00:00"
 }
