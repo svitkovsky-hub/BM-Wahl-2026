@@ -33,23 +33,169 @@ def fetch(url):
     r.encoding = "utf-8"
     return r.text
 
-def debug_html(html, label):
-    """Gibt die ersten 3000 Zeichen des reinen Texts und alle Tabellen-Inhalte aus."""
-    soup = BeautifulSoup(html, "lxml")
-    print(f"\n=== DEBUG {label} ===")
-    print("--- Rohtext (erste 2000 Zeichen) ---")
-    print(soup.get_text(" ", strip=True)[:2000])
-    print(f"\n--- Anzahl Tabellen: {len(soup.find_all('table'))} ---")
-    for i, tbl in enumerate(soup.find_all("table")):
-        rows = tbl.find_all("tr")
-        print(f"\nTabelle {i+1} ({len(rows)} Zeilen):")
-        for row in rows[:10]:  # max 10 Zeilen pro Tabelle
-            cells = [td.get_text(strip=True) for td in row.find_all(["td","th"])]
-            if any(cells):
-                print(f"  {cells}")
-    print("=== ENDE DEBUG ===\n")
+def clean(s):
+    """Whitespace und geschützte Leerzeichen entfernen."""
+    return s.replace("\xa0", " ").strip()
 
-# Hauptseite laden und debuggen
+def parse_zahl(s):
+    """'1.667' oder '250' -> int, None bei Fehler."""
+    raw = re.sub(r"\D", "", clean(s))
+    return int(raw) if raw else None
+
+def parse_pct(s):
+    """'33,3 %' oder '33,3\xa0%' -> float, None bei Fehler."""
+    m = re.search(r"(\d+[,.]?\d*)", clean(s))
+    if not m:
+        return None
+    try:
+        return round(float(m.group(1).replace(",", ".")), 1)
+    except:
+        return None
+
+def parse_seite(html):
+    """
+    Gibt zurück:
+      candidates  – Liste [{name, vorname, stimmen, anteil}]
+      stats       – {beteiligung, berechtigt, waehler, ungueltig}
+      counted_map – {bezirk_name: uhrzeit}
+    """
+    soup = BeautifulSoup(html, "lxml")
+    tables = soup.find_all("table")
+
+    stats = {"beteiligung": "-", "berechtigt": 0, "waehler": 0, "ungueltig": 0}
+    candidates = []
+    counted_map = {}
+
+    for tbl in tables:
+        rows = tbl.find_all("tr")
+        if not rows:
+            continue
+
+        # Header der Tabelle bestimmen
+        header = [clean(th.get_text()) for th in rows[0].find_all(["th", "td"])]
+
+        # ── Tabelle 2: Ergebnisübersicht (Direktkandidat/in ...) ──
+        if header and header[0] in ("Direktkandidat/in", "Stichwahlteilnehmer/in"):
+            for row in rows[1:]:
+                tds = row.find_all("td")
+                if len(tds) < 2:
+                    continue
+                name = clean(tds[0].get_text())
+                val  = parse_zahl(tds[1].get_text())
+                if val is None:
+                    continue
+
+                if name == "Wahlberechtigte":
+                    stats["berechtigt"] = val
+                elif name == "Wählende":
+                    stats["waehler"] = val
+                    if len(tds) >= 3:
+                        pct = parse_pct(tds[2].get_text())
+                        if pct:
+                            stats["beteiligung"] = str(pct).replace(".", ",") + " %"
+                elif name == "Ungültige Stimmen":
+                    stats["ungueltig"] = val
+                elif name and name not in ("Gültige Stimmen", ""):
+                    pct = parse_pct(tds[2].get_text()) if len(tds) >= 3 else None
+                    if pct and pct > 0:
+                        parts = name.split(",", 1)
+                        candidates.append({
+                            "name":    parts[0].strip(),
+                            "vorname": parts[1].strip() if len(parts) > 1 else "",
+                            "stimmen": val,
+                            "anteil":  pct
+                        })
+
+        # ── Tabelle 3: Auszählungsstand ──
+        # Header: ['Gebiet', 'Auszählungsstand', 'Zeitpunkt letzter Eingang']
+        elif len(header) >= 3 and "Auszählungsstand" in header[1]:
+            for row in rows[1:]:
+                tds = row.find_all("td")
+                if len(tds) < 3:
+                    continue
+                # Bezirkname aus Link-Text
+                link = tds[0].find("a")
+                name = clean(link.get_text() if link else tds[0].get_text())
+                stand = clean(tds[1].get_text())   # z.B. "1 von 1" oder "0 von 1"
+                zeit  = clean(tds[2].get_text())   # z.B. "10:27" oder ""
+
+                # Ausgezählt wenn stand "1 von 1" und name ein echter Bezirk ist
+                if name in BEZIRK_NAMEN and stand.startswith("1 von"):
+                    counted_map[name] = zeit if zeit else "?"
+                    print(f"  Ausgezählt: {name} um {zeit or '?'}")
+
+    candidates.sort(key=lambda x: -x["anteil"])
+    return candidates, stats, counted_map
+
+
+# ── Hauptseite ──────────────────────────────────────────────
 print("Lade index.html...")
 html = fetch(BASE + "index.html")
-debug_html(html, "index.html")
+soup = BeautifulSoup(html, "lxml")
+full = soup.get_text(" ", strip=True)
+
+datum = ""
+m = re.search(r"(\d{1,2}\.\s+\w+\s+\d{4})", full)
+if m:
+    datum = m.group(1)
+
+ausgezaehlt, gesamt = 0, 18
+m = re.search(r"Ausgez[^:]*:\s*(\d+)\s+von\s+(\d+)", full)
+if m:
+    ausgezaehlt, gesamt = int(m.group(1)), int(m.group(2))
+
+global_cands, global_stats, counted_map = parse_seite(html)
+
+print(f"  Datum:      {datum}")
+print(f"  Ausgezählt: {ausgezaehlt}/{gesamt}")
+print(f"  Kandidaten: {[c['name'] for c in global_cands]}")
+print(f"  Beteiligung:{global_stats['beteiligung']}")
+print(f"  Berechtigt: {global_stats['berechtigt']}")
+print(f"  Counted:    {list(counted_map.keys())}")
+
+# ── Einzelne Bezirke ────────────────────────────────────────
+result_bezirke = []
+for bk in BEZIRKE:
+    is_counted = bk["name"] in counted_map
+    entry = {
+        **bk,
+        "counted":    is_counted,
+        "time":       counted_map.get(bk["name"]),
+        "candidates": [],
+        "beteiligung": "-",
+        "waehler":    0,
+        "berechtigt": 0,
+        "ungueltig":  0,
+    }
+    if is_counted:
+        print(f"  Lade Bezirk: {bk['name']}")
+        try:
+            bk_html = fetch(BASE + bk["url"])
+            cands, bk_stats, _ = parse_seite(bk_html)
+            entry.update({
+                "candidates":  cands,
+                "beteiligung": bk_stats["beteiligung"],
+                "waehler":     bk_stats["waehler"],
+                "berechtigt":  bk_stats["berechtigt"],
+                "ungueltig":   bk_stats["ungueltig"],
+            })
+            print(f"    OK: {len(cands)} Kandidaten, Beteiligung {bk_stats['beteiligung']}")
+        except Exception as e:
+            print(f"    FEHLER: {e}")
+    result_bezirke.append(entry)
+
+# ── JSON schreiben ──────────────────────────────────────────
+output = {
+    "datum":            datum,
+    "ausgezaehlt":      ausgezaehlt,
+    "gesamt":           gesamt,
+    "globalCandidates": global_cands,
+    "globalStats":      global_stats,
+    "bezirke":          result_bezirke,
+    "fetchedAt":        datetime.now(timezone.utc).isoformat()
+}
+
+with open("daten.json", "w", encoding="utf-8") as f:
+    json.dump(output, f, ensure_ascii=False, indent=2)
+
+print(f"\nFertig! {ausgezaehlt}/{gesamt} Bezirke, {len(global_cands)} Kandidaten.")
