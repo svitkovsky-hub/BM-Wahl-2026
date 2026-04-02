@@ -4,39 +4,36 @@
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Menholz",
-      "vorname": "Robin",
-      "stimmen": 2567,
-      "anteil": 36.1
-    },
-    {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 2465,
-      "anteil": 34.7
+      "stimmen": 5265,
+      "anteil": 53.9
+    },
+    {
+      "name": "Menholz",
+      "vorname": "Robin",
+      "stimmen": 2467,
+      "anteil": 25.3
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1797,
-      "anteil": 25.3
+      "stimmen": 1747,
+      "anteil": 17.9
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
       "stimmen": 283,
-      "anteil": 4.0
+      "anteil": 2.9
     }
   ],
   "globalStats": {
-    "beteiligung": "85,5 %",
+    "beteiligung": "-",
     "berechtigt": 8410,
-    "waehler": 7187,
-    "ungueltig": 75,
-    "stichwahl": [
-      "Menholz",
-      "Mikat"
-    ]
+    "waehler": 9827,
+    "ungueltig": 65,
+    "stichwahl": []
   },
   "bezirke": [
     {
@@ -240,13 +237,38 @@
       "nr": "006",
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
-      "counted": false,
+      "counted": true,
       "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "candidates": [
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 200,
+          "anteil": 44.9
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 125,
+          "anteil": 28.1
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 60,
+          "anteil": 13.5
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 60,
+          "anteil": 13.5
+        }
+      ],
+      "beteiligung": "48,7 %",
+      "waehler": 450,
+      "berechtigt": 924,
+      "ungueltig": 5
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-007.html",
@@ -633,31 +655,25 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "09:32",
+      "time": "13:18",
       "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 200,
-          "anteil": 57.1
-        },
         {
           "name": "Mikat",
           "vorname": "Mirijam",
-          "stimmen": 100,
-          "anteil": 28.6
+          "stimmen": 2900,
+          "anteil": 96.7
         },
         {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 50,
-          "anteil": 14.3
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 100,
+          "anteil": 3.3
         }
       ],
       "beteiligung": "-",
-      "waehler": 360,
+      "waehler": 3000,
       "berechtigt": 0,
-      "ungueltig": 10
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-4.html",
@@ -699,5 +715,5 @@
       "ungueltig": 5
     }
   ],
-  "fetchedAt": "2026-04-02T09:39:40.330686+00:00"
+  "fetchedAt": "2026-04-02T11:21:34.599337+00:00"
 }
