@@ -1,38 +1,38 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 14,
+  "ausgezaehlt": 15,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 2118,
-      "anteil": 37.1
+      "stimmen": 2218,
+      "anteil": 37.2
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 2005,
-      "anteil": 35.1
+      "stimmen": 2085,
+      "anteil": 34.9
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1402,
-      "anteil": 24.6
+      "stimmen": 1462,
+      "anteil": 24.5
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 182,
-      "anteil": 3.2
+      "stimmen": 202,
+      "anteil": 3.4
     }
   ],
   "globalStats": {
-    "beteiligung": "90,7 %",
-    "berechtigt": 6342,
-    "waehler": 5752,
-    "ungueltig": 45,
+    "beteiligung": "86,8 %",
+    "berechtigt": 6952,
+    "waehler": 6032,
+    "ungueltig": 65,
     "stichwahl": [
       "Menholz",
       "Mikat"
@@ -176,13 +176,38 @@
       "nr": "005",
       "ort": "Blaubeuren",
       "adresse": "Helfensteinerstrasse 12",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:45",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 100,
+          "anteil": 38.5
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 80,
+          "anteil": 30.8
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 60,
+          "anteil": 23.1
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 20,
+          "anteil": 7.7
+        }
+      ],
+      "beteiligung": "45,9 %",
+      "waehler": 280,
+      "berechtigt": 610,
+      "ungueltig": 20
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-006.html",
@@ -205,7 +230,7 @@
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
       "counted": true,
-      "time": "09:43",
+      "time": "09:45",
       "candidates": [
         {
           "name": "Menholz",
@@ -624,5 +649,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:45:50.208802+00:00"
+  "fetchedAt": "2026-04-02T07:46:17.288085+00:00"
 }
