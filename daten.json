@@ -1,38 +1,38 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 4,
+  "ausgezaehlt": 5,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 850,
-      "anteil": 36.3
+      "stimmen": 950,
+      "anteil": 34.7
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 710,
-      "anteil": 30.3
+      "stimmen": 900,
+      "anteil": 32.9
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 650,
-      "anteil": 27.7
+      "stimmen": 750,
+      "anteil": 27.4
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 133,
-      "anteil": 5.7
+      "stimmen": 138,
+      "anteil": 5.0
     }
   ],
   "globalStats": {
     "beteiligung": "-",
-    "berechtigt": 1667,
-    "waehler": 2350,
-    "ungueltig": 7,
+    "berechtigt": 2306,
+    "waehler": 2750,
+    "ungueltig": 12,
     "stichwahl": [
       "Menholz",
       "Mikat"
@@ -221,13 +221,38 @@
       "nr": "010",
       "ort": "Seißen",
       "adresse": "Albstraße 74",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:29",
+      "candidates": [
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 190,
+          "anteil": 48.1
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 100,
+          "anteil": 25.3
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 100,
+          "anteil": 25.3
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 5,
+          "anteil": 1.3
+        }
+      ],
+      "beteiligung": "62,6 %",
+      "waehler": 400,
+      "berechtigt": 639,
+      "ungueltig": 5
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-011.html",
@@ -392,5 +417,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:29:43.940258+00:00"
+  "fetchedAt": "2026-04-02T07:30:13.584024+00:00"
 }
