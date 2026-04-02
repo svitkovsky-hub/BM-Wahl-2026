@@ -6,34 +6,37 @@
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 5265,
-      "anteil": 53.9
+      "stimmen": 3365,
+      "anteil": 43.4
     },
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 2467,
-      "anteil": 25.3
+      "stimmen": 2367,
+      "anteil": 30.5
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
       "stimmen": 1747,
-      "anteil": 17.9
+      "anteil": 22.5
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
       "stimmen": 283,
-      "anteil": 2.9
+      "anteil": 3.6
     }
   ],
   "globalStats": {
-    "beteiligung": "-",
+    "beteiligung": "93,1 %",
     "berechtigt": 8410,
-    "waehler": 9827,
+    "waehler": 7827,
     "ungueltig": 65,
-    "stichwahl": []
+    "stichwahl": [
+      "Mikat",
+      "Menholz"
+    ]
   },
   "bezirke": [
     {
@@ -238,7 +241,7 @@
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
       "counted": true,
-      "time": "11:45",
+      "time": "12:00",
       "candidates": [
         {
           "name": "Mikat",
@@ -655,23 +658,17 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "13:18",
+      "time": "13:55",
       "candidates": [
         {
           "name": "Mikat",
           "vorname": "Mirijam",
-          "stimmen": 2900,
-          "anteil": 96.7
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 100,
-          "anteil": 3.3
+          "stimmen": 1000,
+          "anteil": 100.0
         }
       ],
       "beteiligung": "-",
-      "waehler": 3000,
+      "waehler": 1000,
       "berechtigt": 0,
       "ungueltig": 0
     },
@@ -715,5 +712,5 @@
       "ungueltig": 5
     }
   ],
-  "fetchedAt": "2026-04-02T11:45:30.892591+00:00"
+  "fetchedAt": "2026-04-02T12:00:27.688627+00:00"
 }
