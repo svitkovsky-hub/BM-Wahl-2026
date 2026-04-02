@@ -1,38 +1,38 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 12,
+  "ausgezaehlt": 13,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 1900,
-      "anteil": 36.5
+      "stimmen": 2018,
+      "anteil": 36.8
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 1885,
-      "anteil": 36.2
+      "stimmen": 1965,
+      "anteil": 35.9
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1262,
-      "anteil": 24.3
+      "stimmen": 1337,
+      "anteil": 24.4
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 155,
-      "anteil": 3.0
+      "stimmen": 157,
+      "anteil": 2.9
     }
   ],
   "globalStats": {
-    "beteiligung": "96,1 %",
-    "berechtigt": 5455,
-    "waehler": 5242,
-    "ungueltig": 40,
+    "beteiligung": "94,0 %",
+    "berechtigt": 5874,
+    "waehler": 5522,
+    "ungueltig": 45,
     "stichwahl": [
       "Menholz",
       "Mikat"
@@ -218,13 +218,38 @@
       "nr": "008",
       "ort": "Pappelau",
       "adresse": "Römerstraße 22",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:42",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 118,
+          "anteil": 42.9
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 80,
+          "anteil": 29.1
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 75,
+          "anteil": 27.3
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 2,
+          "anteil": 0.7
+        }
+      ],
+      "beteiligung": "66,8 %",
+      "waehler": 280,
+      "berechtigt": 419,
+      "ungueltig": 5
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-009.html",
@@ -574,5 +599,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:42:45.748949+00:00"
+  "fetchedAt": "2026-04-02T07:43:19.072289+00:00"
 }
