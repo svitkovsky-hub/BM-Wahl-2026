@@ -1,41 +1,41 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 7,
+  "ausgezaehlt": 8,
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Mikat",
-      "vorname": "Mirijam",
-      "stimmen": 1249,
-      "anteil": 35.9
-    },
-    {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 1200,
-      "anteil": 34.5
+      "stimmen": 1400,
+      "anteil": 36.5
+    },
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 1349,
+      "anteil": 35.2
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 888,
-      "anteil": 25.5
+      "stimmen": 938,
+      "anteil": 24.5
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
       "stimmen": 144,
-      "anteil": 4.1
+      "anteil": 3.8
     }
   ],
   "globalStats": {
     "beteiligung": "-",
     "berechtigt": 3444,
-    "waehler": 3500,
-    "ungueltig": 19,
+    "waehler": 3860,
+    "ungueltig": 29,
     "stichwahl": [
-      "Mikat",
-      "Menholz"
+      "Menholz",
+      "Mikat"
     ]
   },
   "bezirke": [
@@ -444,13 +444,32 @@
       "nr": "BW3",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "09:32",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 200,
+          "anteil": 57.1
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 100,
+          "anteil": 28.6
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 50,
+          "anteil": 14.3
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 360,
       "berechtigt": 0,
-      "ungueltig": 0
+      "ungueltig": 10
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-4.html",
@@ -467,5 +486,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:32:46.983748+00:00"
+  "fetchedAt": "2026-04-02T07:33:12.986487+00:00"
 }
