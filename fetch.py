@@ -169,7 +169,7 @@ print(f"  Beteiligung:{global_stats['beteiligung']}")
 print(f"  Berechtigt: {global_stats['berechtigt']}")
 print(f"  Counted:    {list(counted_map.keys())}")
 
-# ── Einzelne Bezirke ────────────────────────────────────────
+# ── Einzelne Bezirke: immer laden, nicht nur wenn in counted_map ────────────
 result_bezirke = []
 for bk in BEZIRKE:
     is_counted = bk["name"] in counted_map
@@ -183,21 +183,25 @@ for bk in BEZIRKE:
         "berechtigt": 0,
         "ungueltig":  0,
     }
-    if is_counted:
-        print(f"\n  Lade Bezirk: {bk['name']}")
-        try:
-            bk_html = fetch(BASE + bk["url"])
-            cands, bk_stats, _ = parse_seite(bk_html, bk["nr"])
-            entry.update({
-                "candidates":  cands,
-                "beteiligung": bk_stats["beteiligung"],
-                "waehler":     bk_stats["waehler"],
-                "berechtigt":  bk_stats["berechtigt"],
-                "ungueltig":   bk_stats["ungueltig"],
-            })
-            print(f"  -> OK: {len(cands)} Kandidaten, Beteiligung {bk_stats['beteiligung']}")
-        except Exception as e:
-            print(f"  -> FEHLER: {e}")
+    print(f"  Lade: {bk['name']}")
+    try:
+        bk_html = fetch(BASE + bk["url"])
+        cands, bk_stats, _ = parse_seite(bk_html, bk["nr"])
+        if cands:
+            entry["candidates"]  = cands
+            entry["beteiligung"] = bk_stats["beteiligung"]
+            entry["waehler"]     = bk_stats["waehler"]
+            entry["berechtigt"]  = bk_stats["berechtigt"]
+            entry["ungueltig"]   = bk_stats["ungueltig"]
+            # Kandidaten vorhanden → als ausgezählt markieren
+            if not is_counted:
+                entry["counted"] = True
+                print(f"    Nachträglich als ausgezählt markiert!")
+            print(f"    OK: {len(cands)} Kandidaten")
+        else:
+            print(f"    Noch keine Kandidaten")
+    except Exception as e:
+        print(f"    FEHLER: {e}")
     result_bezirke.append(entry)
 
 # ── JSON schreiben ──────────────────────────────────────────
