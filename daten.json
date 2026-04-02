@@ -1,37 +1,37 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 13,
+  "ausgezaehlt": 14,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 2018,
-      "anteil": 36.8
+      "stimmen": 2118,
+      "anteil": 37.1
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 1965,
-      "anteil": 35.9
+      "stimmen": 2005,
+      "anteil": 35.1
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1337,
-      "anteil": 24.4
+      "stimmen": 1402,
+      "anteil": 24.6
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 157,
-      "anteil": 2.9
+      "stimmen": 182,
+      "anteil": 3.2
     }
   ],
   "globalStats": {
-    "beteiligung": "94,0 %",
-    "berechtigt": 5874,
-    "waehler": 5522,
+    "beteiligung": "90,7 %",
+    "berechtigt": 6342,
+    "waehler": 5752,
     "ungueltig": 45,
     "stichwahl": [
       "Menholz",
@@ -204,12 +204,37 @@
       "nr": "007",
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "09:43",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 100,
+          "anteil": 43.5
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 65,
+          "anteil": 28.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 40,
+          "anteil": 17.4
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 25,
+          "anteil": 10.9
+        }
+      ],
+      "beteiligung": "49,1 %",
+      "waehler": 230,
+      "berechtigt": 468,
       "ungueltig": 0
     },
     {
@@ -599,5 +624,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:43:44.797330+00:00"
+  "fetchedAt": "2026-04-02T07:44:19.206680+00:00"
 }
