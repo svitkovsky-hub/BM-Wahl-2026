@@ -1,41 +1,41 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 15,
+  "ausgezaehlt": 17,
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Menholz",
-      "vorname": "Robin",
-      "stimmen": 2218,
-      "anteil": 37.2
-    },
-    {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 2085,
-      "anteil": 34.9
+      "stimmen": 2535,
+      "anteil": 36.6
+    },
+    {
+      "name": "Menholz",
+      "vorname": "Robin",
+      "stimmen": 2447,
+      "anteil": 35.4
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1462,
-      "anteil": 24.5
+      "stimmen": 1732,
+      "anteil": 25.0
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 202,
-      "anteil": 3.4
+      "stimmen": 203,
+      "anteil": 2.9
     }
   ],
   "globalStats": {
-    "beteiligung": "86,8 %",
-    "berechtigt": 6952,
-    "waehler": 6032,
-    "ungueltig": 65,
+    "beteiligung": "83,1 %",
+    "berechtigt": 8410,
+    "waehler": 6987,
+    "ungueltig": 70,
     "stichwahl": [
-      "Menholz",
-      "Mikat"
+      "Mikat",
+      "Menholz"
     ]
   },
   "bezirke": [
@@ -162,12 +162,37 @@
       "nr": "004",
       "ort": "Gerhausen",
       "adresse": "Schulstraße 26",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "09:47",
+      "candidates": [
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 200,
+          "anteil": 49.4
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 104,
+          "anteil": 25.7
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 100,
+          "anteil": 24.7
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.2
+        }
+      ],
+      "beteiligung": "75,8 %",
+      "waehler": 405,
+      "berechtigt": 534,
       "ungueltig": 0
     },
     {
@@ -649,5 +674,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:47:50.915199+00:00"
+  "fetchedAt": "2026-04-02T07:48:17.962219+00:00"
 }
