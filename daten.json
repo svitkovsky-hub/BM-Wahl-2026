@@ -1,38 +1,38 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 17,
+  "ausgezaehlt": 18,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 2447,
-      "anteil": 35.9
+      "stimmen": 2567,
+      "anteil": 36.1
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 2385,
-      "anteil": 35.0
+      "stimmen": 2465,
+      "anteil": 34.7
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1722,
+      "stimmen": 1797,
       "anteil": 25.3
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 263,
-      "anteil": 3.9
+      "stimmen": 283,
+      "anteil": 4.0
     }
   ],
   "globalStats": {
-    "beteiligung": "81,9 %",
+    "beteiligung": "85,5 %",
     "berechtigt": 8410,
-    "waehler": 6887,
-    "ungueltig": 70,
+    "waehler": 7187,
+    "ungueltig": 75,
     "stichwahl": [
       "Menholz",
       "Mikat"
@@ -665,14 +665,39 @@
       "nr": "BW4",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "09:53",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 120,
+          "anteil": 40.7
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 80,
+          "anteil": 27.1
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 75,
+          "anteil": 25.4
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 20,
+          "anteil": 6.8
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 300,
       "berechtigt": 0,
-      "ungueltig": 0
+      "ungueltig": 5
     }
   ],
-  "fetchedAt": "2026-04-02T07:53:51.234324+00:00"
+  "fetchedAt": "2026-04-02T07:54:20.210137+00:00"
 }
