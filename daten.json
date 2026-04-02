@@ -1,41 +1,41 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 3,
+  "ausgezaehlt": 4,
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Mikat",
-      "vorname": "Mirijam",
-      "stimmen": 660,
-      "anteil": 42.6
-    },
-    {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 450,
-      "anteil": 29.1
+      "stimmen": 850,
+      "anteil": 36.3
+    },
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 710,
+      "anteil": 30.3
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 350,
-      "anteil": 22.6
+      "stimmen": 650,
+      "anteil": 27.7
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 88,
+      "stimmen": 133,
       "anteil": 5.7
     }
   ],
   "globalStats": {
-    "beteiligung": "93,0 %",
+    "beteiligung": "-",
     "berechtigt": 1667,
-    "waehler": 1550,
-    "ungueltig": 2,
+    "waehler": 2350,
+    "ungueltig": 7,
     "stichwahl": [
-      "Mikat",
-      "Menholz"
+      "Menholz",
+      "Mikat"
     ]
   },
   "bezirke": [
@@ -330,13 +330,38 @@
       "nr": "BW2",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "09:25",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 400,
+          "anteil": 50.3
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 300,
+          "anteil": 37.7
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 50,
+          "anteil": 6.3
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 45,
+          "anteil": 5.7
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 800,
       "berechtigt": 0,
-      "ungueltig": 0
+      "ungueltig": 5
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-3.html",
@@ -367,5 +392,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:25:39.960087+00:00"
+  "fetchedAt": "2026-04-02T07:26:12.130697+00:00"
 }
