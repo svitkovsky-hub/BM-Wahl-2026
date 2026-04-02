@@ -1,41 +1,41 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 8,
+  "ausgezaehlt": 9,
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Menholz",
-      "vorname": "Robin",
-      "stimmen": 1400,
-      "anteil": 36.5
-    },
-    {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 1349,
-      "anteil": 35.2
+      "stimmen": 1575,
+      "anteil": 37.0
+    },
+    {
+      "name": "Menholz",
+      "vorname": "Robin",
+      "stimmen": 1550,
+      "anteil": 36.4
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 938,
-      "anteil": 24.5
+      "stimmen": 990,
+      "anteil": 23.2
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
       "stimmen": 144,
-      "anteil": 3.8
+      "anteil": 3.4
     }
   ],
   "globalStats": {
     "beteiligung": "-",
-    "berechtigt": 3444,
-    "waehler": 3860,
-    "ungueltig": 29,
+    "berechtigt": 4091,
+    "waehler": 4290,
+    "ungueltig": 31,
     "stichwahl": [
-      "Menholz",
-      "Mikat"
+      "Mikat",
+      "Menholz"
     ]
   },
   "bezirke": [
@@ -313,13 +313,32 @@
       "nr": "013",
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:34",
+      "candidates": [
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 226,
+          "anteil": 52.8
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 150,
+          "anteil": 35.0
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 52,
+          "anteil": 12.1
+        }
+      ],
+      "beteiligung": "66,5 %",
+      "waehler": 430,
+      "berechtigt": 647,
+      "ungueltig": 2
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-014.html",
@@ -486,5 +505,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:34:44.028974+00:00"
+  "fetchedAt": "2026-04-02T07:35:14.327356+00:00"
 }
