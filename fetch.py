@@ -196,7 +196,10 @@ for bk in BEZIRKE:
             # Kandidaten vorhanden → als ausgezählt markieren
             if not is_counted:
                 entry["counted"] = True
-                print(f"    Nachträglich als ausgezählt markiert!")
+                # Uhrzeit aus Seitenkopf holen oder aktuelle Zeit als Fallback
+                from datetime import datetime, timezone
+                entry["time"] = datetime.now().strftime("%H:%M")
+                print(f"    Nachträglich als ausgezählt markiert (Zeit: {entry['time']})")
             print(f"    OK: {len(cands)} Kandidaten")
         else:
             print(f"    Noch keine Kandidaten")
