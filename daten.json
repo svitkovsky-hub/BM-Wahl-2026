@@ -1,41 +1,41 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 9,
+  "ausgezaehlt": 11,
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Mikat",
-      "vorname": "Mirijam",
-      "stimmen": 1575,
-      "anteil": 37.0
-    },
-    {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 1550,
-      "anteil": 36.4
+      "stimmen": 1800,
+      "anteil": 36.8
+    },
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 1790,
+      "anteil": 36.6
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 990,
-      "anteil": 23.2
+      "stimmen": 1162,
+      "anteil": 23.7
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 144,
-      "anteil": 3.4
+      "stimmen": 145,
+      "anteil": 3.0
     }
   ],
   "globalStats": {
-    "beteiligung": "-",
-    "berechtigt": 4091,
-    "waehler": 4290,
-    "ungueltig": 31,
+    "beteiligung": "99,6 %",
+    "berechtigt": 4953,
+    "waehler": 4932,
+    "ungueltig": 35,
     "stichwahl": [
-      "Mikat",
-      "Menholz"
+      "Menholz",
+      "Mikat"
     ]
   },
   "bezirke": [
@@ -123,13 +123,38 @@
       "nr": "003",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:37",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 200,
+          "anteil": 37.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 185,
+          "anteil": 34.5
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 150,
+          "anteil": 28.0
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.2
+        }
+      ],
+      "beteiligung": "77,3 %",
+      "waehler": 540,
+      "berechtigt": 699,
+      "ungueltig": 4
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-004.html",
@@ -207,12 +232,31 @@
       "nr": "009",
       "ort": "Erstetten",
       "adresse": "Schleichtalstraße 32",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "09:37",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 50,
+          "anteil": 49.0
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 30,
+          "anteil": 29.4
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 22,
+          "anteil": 21.6
+        }
+      ],
+      "beteiligung": "62,6 %",
+      "waehler": 102,
+      "berechtigt": 163,
       "ungueltig": 0
     },
     {
@@ -505,5 +549,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:37:43.000182+00:00"
+  "fetchedAt": "2026-04-02T07:38:18.567641+00:00"
 }
