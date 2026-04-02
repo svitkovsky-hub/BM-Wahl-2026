@@ -331,7 +331,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "09:25",
+      "time": "09:27",
       "candidates": [
         {
           "name": "Menholz",
@@ -392,5 +392,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:27:41.624048+00:00"
+  "fetchedAt": "2026-04-02T07:28:14.852938+00:00"
 }
