@@ -4,38 +4,38 @@
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Mikat",
-      "vorname": "Mirijam",
-      "stimmen": 2535,
-      "anteil": 36.6
-    },
-    {
       "name": "Menholz",
       "vorname": "Robin",
       "stimmen": 2447,
-      "anteil": 35.4
+      "anteil": 35.9
+    },
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 2385,
+      "anteil": 35.0
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 1732,
-      "anteil": 25.0
+      "stimmen": 1722,
+      "anteil": 25.3
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 203,
-      "anteil": 2.9
+      "stimmen": 263,
+      "anteil": 3.9
     }
   ],
   "globalStats": {
-    "beteiligung": "83,1 %",
+    "beteiligung": "81,9 %",
     "berechtigt": 8410,
-    "waehler": 6987,
+    "waehler": 6887,
     "ungueltig": 70,
     "stichwahl": [
-      "Mikat",
-      "Menholz"
+      "Menholz",
+      "Mikat"
     ]
   },
   "bezirke": [
@@ -674,5 +674,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:51:48.676205+00:00"
+  "fetchedAt": "2026-04-02T07:52:22.490017+00:00"
 }
