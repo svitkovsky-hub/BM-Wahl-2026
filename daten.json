@@ -1,41 +1,41 @@
 {
   "datum": "24. Dezember 2030",
-  "ausgezaehlt": 5,
+  "ausgezaehlt": 7,
   "gesamt": 18,
   "globalCandidates": [
     {
-      "name": "Menholz",
-      "vorname": "Robin",
-      "stimmen": 950,
-      "anteil": 34.7
-    },
-    {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 900,
-      "anteil": 32.9
+      "stimmen": 1249,
+      "anteil": 35.9
+    },
+    {
+      "name": "Menholz",
+      "vorname": "Robin",
+      "stimmen": 1200,
+      "anteil": 34.5
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 750,
-      "anteil": 27.4
+      "stimmen": 888,
+      "anteil": 25.5
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 138,
-      "anteil": 5.0
+      "stimmen": 144,
+      "anteil": 4.1
     }
   ],
   "globalStats": {
     "beteiligung": "-",
-    "berechtigt": 2306,
-    "waehler": 2750,
-    "ungueltig": 12,
+    "berechtigt": 3444,
+    "waehler": 3500,
+    "ungueltig": 19,
     "stichwahl": [
-      "Menholz",
-      "Mikat"
+      "Mikat",
+      "Menholz"
     ]
   },
   "bezirke": [
@@ -260,13 +260,38 @@
       "nr": "011",
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:30",
+      "candidates": [
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 150,
+          "anteil": 49.2
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 100,
+          "anteil": 32.8
+        },
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 50,
+          "anteil": 16.4
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 5,
+          "anteil": 1.6
+        }
+      ],
+      "beteiligung": "58,8 %",
+      "waehler": 310,
+      "berechtigt": 527,
+      "ungueltig": 5
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-012.html",
@@ -302,13 +327,38 @@
       "nr": "014",
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "09:30",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 200,
+          "anteil": 45.7
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 199,
+          "anteil": 45.4
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 38,
+          "anteil": 8.7
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.2
+        }
+      ],
+      "beteiligung": "72,0 %",
+      "waehler": 440,
+      "berechtigt": 611,
+      "ungueltig": 2
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-1.html",
@@ -417,5 +467,5 @@
       "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-02T07:30:46.540162+00:00"
+  "fetchedAt": "2026-04-02T07:31:16.749954+00:00"
 }
