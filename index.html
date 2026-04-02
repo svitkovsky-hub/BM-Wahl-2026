@@ -78,18 +78,16 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 .g-name{font-size:clamp(13px,1.4vw,17px);font-weight:700;width:175px;flex-shrink:0;line-height:1.2;white-space:normal;word-break:break-word}
 .g-name .vn{font-weight:400;color:var(--muted);font-size:.88em}
 .g-stw{display:inline-block;font-size:7px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 5px;background:var(--gelb);color:#000;margin-left:4px;vertical-align:middle}
-.g-win{display:inline-block;font-size:7px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 5px;background:#2E7A4A;color:#fff;margin-left:4px;vertical-align:middle}
-.g-track{flex:1;background:var(--bg);overflow:hidden;position:relative;height:34px}
-.g-fill{position:absolute;left:0;top:0;height:100%;width:0;display:flex;align-items:center;padding:0 10px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
-.g-pct-in{font-size:13px;font-weight:700;font-family:monospace;color:#fff;white-space:nowrap;opacity:0;transition:opacity .3s ease 1s}
-.g-pct-in.vis{opacity:1}
-.g-pct-out{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:13px;font-weight:700;font-family:monospace;color:var(--blau);white-space:nowrap;opacity:0;transition:opacity .3s ease 1s}
-.g-pct-out.vis{opacity:1}
+.g-track{flex:1;background:var(--bg);overflow:hidden;height:34px}
+.g-fill{height:100%;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.g-pct{font-size:13px;font-weight:700;font-family:monospace;white-space:nowrap;min-width:58px;text-align:right;flex-shrink:0;opacity:0;transition:opacity .5s ease .9s}
+.g-pct.vis{opacity:1}
 .g-stim{font-size:11px;font-family:monospace;color:var(--muted);min-width:70px;text-align:right;flex-shrink:0}
 .fill-c0{background:var(--blau)}
 .fill-c1{background:#1A5E7A}
 .fill-c2{background:#2E7A9A}
 .fill-c3{background:#4A9AB8}
+.pct-c0{color:var(--blau)}.pct-c1{color:#1A5E7A}.pct-c2{color:#2E7A9A}.pct-c3{color:#4A9AB8}
 
 /* ── Slide-Bereich (unten, rollt durch Bezirke) ── */
 .slides-area{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
@@ -129,14 +127,10 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 }
 .cand-name .vn{font-weight:400;color:var(--muted);font-size:.85em}
 /* Balken-Track + Position für Prozent */
-.cand-track{flex:1;overflow:hidden;background:var(--white);border:1px solid var(--div);position:relative;height:46px}
-.cand-fill{position:absolute;left:0;top:0;height:100%;width:0;display:flex;align-items:center;padding:0 12px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
-/* Prozent innen (wenn Balken breit genug) */
-.cand-pct-in{font-size:clamp(12px,1.5vw,16px);font-weight:700;font-family:monospace;color:#fff;white-space:nowrap;opacity:0;transition:opacity .3s ease .9s}
-.cand-pct-in.vis{opacity:1}
-/* Prozent außen (als Fallback für schmale Balken) */
-.cand-pct-out{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:clamp(12px,1.5vw,16px);font-weight:700;font-family:monospace;color:var(--blau);white-space:nowrap;opacity:0;transition:opacity .3s ease .9s;pointer-events:none}
-.cand-pct-out.vis{opacity:1}
+.cand-track{flex:1;overflow:hidden;background:var(--white);border:1px solid var(--div);height:46px}
+.cand-fill{height:100%;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+.cand-pct{font-size:clamp(12px,1.4vw,16px);font-weight:700;font-family:monospace;white-space:nowrap;min-width:55px;text-align:right;flex-shrink:0;opacity:0;transition:opacity .5s ease .9s}
+.cand-pct.vis{opacity:1}
 
 .cand-stimmen{font-size:clamp(10px,1.1vw,12px);font-family:monospace;color:var(--muted);min-width:65px;text-align:right;flex-shrink:0}
 
@@ -247,7 +241,7 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 
 <script>
 const SLIDE_SEC=12, REFRESH_SEC=20, DATA_URL='./daten.json';
-const G={candidates:[],stichwahl:[],gewinner:null,beteiligung:'—',waehler:0,berechtigt:0,ungueltig:0,ausgezaehlt:0,gesamt:18,updateTime:null,datum:'2026',bezirke:[]};
+const G={candidates:[],stichwahl:[],beteiligung:'—',waehler:0,berechtigt:0,ungueltig:0,ausgezaehlt:0,gesamt:18,updateTime:null,datum:'2026',bezirke:[]};
 let knownCounted=new Set();
 
 function fixName(name){
@@ -281,7 +275,6 @@ async function loadData(){
       // Stichwahl nur wenn KEIN Kandidat absolute Mehrheit (>50%) hat
       const hatMehrheit = G.candidates.some(c => c.anteil > 50);
       G.stichwahl = hatMehrheit ? [] : G.candidates.slice(0,2).map(c=>c.name);
-      G.gewinner  = hatMehrheit ? G.candidates[0].name : null;
     }
     if(d.bezirke) G.bezirke=d.bezirke.map(b=>{
       if(b.candidates) b.candidates=b.candidates.map(c=>({...c,name:fixName(c.name),vorname:fixVorname(c.name,c.vorname)}));
@@ -322,20 +315,14 @@ function renderGesamt(){
   const max=Math.max(...G.candidates.map(c=>c.anteil),1);
   cont.innerHTML=G.candidates.map((c,i)=>{
     const pct=(c.anteil/max*100).toFixed(1);
-    /* Schwellwert: < 22% → Prozent außen anzeigen */
-    const narrow=parseFloat(pct)<22;
+    /* Feste Prozentzahl-Spalte rechts neben dem Balken */
     return '<div class="g-row">'
       +'<div class="g-rank">'+(i+1)+'</div>'
       +'<div class="g-name">'+c.name
-      +(G.gewinner===c.name?'<span class="g-win">Gewählt</span>'
-        :G.stichwahl.includes(c.name)?'<span class="g-stw">Stichw.</span>':'')
+      +(G.stichwahl.includes(c.name)?'<span class="g-stw">Stichw.</span>':'')
       +(c.vorname?'<br><span class="vn">'+c.vorname+'</span>':'')+'</div>'
-      +'<div class="g-track">'
-        +'<div class="g-fill fill-c'+i+'" data-pct="'+pct+'">'
-          +'<span class="g-pct-in'+(narrow?'':'')+'">'+(narrow?'':c.anteil.toFixed(1).replace('.',',')+' %')+'</span>'
-        +'</div>'
-        +(narrow?'<span class="g-pct-out" data-pctout="'+pct+'">'+c.anteil.toFixed(1).replace('.',',')+' %</span>':'')
-      +'</div>'
+      +'<div class="g-track"><div class="g-fill fill-c'+i+'" data-pct="'+pct+'"></div></div>'
+      +'<div class="g-pct pct-c'+i+'" data-el="gpct">'+c.anteil.toFixed(1).replace('.',',')+' %</div>'
       +'<div class="g-stim">'+c.stimmen.toLocaleString('de')+' St.</div>'
     +'</div>';
   }).join('');
@@ -343,14 +330,8 @@ function renderGesamt(){
 }
 
 function animateGesamt(){
-  document.querySelectorAll('#gesamt-cands .g-fill[data-pct]').forEach(b=>{
-    b.style.width=b.dataset.pct+'%';
-    const pi=b.querySelector('.g-pct-in');
-    if(pi&&pi.textContent) pi.classList.add('vis');
-  });
-  document.querySelectorAll('#gesamt-cands .g-pct-out[data-pctout]').forEach(el=>{
-    setTimeout(()=>el.classList.add('vis'),900);
-  });
+  document.querySelectorAll('#gesamt-cands .g-fill[data-pct]').forEach(b=>b.style.width=b.dataset.pct+'%');
+  document.querySelectorAll('#gesamt-cands .g-pct').forEach(el=>el.classList.add('vis'));
 }
 
 /* ── Linke Leiste ── */
@@ -455,18 +436,8 @@ function updateFootTxt(){
     :'— / '+slides.length;
 }
 function animateBars(el){
-  el.querySelectorAll('.cand-fill[data-pct]').forEach(b=>{
-    const pct=parseFloat(b.dataset.pct);
-    b.style.width=b.dataset.pct+'%';
-    const narrow=pct<22;
-    /* Schrift innen sichtbar machen wenn Balken breit */
-    const pi=b.querySelector('.cand-pct-in');
-    if(pi&&!narrow) setTimeout(()=>pi.classList.add('vis'),900);
-  });
-  /* Schrift außen */
-  el.querySelectorAll('.cand-pct-out').forEach(el2=>{
-    setTimeout(()=>el2.classList.add('vis'),900);
-  });
+  el.querySelectorAll('.cand-fill[data-pct]').forEach(b=>b.style.width=b.dataset.pct+'%');
+  el.querySelectorAll('.cand-pct').forEach(p=>p.classList.add('vis'));
   el.querySelectorAll('.cmp-bar[data-cmp]').forEach(b=>b.style.width=b.dataset.cmp+'%');
 }
 
@@ -495,19 +466,14 @@ function htmlBezirk(bk){
     +'<div class="bz-stat"><div class="bz-stat-l">Berechtigt</div><div class="bz-stat-v">'+(bk.berechtigt||0).toLocaleString('de')+'</div></div>'
     +'</div>';
 
-  /* Kandidaten mit Prozent-Logik */
+  /* Kandidaten – Prozentzahl als eigene feste Spalte */
   const cands='<div class="cands">'+bk.candidates.map((c,i)=>{
     const pct=(c.anteil/max*100).toFixed(1);
-    const narrow=parseFloat(pct)<22;
     return '<div class="cand-row">'
       +'<div class="cand-rank">'+(i+1)+'</div>'
       +'<div class="cand-name">'+c.name+(c.vorname?'<br><span class="vn">'+c.vorname+'</span>':'')+'</div>'
-      +'<div class="cand-track">'
-        +'<div class="cand-fill fill-c'+i+'" data-pct="'+pct+'">'
-          +'<span class="cand-pct-in">'+(narrow?'':c.anteil.toFixed(1).replace('.',',')+' %')+'</span>'
-        +'</div>'
-        +(narrow?'<span class="cand-pct-out">'+c.anteil.toFixed(1).replace('.',',')+' %</span>':'')
-      +'</div>'
+      +'<div class="cand-track"><div class="cand-fill fill-c'+i+'" data-pct="'+pct+'"></div></div>'
+      +'<div class="cand-pct pct-c'+i+'">'+c.anteil.toFixed(1).replace('.',',')+' %</div>'
       +'<div class="cand-stimmen">'+(c.stimmen||0).toLocaleString('de')+' St.</div>'
     +'</div>';
   }).join('')+'</div>';
