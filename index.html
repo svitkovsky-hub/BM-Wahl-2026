@@ -78,6 +78,7 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 .g-name{font-size:clamp(13px,1.4vw,17px);font-weight:700;width:175px;flex-shrink:0;line-height:1.2;white-space:normal;word-break:break-word}
 .g-name .vn{font-weight:400;color:var(--muted);font-size:.88em}
 .g-stw{display:inline-block;font-size:7px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 5px;background:var(--gelb);color:#000;margin-left:4px;vertical-align:middle}
+.g-win{display:inline-block;font-size:7px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 5px;background:#2E7A4A;color:#fff;margin-left:4px;vertical-align:middle}
 .g-track{flex:1;background:var(--bg);overflow:hidden;position:relative;height:34px}
 .g-fill{position:absolute;left:0;top:0;height:100%;width:0;display:flex;align-items:center;padding:0 10px;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
 .g-pct-in{font-size:13px;font-weight:700;font-family:monospace;color:#fff;white-space:nowrap;opacity:0;transition:opacity .3s ease 1s}
@@ -122,8 +123,8 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 .cand-row{display:flex;align-items:center;gap:9px}
 .cand-rank{font-size:12px;font-weight:700;font-family:monospace;color:var(--muted);width:16px;flex-shrink:0;text-align:center}
 .cand-name{
-  font-size:clamp(13px,1.7vw,20px);font-weight:700;
-  line-height:1.2;width:180px;flex-shrink:0;
+  font-size:clamp(13px,1.4vw,17px);font-weight:700;
+  line-height:1.2;width:175px;flex-shrink:0;
   white-space:normal;word-break:break-word;color:var(--text);
 }
 .cand-name .vn{font-weight:400;color:var(--muted);font-size:.85em}
@@ -201,7 +202,10 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
       <div class="prog-track"><div class="prog-fill" id="l-ausz-bar" style="width:0%"></div></div>
     </div>
     <div class="left-foot">
-      <div class="upd" id="l-upd">Stand: —</div>
+      <div>
+        <div class="upd" id="l-upd-daten">Daten: —</div>
+        <div class="upd" id="l-upd-check" style="margin-top:2px">Geprüft: —</div>
+      </div>
       <div style="display:flex;align-items:center;gap:7px">
         <div class="status-chip wait" id="status-chip">Lade …</div>
         <div class="pulse" id="pulse" style="background:rgba(255,255,255,.3)"></div>
@@ -243,7 +247,7 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 
 <script>
 const SLIDE_SEC=12, REFRESH_SEC=20, DATA_URL='./daten.json';
-const G={candidates:[],stichwahl:[],beteiligung:'—',waehler:0,berechtigt:0,ungueltig:0,ausgezaehlt:0,gesamt:18,updateTime:null,datum:'2026',bezirke:[]};
+const G={candidates:[],stichwahl:[],gewinner:null,beteiligung:'—',waehler:0,berechtigt:0,ungueltig:0,ausgezaehlt:0,gesamt:18,updateTime:null,datum:'2026',bezirke:[]};
 let knownCounted=new Set();
 
 function fixName(name){
@@ -274,7 +278,10 @@ async function loadData(){
     }
     if(d.globalCandidates&&d.globalCandidates.length){
       G.candidates=d.globalCandidates.map(c=>({...c,name:fixName(c.name),vorname:fixVorname(c.name,c.vorname)}));
-      G.stichwahl=G.candidates.slice(0,2).map(c=>c.name);
+      // Stichwahl nur wenn KEIN Kandidat absolute Mehrheit (>50%) hat
+      const hatMehrheit = G.candidates.some(c => c.anteil > 50);
+      G.stichwahl = hatMehrheit ? [] : G.candidates.slice(0,2).map(c=>c.name);
+      G.gewinner  = hatMehrheit ? G.candidates[0].name : null;
     }
     if(d.bezirke) G.bezirke=d.bezirke.map(b=>{
       if(b.candidates) b.candidates=b.candidates.map(c=>({...c,name:fixName(c.name),vorname:fixVorname(c.name,c.vorname)}));
@@ -292,9 +299,14 @@ async function loadData(){
       onNewData(newlyDone);
     }
     document.getElementById('pulse').style.background='rgba(255,255,255,.6)';
+    // Browser-seitige Prüfzeit – aktualisiert bei jedem fetch
+    const chk=document.getElementById('l-upd-check');
+    if(chk) chk.textContent='Geprüft: '+new Date().toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   }catch(e){
     console.warn('Ladefehler:',e.message);
     chip.className='status-chip err'; chip.textContent='Fehler';
+    const chk=document.getElementById('l-upd-check');
+    if(chk) chk.textContent='Geprüft: '+new Date().toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   }
 }
 
@@ -315,7 +327,8 @@ function renderGesamt(){
     return '<div class="g-row">'
       +'<div class="g-rank">'+(i+1)+'</div>'
       +'<div class="g-name">'+c.name
-      +(G.stichwahl.includes(c.name)?'<span class="g-stw">Stichw.</span>':'')
+      +(G.gewinner===c.name?'<span class="g-win">Gewählt</span>'
+        :G.stichwahl.includes(c.name)?'<span class="g-stw">Stichw.</span>':'')
       +(c.vorname?'<br><span class="vn">'+c.vorname+'</span>':'')+'</div>'
       +'<div class="g-track">'
         +'<div class="g-fill fill-c'+i+'" data-pct="'+pct+'">'
@@ -343,7 +356,9 @@ function animateGesamt(){
 /* ── Linke Leiste ── */
 function renderLeft(){
   document.getElementById('l-datum').textContent=G.datum||'2026';
-  if(G.updateTime) document.getElementById('l-upd').textContent='Daten '+G.updateTime.toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+  // Uhrzeit aus daten.json (wann Python zuletzt abgerufen hat)
+  const datenEl=document.getElementById('l-upd-daten');
+  if(datenEl&&G.updateTime) datenEl.textContent='Daten: '+G.updateTime.toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
   // Stats
   const bet=document.getElementById('l-bet'); if(bet) bet.textContent=G.beteiligung;
   const wae=document.getElementById('l-wae'); if(wae) wae.textContent=G.waehler?G.waehler.toLocaleString('de'):'—';
@@ -364,7 +379,8 @@ function renderLeft(){
     return '<div class="bk-card'+(done?' done':'')+'" title="'+b.name+'">'
       +'<div class="bk-card-top"><div class="bk-dot"></div><div class="bk-nr">'+b.nr+'</div></div>'
       +'<div class="bk-ort">'+ort+'</div>'
-      +(done&&b.time?'<div class="bk-time">'+b.time+' Uhr</div>':'')
+      +(done&&b.time?'<div class="bk-time">'+b.time+' Uhr</div>'
+        :done?'<div class="bk-time" style="color:rgba(255,255,255,.4);font-style:italic">keine Zeit</div>':'')
       +'</div>';
   }).join('');
 }
@@ -468,6 +484,7 @@ function htmlBezirk(bk){
     +'<div class="type-fullname">'+bk.name+'</div>'
     +(bk.time
       ?'<div class="type-time"><div class="type-time-label">Ergebnis eingegangen um</div><div class="type-time-val">'+bk.time+' Uhr</div></div>'
+      :bk.candidates&&bk.candidates.length?'<div class="type-time"><div class="type-time-label">Ergebnis eingegangen</div><div class="type-time-val" style="font-size:11px;opacity:.6">Zeit unbekannt</div></div>'
       :'')
     +'</div>';
 
