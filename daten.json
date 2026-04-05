@@ -241,7 +241,7 @@
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
       "counted": true,
-      "time": "05:57",
+      "time": "08:05",
       "candidates": [
         {
           "name": "Mikat",
@@ -712,5 +712,5 @@
       "ungueltig": 5
     }
   ],
-  "fetchedAt": "2026-04-05T05:57:35.632113+00:00"
+  "fetchedAt": "2026-04-05T08:05:05.780215+00:00"
 }
