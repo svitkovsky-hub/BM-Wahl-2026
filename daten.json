@@ -18,7 +18,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Kaczmarek",
@@ -57,7 +57,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -96,7 +96,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -135,7 +135,7 @@
       "ort": "Gerhausen",
       "adresse": "Schulstraße 26",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Kaczmarek",
@@ -174,7 +174,7 @@
       "ort": "Blaubeuren",
       "adresse": "Helfensteinerstrasse 12",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -213,7 +213,7 @@
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -252,7 +252,7 @@
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -291,7 +291,7 @@
       "ort": "Pappelau",
       "adresse": "Römerstraße 22",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -330,7 +330,7 @@
       "ort": "Erstetten",
       "adresse": "Schleichtalstraße 32",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -363,7 +363,7 @@
       "ort": "Seißen",
       "adresse": "Albstraße 74",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -402,7 +402,7 @@
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -441,7 +441,7 @@
       "ort": "Weiler",
       "adresse": "Siedlungsstraße 1",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Kaczmarek",
@@ -480,7 +480,7 @@
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -513,7 +513,7 @@
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -552,7 +552,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -591,7 +591,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -630,7 +630,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Mikat",
@@ -651,7 +651,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "06:10",
+      "time": "08:33",
       "candidates": [
         {
           "name": "Menholz",
@@ -684,5 +684,5 @@
       "ungueltig": 5
     }
   ],
-  "fetchedAt": "2026-04-12T06:10:48.399790+00:00"
+  "fetchedAt": "2026-04-12T08:33:57.568310+00:00"
 }
