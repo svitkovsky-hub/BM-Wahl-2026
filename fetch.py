@@ -1,9 +1,14 @@
-import requests, json, re
+import requests, json, re, os
 from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 
+# ── URL bei Bedarf hier ändern ──────────────────────────────────────────────
 BASE = "https://wahlergebnisse.komm.one/24/produktion/8425020/999-1337/20301224/buergermeisterwahl_gemeinde/"
-HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; WahlBot/1.0)"}
+# ────────────────────────────────────────────────────────────────────────────
+
+# Endergebnis-Modus: Datei "final_mode.txt" im Repo-Root anlegen → alle
+# Monitore zeigen innerhalb von 25 Sek. das vorläufige Endergebnis.
+FINAL_MODE = os.path.exists("final_mode.txt")
 
 BEZIRKE = [
     {"url": "ergebnisse_stimmbezirk_08425020-001.html", "name": "001 Rathaus, Karlstraße 2",            "nr": "001", "ort": "Blaubeuren", "adresse": "Karlstraße 2"},
@@ -215,6 +220,7 @@ output = {
     "globalCandidates": global_cands,
     "globalStats":      global_stats,
     "bezirke":          result_bezirke,
+    "endErgebnis":      FINAL_MODE,   # True wenn final_mode.txt existiert
     "fetchedAt":        datetime.now(timezone.utc).isoformat()
 }
 
