@@ -72,22 +72,22 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 .gesamt-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
 .gesamt-title{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
 .gesamt-sub{font-size:11px;font-family:monospace;color:var(--muted)}
-.gesamt-cands{display:flex;flex-direction:column;gap:7px}
+.gesamt-cands{display:flex;flex-direction:column;gap:9px}
 .g-row{display:flex;align-items:center;gap:10px}
-.g-rank{font-size:12px;font-weight:700;font-family:monospace;color:var(--muted);width:16px;text-align:center;flex-shrink:0}
-.g-name{font-size:clamp(13px,1.4vw,17px);font-weight:700;width:175px;flex-shrink:0;line-height:1.2;white-space:normal;word-break:break-word}
+.g-rank{font-size:13px;font-weight:700;font-family:monospace;color:var(--muted);width:18px;text-align:center;flex-shrink:0}
+.g-name{font-size:clamp(14px,1.5vw,18px);font-weight:700;width:185px;flex-shrink:0;line-height:1.2;white-space:normal;word-break:break-word}
 .g-name .vn{font-weight:400;color:var(--muted);font-size:.88em}
 .g-stw{display:inline-block;font-size:7px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:1px 5px;background:var(--gelb);color:#000;margin-left:4px;vertical-align:middle}
-.g-track{flex:1;background:var(--bg);overflow:hidden;height:34px}
+.g-track{flex:1;background:var(--bg);overflow:hidden;height:40px}
 .g-fill{height:100%;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
-.g-pct{font-size:13px;font-weight:700;font-family:monospace;white-space:nowrap;min-width:58px;text-align:right;flex-shrink:0;opacity:0;transition:opacity .5s ease .9s}
+.g-pct{font-size:14px;font-weight:700;font-family:monospace;white-space:nowrap;min-width:62px;text-align:right;flex-shrink:0;opacity:0;transition:opacity .5s ease .9s}
 .g-pct.vis{opacity:1}
-.g-stim{font-size:11px;font-family:monospace;color:var(--muted);min-width:70px;text-align:right;flex-shrink:0}
-.fill-c0{background:var(--blau)}
-.fill-c1{background:#1A5E7A}
-.fill-c2{background:#2E7A9A}
-.fill-c3{background:#4A9AB8}
-.pct-c0{color:var(--blau)}.pct-c1{color:#1A5E7A}.pct-c2{color:#2E7A9A}.pct-c3{color:#4A9AB8}
+.g-stim{font-size:12px;font-family:monospace;color:var(--muted);min-width:75px;text-align:right;flex-shrink:0}
+.fill-c0{background:#013A50}          /* Primärblau tief   – Platz 1 */
+.fill-c1{background:#006F74}          /* CD-Türkis          – Platz 2 */
+.fill-c2{background:#2A6AB5}          /* Mittleres Blau     – Platz 3 */
+.fill-c3{background:#8FA8B8}          /* Blaugrau hell      – Platz 4 */
+.pct-c0{color:#013A50}.pct-c1{color:#006F74}.pct-c2{color:#2A6AB5}.pct-c3{color:#5A7A90}
 
 /* ── Slide-Bereich (unten, rollt durch Bezirke) ── */
 .slides-area{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
@@ -127,25 +127,37 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 }
 .cand-name .vn{font-weight:400;color:var(--muted);font-size:.85em}
 /* Balken-Track + Position für Prozent */
-.cand-track{flex:1;overflow:hidden;background:var(--white);border:1px solid var(--div);height:46px}
+.cand-track{flex:1;overflow:hidden;background:var(--white);border:1px solid var(--div);height:56px}
 .cand-fill{height:100%;width:0;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
-.cand-pct{font-size:clamp(12px,1.4vw,16px);font-weight:700;font-family:monospace;white-space:nowrap;min-width:55px;text-align:right;flex-shrink:0;opacity:0;transition:opacity .5s ease .9s}
+.cand-pct{font-size:clamp(13px,1.5vw,17px);font-weight:700;font-family:monospace;white-space:nowrap;min-width:58px;text-align:right;flex-shrink:0;opacity:0;transition:opacity .5s ease .9s}
 .cand-pct.vis{opacity:1}
+.cand-stimmen{font-size:clamp(11px,1.2vw,14px);font-family:monospace;color:var(--muted);min-width:70px;text-align:right;flex-shrink:0}
 
-.cand-stimmen{font-size:clamp(10px,1.1vw,12px);font-family:monospace;color:var(--muted);min-width:65px;text-align:right;flex-shrink:0}
-
-/* Vergleich */
-.cmp{margin-top:8px}
-.cmp-title{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-.cmp-row{display:flex;align-items:center;gap:8px;margin-bottom:5px}
-.cmp-name{font-size:11px;font-weight:700;width:125px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted)}
-.cmp-bars{flex:1;display:flex;flex-direction:column;gap:3px}
-.cmp-bar{height:7px;width:0;transition:width 1.2s cubic-bezier(.4,0,.2,1)}
-.cmp-bar.loc.c0{background:var(--blau)}.cmp-bar.loc.c1{background:#1A5E7A}.cmp-bar.loc.c2{background:#2E7A9A}.cmp-bar.loc.c3{background:#4A9AB8}
-.cmp-bar.glob{background:var(--div)}
-.cmp-pcts{font-size:10px;font-family:monospace;min-width:82px;text-align:right;color:var(--muted)}
-
-.warte{flex:1;display:flex;align-items:center;justify-content:center}
+/* ── Endergebnis-Overlay ── */
+.end-overlay{display:none;position:fixed;inset:0;z-index:200;background:var(--white);flex-direction:column;align-items:center;justify-content:center;gap:0}
+.end-overlay.aktiv{display:flex}
+.end-header{background:var(--blau);width:100%;padding:20px 60px;display:flex;align-items:center;justify-content:space-between}
+.end-logo{filter:brightness(0) invert(1);height:50px}
+.end-titel{font-size:16px;font-weight:700;color:rgba(255,255,255,.7);letter-spacing:2px;text-transform:uppercase}
+.end-vorläufig{font-size:11px;color:rgba(255,255,255,.5);margin-top:3px;letter-spacing:1px}
+.end-body{flex:1;width:100%;max-width:1100px;padding:40px 60px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+.end-erg-titel{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.end-row{display:flex;align-items:center;gap:18px}
+.end-rank{font-size:18px;font-weight:700;font-family:monospace;color:var(--muted);width:24px;text-align:center;flex-shrink:0}
+.end-name{font-size:clamp(22px,3vw,38px);font-weight:700;width:320px;flex-shrink:0;line-height:1.2}
+.end-name .vn{font-weight:400;color:var(--muted);font-size:.75em;display:block}
+.end-stw{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;background:var(--gelb);color:#000;margin-left:8px;vertical-align:middle}
+.end-track{flex:1;overflow:hidden;background:var(--bg);height:64px}
+.end-fill{height:100%;width:0;transition:width 2s cubic-bezier(.4,0,.2,1)}
+.end-pct{font-size:clamp(20px,2.5vw,32px);font-weight:700;font-family:monospace;min-width:90px;text-align:right;flex-shrink:0}
+.end-stim{font-size:15px;font-family:monospace;color:var(--muted);min-width:110px;text-align:right;flex-shrink:0}
+.end-stats{display:flex;gap:14px;padding:16px 60px;border-top:1px solid var(--div);background:var(--bg);width:100%}
+.end-stat{background:var(--white);border-left:3px solid var(--blau);padding:10px 20px}
+.end-stat-l{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.end-stat-v{font-size:22px;font-weight:700;font-family:monospace;color:var(--text);line-height:1}
+.end-stat-v.gelb{color:#B8A000}
+.end-close{position:fixed;bottom:20px;right:24px;background:var(--blau);color:#fff;border:none;padding:10px 20px;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;z-index:201}
+.end-close:hover{background:#1A5E7A}
 .warte-text{font-size:16px;font-weight:700;color:var(--muted)}
 
 /* Footer */
@@ -171,6 +183,29 @@ html,body{width:100%;height:100%;background:var(--bg);color:var(--text);font-fam
 </head>
 <body>
 <div class="neu" id="neu-banner"><div class="neu-dot"></div><span id="neu-text">Neues Ergebnis eingetroffen</span><div class="neu-dot"></div></div>
+
+<!-- ══ ENDERGEBNIS-OVERLAY (manuell aktivierbar) ══ -->
+<div class="end-overlay" id="end-overlay">
+  <div class="end-header">
+    <img class="end-logo" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT" alt="Logo">
+    <div style="text-align:center">
+      <div class="end-titel">Bürgermeisterwahl Blaubeuren</div>
+      <div class="end-vorläufig">Vorläufiges Ergebnis · <span id="end-datum">2026</span> · <span id="end-ausz">0 / 18 Gebieten</span></div>
+    </div>
+    <div style="text-align:right;color:rgba(255,255,255,.5);font-size:11px" id="end-uhr"></div>
+  </div>
+  <div class="end-body">
+    <div class="end-erg-titel">Gesamtergebnis</div>
+    <div id="end-cands"></div>
+  </div>
+  <div class="end-stats">
+    <div class="end-stat"><div class="end-stat-l">Beteiligung</div><div class="end-stat-v gelb" id="end-bet">—</div></div>
+    <div class="end-stat"><div class="end-stat-l">Wählende</div><div class="end-stat-v" id="end-wae">—</div></div>
+    <div class="end-stat"><div class="end-stat-l">Berechtigt</div><div class="end-stat-v" id="end-ber">—</div></div>
+    <div class="end-stat"><div class="end-stat-l">Ungültig</div><div class="end-stat-v" id="end-ung">—</div></div>
+  </div>
+  <button class="end-close" onclick="toggleEndergebnis()">✕ Schließen</button>
+</div>
 
 <div class="root">
   <!-- ══ LINKS ══ -->
@@ -287,6 +322,7 @@ async function loadData(){
 
     renderLeft();
     renderGesamt();
+    if(d.endErgebnis) checkEndFlag(d);
     if(newlyDone.length>0){
       newlyDone.forEach(b=>knownCounted.add(b.url));
       onNewData(newlyDone);
@@ -478,25 +514,7 @@ function htmlBezirk(bk){
     +'</div>';
   }).join('')+'</div>';
 
-  /* Vergleich */
-  let cmp='';
-  if(G.ausgezaehlt>1){
-    const rows=bk.candidates.map((c,i)=>{
-      const gc=G.candidates.find(g=>g.name===c.name);
-      const diff=gc?(c.anteil-gc.anteil):null;
-      const ds=diff!==null?(diff>=0?'+':'')+diff.toFixed(1).replace('.',',')+' %':'';
-      const dc=diff!==null&&diff>=0?'#006F74':'#C03030';
-      return '<div class="cmp-row">'
-        +'<div class="cmp-name">'+c.name+'</div>'
-        +'<div class="cmp-bars"><div class="cmp-bar loc c'+i+'" data-cmp="'+(c.anteil/max*100).toFixed(1)+'"></div>'
-        +(gc?'<div class="cmp-bar glob" data-cmp="'+(gc.anteil/gMax*100).toFixed(1)+'"></div>':'')+'</div>'
-        +'<div class="cmp-pcts">'+c.anteil.toFixed(1).replace('.',',')+' % <span style="color:'+dc+'">'+ds+'</span></div>'
-        +'</div>';
-    }).join('');
-    cmp='<div class="cmp"><div class="cmp-title">Vergleich mit Gesamtergebnis <span style="opacity:.4">(oben=Bezirk · unten=Gesamt)</span></div>'+rows+'</div>';
-  }
-
-  return bar+'<div class="slide-body">'+stats+cands+cmp+'</div>';
+  return bar+'<div class="slide-body">'+stats+cands+'</div>';
 }
 
 /* ── NEU-Banner ── */
@@ -505,6 +523,46 @@ function showNeuBanner(bz){
   const b=document.getElementById('neu-banner');
   document.getElementById('neu-text').textContent=bz.length===1?'Neues Ergebnis: '+bz[0].ort:bz.length+' neue Ergebnisse';
   b.classList.add('show');clearTimeout(bannerT);bannerT=setTimeout(()=>b.classList.remove('show'),5000);
+}
+
+/* ── Endergebnis ── */
+let endAktiv=false;
+function toggleEndergebnis(){
+  endAktiv=!endAktiv;
+  const ov=document.getElementById('end-overlay');
+  ov.classList.toggle('aktiv',endAktiv);
+  if(endAktiv) renderEndergebnis();
+}
+// Tastenkürzel: Strg+E
+document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='e'){e.preventDefault();toggleEndergebnis();}});
+// Auch aus daten.json lesen wenn endErgebnis:true gesetzt
+function checkEndFlag(d){
+  if(d.endErgebnis&&!endAktiv){endAktiv=true;document.getElementById('end-overlay').classList.add('aktiv');renderEndergebnis();}
+}
+function renderEndergebnis(){
+  document.getElementById('end-datum').textContent=G.datum||'2026';
+  document.getElementById('end-ausz').textContent=G.ausgezaehlt+' / '+G.gesamt+' Gebieten';
+  document.getElementById('end-bet').textContent=G.beteiligung;
+  document.getElementById('end-wae').textContent=G.waehler?G.waehler.toLocaleString('de'):'—';
+  document.getElementById('end-ber').textContent=G.berechtigt?G.berechtigt.toLocaleString('de'):'—';
+  document.getElementById('end-ung').textContent=G.ungueltig!==undefined?G.ungueltig.toLocaleString('de'):'—';
+  document.getElementById('end-uhr').textContent=new Date().toLocaleTimeString('de',{hour:'2-digit',minute:'2-digit'})+' Uhr';
+  const cont=document.getElementById('end-cands');
+  if(!G.candidates.length){cont.innerHTML='<div style="color:var(--muted)">Keine Daten</div>';return;}
+  const max=Math.max(...G.candidates.map(c=>c.anteil),1);
+  cont.innerHTML=G.candidates.map((c,i)=>`<div class="end-row">
+    <div class="end-rank">${i+1}</div>
+    <div class="end-name">${c.name}${G.stichwahl.includes(c.name)?'<span class="end-stw">Stichwahl</span>':''}
+      ${c.vorname?`<span class="vn">${c.vorname}</span>`:''}
+    </div>
+    <div class="end-track"><div class="end-fill fill-c${i}" data-epct="${(c.anteil/max*100).toFixed(1)}"></div></div>
+    <div class="end-pct pct-c${i}">${c.anteil.toFixed(1).replace('.',',')} %</div>
+    <div class="end-stim">${c.stimmen.toLocaleString('de')} St.</div>
+  </div>`).join('');
+  setTimeout(()=>{
+    document.querySelectorAll('.end-fill[data-epct]').forEach(b=>b.style.width=b.dataset.epct+'%');
+    document.querySelectorAll('.end-pct').forEach(p=>p.classList.add('vis'));
+  },100);
 }
 
 /* ── Timer Ring ── */
