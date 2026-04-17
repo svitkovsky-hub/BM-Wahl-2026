@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from bs4 import BeautifulSoup
 
 # ── URL bei Bedarf hier ändern ──────────────────────────────────────────────
-BASE = "https://wahlergebnisse.komm.one/24/produktion/8425020/999-1337/20301224/buergermeisterwahl_gemeinde/"
+BASE = "https://wahlergebnisse.komm.one/24/produktion/8425020/0/20260419/buergermeisterwahl_gemeinde/"
 # ────────────────────────────────────────────────────────────────────────────
 
 # Endergebnis-Modus: Datei "final_mode.txt" im Repo-Root anlegen → alle
