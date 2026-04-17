@@ -1,5 +1,5 @@
 {
-  "datum": "",
+  "datum": "19. April 2026",
   "ausgezaehlt": 0,
   "gesamt": 18,
   "globalCandidates": [],
@@ -17,37 +17,12 @@
       "nr": "001",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 100,
-          "anteil": 33.3
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 80,
-          "anteil": 26.7
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 70,
-          "anteil": 23.3
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 50,
-          "anteil": 16.7
-        }
-      ],
-      "beteiligung": "41,6 %",
-      "waehler": 300,
-      "berechtigt": 721,
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
       "ungueltig": 0
     },
     {
@@ -56,37 +31,12 @@
       "nr": "002",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 190,
-          "anteil": 42.2
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 150,
-          "anteil": 33.3
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 100,
-          "anteil": 22.2
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 10,
-          "anteil": 2.2
-        }
-      ],
-      "beteiligung": "47,6 %",
-      "waehler": 450,
-      "berechtigt": 946,
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
       "ungueltig": 0
     },
     {
@@ -95,38 +45,13 @@
       "nr": "003",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 200,
-          "anteil": 37.3
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 185,
-          "anteil": 34.5
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 150,
-          "anteil": 28.0
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 1,
-          "anteil": 0.2
-        }
-      ],
-      "beteiligung": "77,3 %",
-      "waehler": 540,
-      "berechtigt": 699,
-      "ungueltig": 4
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-004.html",
@@ -134,37 +59,12 @@
       "nr": "004",
       "ort": "Gerhausen",
       "adresse": "Schulstraße 26",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 200,
-          "anteil": 49.4
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 104,
-          "anteil": 25.7
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 100,
-          "anteil": 24.7
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 1,
-          "anteil": 0.2
-        }
-      ],
-      "beteiligung": "75,8 %",
-      "waehler": 405,
-      "berechtigt": 534,
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
       "ungueltig": 0
     },
     {
@@ -173,38 +73,13 @@
       "nr": "005",
       "ort": "Blaubeuren",
       "adresse": "Helfensteinerstrasse 12",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 100,
-          "anteil": 38.5
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 80,
-          "anteil": 30.8
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 60,
-          "anteil": 23.1
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 20,
-          "anteil": 7.7
-        }
-      ],
-      "beteiligung": "45,9 %",
-      "waehler": 280,
-      "berechtigt": 610,
-      "ungueltig": 20
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-006.html",
@@ -212,38 +87,13 @@
       "nr": "006",
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 200,
-          "anteil": 44.9
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 125,
-          "anteil": 28.1
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 60,
-          "anteil": 13.5
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 60,
-          "anteil": 13.5
-        }
-      ],
-      "beteiligung": "48,7 %",
-      "waehler": 450,
-      "berechtigt": 924,
-      "ungueltig": 5
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-007.html",
@@ -251,37 +101,12 @@
       "nr": "007",
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 100,
-          "anteil": 43.5
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 65,
-          "anteil": 28.3
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 40,
-          "anteil": 17.4
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 25,
-          "anteil": 10.9
-        }
-      ],
-      "beteiligung": "49,1 %",
-      "waehler": 230,
-      "berechtigt": 468,
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
       "ungueltig": 0
     },
     {
@@ -290,38 +115,13 @@
       "nr": "008",
       "ort": "Pappelau",
       "adresse": "Römerstraße 22",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 118,
-          "anteil": 42.9
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 80,
-          "anteil": 29.1
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 75,
-          "anteil": 27.3
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 2,
-          "anteil": 0.7
-        }
-      ],
-      "beteiligung": "66,8 %",
-      "waehler": 280,
-      "berechtigt": 419,
-      "ungueltig": 5
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-009.html",
@@ -329,31 +129,12 @@
       "nr": "009",
       "ort": "Erstetten",
       "adresse": "Schleichtalstraße 32",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 50,
-          "anteil": 49.0
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 30,
-          "anteil": 29.4
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 22,
-          "anteil": 21.6
-        }
-      ],
-      "beteiligung": "62,6 %",
-      "waehler": 102,
-      "berechtigt": 163,
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
       "ungueltig": 0
     },
     {
@@ -362,38 +143,13 @@
       "nr": "010",
       "ort": "Seißen",
       "adresse": "Albstraße 74",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 190,
-          "anteil": 48.1
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 100,
-          "anteil": 25.3
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 100,
-          "anteil": 25.3
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 5,
-          "anteil": 1.3
-        }
-      ],
-      "beteiligung": "62,6 %",
-      "waehler": 400,
-      "berechtigt": 639,
-      "ungueltig": 5
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-011.html",
@@ -401,38 +157,13 @@
       "nr": "011",
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 150,
-          "anteil": 49.2
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 100,
-          "anteil": 32.8
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 50,
-          "anteil": 16.4
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 5,
-          "anteil": 1.6
-        }
-      ],
-      "beteiligung": "58,8 %",
-      "waehler": 310,
-      "berechtigt": 527,
-      "ungueltig": 5
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-012.html",
@@ -440,38 +171,13 @@
       "nr": "012",
       "ort": "Weiler",
       "adresse": "Siedlungsstraße 1",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 100,
-          "anteil": 32.8
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 100,
-          "anteil": 32.8
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 95,
-          "anteil": 31.1
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 10,
-          "anteil": 3.3
-        }
-      ],
-      "beteiligung": "61,8 %",
-      "waehler": 310,
-      "berechtigt": 502,
-      "ungueltig": 5
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-013.html",
@@ -479,32 +185,13 @@
       "nr": "013",
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 226,
-          "anteil": 52.8
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 150,
-          "anteil": 35.0
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 52,
-          "anteil": 12.1
-        }
-      ],
-      "beteiligung": "66,5 %",
-      "waehler": 430,
-      "berechtigt": 647,
-      "ungueltig": 2
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-014.html",
@@ -512,38 +199,13 @@
       "nr": "014",
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 200,
-          "anteil": 45.7
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 199,
-          "anteil": 45.4
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 38,
-          "anteil": 8.7
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 1,
-          "anteil": 0.2
-        }
-      ],
-      "beteiligung": "72,0 %",
-      "waehler": 440,
-      "berechtigt": 611,
-      "ungueltig": 2
+      "counted": false,
+      "time": null,
+      "candidates": [],
+      "beteiligung": "-",
+      "waehler": 0,
+      "berechtigt": 0,
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-1.html",
@@ -551,38 +213,13 @@
       "nr": "BW1",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 390,
-          "anteil": 48.9
-        },
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 300,
-          "anteil": 37.6
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 100,
-          "anteil": 12.5
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 8,
-          "anteil": 1.0
-        }
-      ],
+      "counted": false,
+      "time": null,
+      "candidates": [],
       "beteiligung": "-",
-      "waehler": 800,
+      "waehler": 0,
       "berechtigt": 0,
-      "ungueltig": 2
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-2.html",
@@ -590,38 +227,13 @@
       "nr": "BW2",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 400,
-          "anteil": 50.3
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 300,
-          "anteil": 37.7
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 50,
-          "anteil": 6.3
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 45,
-          "anteil": 5.7
-        }
-      ],
+      "counted": false,
+      "time": null,
+      "candidates": [],
       "beteiligung": "-",
-      "waehler": 800,
+      "waehler": 0,
       "berechtigt": 0,
-      "ungueltig": 5
+      "ungueltig": 0
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-3.html",
@@ -629,18 +241,11 @@
       "nr": "BW3",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 1000,
-          "anteil": 100.0
-        }
-      ],
+      "counted": false,
+      "time": null,
+      "candidates": [],
       "beteiligung": "-",
-      "waehler": 1000,
+      "waehler": 0,
       "berechtigt": 0,
       "ungueltig": 0
     },
@@ -650,39 +255,15 @@
       "nr": "BW4",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": true,
-      "time": "06:24",
-      "candidates": [
-        {
-          "name": "Menholz",
-          "vorname": "Robin",
-          "stimmen": 120,
-          "anteil": 40.7
-        },
-        {
-          "name": "Mikat",
-          "vorname": "Mirijam",
-          "stimmen": 80,
-          "anteil": 27.1
-        },
-        {
-          "name": "Kaczmarek",
-          "vorname": "Viktor",
-          "stimmen": 75,
-          "anteil": 25.4
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 20,
-          "anteil": 6.8
-        }
-      ],
+      "counted": false,
+      "time": null,
+      "candidates": [],
       "beteiligung": "-",
-      "waehler": 300,
+      "waehler": 0,
       "berechtigt": 0,
-      "ungueltig": 5
+      "ungueltig": 0
     }
   ],
-  "fetchedAt": "2026-04-16T06:24:21.008958+00:00"
+  "endErgebnis": true,
+  "fetchedAt": "2026-04-17T11:29:26.669966+00:00"
 }
