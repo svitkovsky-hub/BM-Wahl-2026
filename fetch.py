@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 BASE = "https://wahlergebnisse.komm.one/24/produktion/8425020/0/20260419/buergermeisterwahl_gemeinde/"
 # ────────────────────────────────────────────────────────────────────────────
 
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; WahlBot/1.0)"}
+
 # Endergebnis-Modus: Datei "final_mode.txt" im Repo-Root anlegen → alle
 # Monitore zeigen innerhalb von 25 Sek. das vorläufige Endergebnis.
 FINAL_MODE = os.path.exists("final_mode.txt")
