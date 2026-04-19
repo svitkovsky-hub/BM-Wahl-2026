@@ -1,31 +1,31 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 1,
+  "ausgezaehlt": 2,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 108,
-      "anteil": 60.7
-    },
-    {
-      "name": "Kaczmarek",
-      "vorname": "Viktor",
-      "stimmen": 36,
-      "anteil": 20.2
+      "stimmen": 144,
+      "anteil": 55.4
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 34,
-      "anteil": 19.1
+      "stimmen": 69,
+      "anteil": 26.5
+    },
+    {
+      "name": "Kaczmarek",
+      "vorname": "Viktor",
+      "stimmen": 47,
+      "anteil": 18.1
     }
   ],
   "globalStats": {
-    "beteiligung": "26,2 %",
-    "berechtigt": 682,
-    "waehler": 179,
+    "beteiligung": "30,8 %",
+    "berechtigt": 848,
+    "waehler": 261,
     "ungueltig": 1,
     "stichwahl": []
   },
@@ -167,12 +167,31 @@
       "nr": "009",
       "ort": "Erstetten",
       "adresse": "Schleichtalstraße 32",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "18:15",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 36,
+          "anteil": 43.9
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 35,
+          "anteil": 42.7
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 11,
+          "anteil": 13.4
+        }
+      ],
+      "beteiligung": "49,4 %",
+      "waehler": 82,
+      "berechtigt": 166,
       "ungueltig": 0
     },
     {
@@ -303,5 +322,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:16:48.811337+00:00"
+  "fetchedAt": "2026-04-19T16:17:19.093000+00:00"
 }
