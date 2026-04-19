@@ -209,7 +209,7 @@
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
       "counted": true,
-      "time": "18:29",
+      "time": "18:30",
       "candidates": [
         {
           "name": "Menholz",
@@ -529,5 +529,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:31:17.893639+00:00"
+  "fetchedAt": "2026-04-19T16:31:49.804320+00:00"
 }
