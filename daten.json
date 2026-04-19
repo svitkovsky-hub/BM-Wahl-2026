@@ -161,13 +161,32 @@
       "nr": "005",
       "ort": "Gerhausen",
       "adresse": "Helfensteinerstrasse 12",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "16:28",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 166,
+          "anteil": 60.1
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 62,
+          "anteil": 22.5
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 48,
+          "anteil": 17.4
+        }
+      ],
+      "beteiligung": "37,8 %",
+      "waehler": 277,
+      "berechtigt": 733,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-006.html",
@@ -460,5 +479,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:27:46.170350+00:00"
+  "fetchedAt": "2026-04-19T16:28:20.699564+00:00"
 }
