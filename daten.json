@@ -81,13 +81,32 @@
       "nr": "002",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "16:39",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 237,
+          "anteil": 67.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 66,
+          "anteil": 18.8
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 49,
+          "anteil": 13.9
+        }
+      ],
+      "beteiligung": "32,6 %",
+      "waehler": 353,
+      "berechtigt": 1082,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-003.html",
@@ -623,5 +642,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:38:46.229115+00:00"
+  "fetchedAt": "2026-04-19T16:39:23.541373+00:00"
 }
