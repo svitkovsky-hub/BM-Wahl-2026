@@ -549,13 +549,38 @@
       "nr": "BW3",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "16:35",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 246,
+          "anteil": 64.1
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 101,
+          "anteil": 26.3
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 35,
+          "anteil": 9.1
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 2,
+          "anteil": 0.5
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 385,
       "berechtigt": 0,
-      "ungueltig": 0
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-4.html",
@@ -598,5 +623,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:34:50.427385+00:00"
+  "fetchedAt": "2026-04-19T16:35:20.365232+00:00"
 }
