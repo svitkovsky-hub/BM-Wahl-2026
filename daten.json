@@ -284,7 +284,7 @@
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
       "counted": true,
-      "time": "18:25",
+      "time": "18:26",
       "candidates": [
         {
           "name": "Menholz",
@@ -356,7 +356,7 @@
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
       "counted": true,
-      "time": "18:22",
+      "time": "18:26",
       "candidates": [
         {
           "name": "Menholz",
@@ -460,5 +460,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:27:17.451683+00:00"
+  "fetchedAt": "2026-04-19T16:27:46.170350+00:00"
 }
