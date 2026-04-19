@@ -283,13 +283,38 @@
       "nr": "011",
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "16:26",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 176,
+          "anteil": 68.0
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 65,
+          "anteil": 25.1
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 17,
+          "anteil": 6.6
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.4
+        }
+      ],
+      "beteiligung": "47,9 %",
+      "waehler": 261,
+      "berechtigt": 545,
+      "ungueltig": 2
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-012.html",
@@ -297,13 +322,32 @@
       "nr": "012",
       "ort": "Weiler",
       "adresse": "Siedlungsstraße 1",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "16:26",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 148,
+          "anteil": 71.5
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 30,
+          "anteil": 14.5
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 29,
+          "anteil": 14.0
+        }
+      ],
+      "beteiligung": "39,1 %",
+      "waehler": 208,
+      "berechtigt": 532,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-013.html",
@@ -416,5 +460,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:25:46.996265+00:00"
+  "fetchedAt": "2026-04-19T16:26:17.113033+00:00"
 }
