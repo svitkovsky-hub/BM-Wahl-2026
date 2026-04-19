@@ -208,12 +208,37 @@
       "nr": "007",
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "16:30",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 156,
+          "anteil": 76.1
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 34,
+          "anteil": 16.6
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 14,
+          "anteil": 6.8
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.5
+        }
+      ],
+      "beteiligung": "42,1 %",
+      "waehler": 205,
+      "berechtigt": 487,
       "ungueltig": 0
     },
     {
@@ -427,11 +452,36 @@
       "nr": "BW1",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "16:30",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 243,
+          "anteil": 70.4
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 68,
+          "anteil": 19.7
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 33,
+          "anteil": 9.6
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.3
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 345,
       "berechtigt": 0,
       "ungueltig": 0
     },
@@ -479,5 +529,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:29:51.017357+00:00"
+  "fetchedAt": "2026-04-19T16:30:20.276589+00:00"
 }
