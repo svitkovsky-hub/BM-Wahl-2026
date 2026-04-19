@@ -1,38 +1,38 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 5,
+  "ausgezaehlt": 6,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 582,
-      "anteil": 62.0
+      "stimmen": 789,
+      "anteil": 65.0
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 217,
-      "anteil": 23.1
+      "stimmen": 260,
+      "anteil": 21.4
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 136,
-      "anteil": 14.5
+      "stimmen": 159,
+      "anteil": 13.1
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 3,
-      "anteil": 0.3
+      "stimmen": 5,
+      "anteil": 0.4
     }
   ],
   "globalStats": {
-    "beteiligung": "30,4 %",
-    "berechtigt": 3095,
-    "waehler": 940,
-    "ungueltig": 2,
+    "beteiligung": "32,1 %",
+    "berechtigt": 3790,
+    "waehler": 1216,
+    "ungueltig": 3,
     "stichwahl": []
   },
   "bezirke": [
@@ -312,7 +312,7 @@
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
       "counted": true,
-      "time": "16:23",
+      "time": "18:22",
       "candidates": [
         {
           "name": "Menholz",
@@ -416,5 +416,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:23:16.833998+00:00"
+  "fetchedAt": "2026-04-19T16:23:46.788496+00:00"
 }
