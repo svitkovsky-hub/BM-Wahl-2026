@@ -311,13 +311,38 @@
       "nr": "013",
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "16:23",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 207,
+          "anteil": 75.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 43,
+          "anteil": 15.6
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 23,
+          "anteil": 8.4
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 2,
+          "anteil": 0.7
+        }
+      ],
+      "beteiligung": "39,7 %",
+      "waehler": 276,
+      "berechtigt": 695,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-014.html",
@@ -391,5 +416,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:22:48.398649+00:00"
+  "fetchedAt": "2026-04-19T16:23:16.833998+00:00"
 }
