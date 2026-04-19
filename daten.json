@@ -1,38 +1,38 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 6,
+  "ausgezaehlt": 8,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 789,
-      "anteil": 65.0
+      "stimmen": 1113,
+      "anteil": 66.3
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 260,
-      "anteil": 21.4
+      "stimmen": 355,
+      "anteil": 21.1
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 159,
-      "anteil": 13.1
+      "stimmen": 205,
+      "anteil": 12.2
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 5,
+      "stimmen": 6,
       "anteil": 0.4
     }
   ],
   "globalStats": {
-    "beteiligung": "32,1 %",
-    "berechtigt": 3790,
-    "waehler": 1216,
-    "ungueltig": 3,
+    "beteiligung": "34,6 %",
+    "berechtigt": 4867,
+    "waehler": 1685,
+    "ungueltig": 6,
     "stichwahl": []
   },
   "bezirke": [
@@ -284,7 +284,7 @@
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
       "counted": true,
-      "time": "16:26",
+      "time": "18:25",
       "candidates": [
         {
           "name": "Menholz",
@@ -323,7 +323,7 @@
       "ort": "Weiler",
       "adresse": "Siedlungsstraße 1",
       "counted": true,
-      "time": "16:26",
+      "time": "18:25",
       "candidates": [
         {
           "name": "Menholz",
@@ -460,5 +460,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:26:17.113033+00:00"
+  "fetchedAt": "2026-04-19T16:26:47.318567+00:00"
 }
