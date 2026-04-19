@@ -1,13 +1,32 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 0,
+  "ausgezaehlt": 1,
   "gesamt": 18,
-  "globalCandidates": [],
+  "globalCandidates": [
+    {
+      "name": "Menholz",
+      "vorname": "Robin",
+      "stimmen": 108,
+      "anteil": 60.7
+    },
+    {
+      "name": "Kaczmarek",
+      "vorname": "Viktor",
+      "stimmen": 36,
+      "anteil": 20.2
+    },
+    {
+      "name": "Mikat",
+      "vorname": "Mirijam",
+      "stimmen": 34,
+      "anteil": 19.1
+    }
+  ],
   "globalStats": {
-    "beteiligung": "-",
-    "berechtigt": 0,
-    "waehler": 0,
-    "ungueltig": 0,
+    "beteiligung": "26,2 %",
+    "berechtigt": 682,
+    "waehler": 179,
+    "ungueltig": 1,
     "stichwahl": []
   },
   "bezirke": [
@@ -59,13 +78,32 @@
       "nr": "004",
       "ort": "Gerhausen",
       "adresse": "Schulstraße 26",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "18:12",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 108,
+          "anteil": 60.7
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 36,
+          "anteil": 20.2
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 34,
+          "anteil": 19.1
+        }
+      ],
+      "beteiligung": "26,2 %",
+      "waehler": 179,
+      "berechtigt": 682,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-005.html",
@@ -265,5 +303,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:12:48.360531+00:00"
+  "fetchedAt": "2026-04-19T16:13:18.095124+00:00"
 }
