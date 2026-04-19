@@ -1,37 +1,37 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 17,
+  "ausgezaehlt": 18,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 3189,
-      "anteil": 69.7
+      "stimmen": 3477,
+      "anteil": 70.6
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 900,
-      "anteil": 19.7
+      "stimmen": 941,
+      "anteil": 19.1
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 472,
-      "anteil": 10.3
+      "stimmen": 493,
+      "anteil": 10.0
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 12,
+      "stimmen": 13,
       "anteil": 0.3
     }
   ],
   "globalStats": {
-    "beteiligung": "54,1 %",
-    "berechtigt": 8473,
-    "waehler": 4585,
+    "beteiligung": "52,4 %",
+    "berechtigt": 9412,
+    "waehler": 4936,
     "ungueltig": 12,
     "stichwahl": []
   },
@@ -686,5 +686,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:44:21.732161+00:00"
+  "fetchedAt": "2026-04-19T16:44:52.185630+00:00"
 }
