@@ -1,31 +1,37 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 2,
+  "ausgezaehlt": 4,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 144,
-      "anteil": 55.4
+      "stimmen": 424,
+      "anteil": 61.7
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 69,
-      "anteil": 26.5
+      "stimmen": 159,
+      "anteil": 23.1
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 47,
-      "anteil": 18.1
+      "stimmen": 101,
+      "anteil": 14.7
+    },
+    {
+      "name": "Wähler benannte Personen",
+      "vorname": "",
+      "stimmen": 3,
+      "anteil": 0.4
     }
   ],
   "globalStats": {
-    "beteiligung": "30,8 %",
-    "berechtigt": 848,
-    "waehler": 261,
+    "beteiligung": "31,3 %",
+    "berechtigt": 2196,
+    "waehler": 688,
     "ungueltig": 1,
     "stichwahl": []
   },
@@ -36,12 +42,37 @@
       "nr": "001",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "18:17",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 183,
+          "anteil": 69.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 41,
+          "anteil": 15.5
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 37,
+          "anteil": 14.0
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 3,
+          "anteil": 1.1
+        }
+      ],
+      "beteiligung": "28,7 %",
+      "waehler": 264,
+      "berechtigt": 920,
       "ungueltig": 0
     },
     {
@@ -154,7 +185,7 @@
       "ort": "Pappelau",
       "adresse": "Römerstraße 22",
       "counted": true,
-      "time": "16:18",
+      "time": "18:17",
       "candidates": [
         {
           "name": "Menholz",
@@ -341,5 +372,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:18:56.354493+00:00"
+  "fetchedAt": "2026-04-19T16:19:20.224068+00:00"
 }
