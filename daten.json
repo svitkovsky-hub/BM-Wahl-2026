@@ -214,7 +214,7 @@
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
       "counted": true,
-      "time": "16:47",
+      "time": "16:48",
       "candidates": [
         {
           "name": "Menholz",
@@ -686,5 +686,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:47:46.956021+00:00"
+  "fetchedAt": "2026-04-19T16:48:19.104730+00:00"
 }
