@@ -1,25 +1,25 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 16,
+  "ausgezaehlt": 17,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 2979,
-      "anteil": 68.9
+      "stimmen": 3189,
+      "anteil": 69.7
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 874,
-      "anteil": 20.2
+      "stimmen": 900,
+      "anteil": 19.7
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 458,
-      "anteil": 10.6
+      "stimmen": 472,
+      "anteil": 10.3
     },
     {
       "name": "Wähler benannte Personen",
@@ -29,10 +29,10 @@
     }
   ],
   "globalStats": {
-    "beteiligung": "55,4 %",
-    "berechtigt": 7824,
-    "waehler": 4334,
-    "ungueltig": 11,
+    "beteiligung": "54,1 %",
+    "berechtigt": 8473,
+    "waehler": 4585,
+    "ungueltig": 12,
     "stichwahl": []
   },
   "bezirke": [
@@ -483,7 +483,7 @@
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
       "counted": true,
-      "time": "16:40",
+      "time": "18:39",
       "candidates": [
         {
           "name": "Menholz",
@@ -661,5 +661,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:40:21.410531+00:00"
+  "fetchedAt": "2026-04-19T16:40:46.956262+00:00"
 }
