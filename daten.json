@@ -43,7 +43,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
       "counted": true,
-      "time": "18:17",
+      "time": "18:18",
       "candidates": [
         {
           "name": "Menholz",
@@ -372,5 +372,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:20:17.798231+00:00"
+  "fetchedAt": "2026-04-19T16:20:46.817604+00:00"
 }
