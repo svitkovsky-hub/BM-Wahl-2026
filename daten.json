@@ -1,38 +1,38 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 14,
+  "ausgezaehlt": 15,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 2496,
-      "anteil": 69.6
+      "stimmen": 2742,
+      "anteil": 69.1
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 707,
-      "anteil": 19.7
+      "stimmen": 808,
+      "anteil": 20.3
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 374,
-      "anteil": 10.4
+      "stimmen": 409,
+      "anteil": 10.3
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 10,
+      "stimmen": 12,
       "anteil": 0.3
     }
   ],
   "globalStats": {
-    "beteiligung": "53,3 %",
+    "beteiligung": "59,0 %",
     "berechtigt": 6742,
-    "waehler": 3596,
-    "ungueltig": 9,
+    "waehler": 3981,
+    "ungueltig": 10,
     "stichwahl": []
   },
   "bezirke": [
@@ -550,7 +550,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "16:35",
+      "time": "18:34",
       "candidates": [
         {
           "name": "Menholz",
@@ -589,7 +589,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "18:33",
+      "time": "18:34",
       "candidates": [
         {
           "name": "Menholz",
@@ -623,5 +623,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:35:20.365232+00:00"
+  "fetchedAt": "2026-04-19T16:35:50.392538+00:00"
 }
