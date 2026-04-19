@@ -213,12 +213,37 @@
       "nr": "006",
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "16:44",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 288,
+          "anteil": 82.1
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 41,
+          "anteil": 11.7
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 21,
+          "anteil": 6.0
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.3
+        }
+      ],
+      "beteiligung": "37,4 %",
+      "waehler": 351,
+      "berechtigt": 939,
       "ungueltig": 0
     },
     {
@@ -661,5 +686,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:43:45.853378+00:00"
+  "fetchedAt": "2026-04-19T16:44:21.732161+00:00"
 }
