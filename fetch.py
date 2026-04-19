@@ -17,7 +17,7 @@ BEZIRKE = [
     {"url": "ergebnisse_stimmbezirk_08425020-002.html", "name": "002 Johannes-Montini-Haus, Karlstraße 53", "nr": "002", "ort": "Blaubeuren", "adresse": "Karlstraße 53"},
     {"url": "ergebnisse_stimmbezirk_08425020-003.html", "name": "003 Johannes-Montini-Haus ZVU, Karlstraße 53", "nr": "003", "ort": "Blaubeuren", "adresse": "Karlstraße 53"},
     {"url": "ergebnisse_stimmbezirk_08425020-004.html", "name": "004 Gemeindehaus Gerhausen, Schulstraße 26", "nr": "004", "ort": "Gerhausen",  "adresse": "Schulstraße 26"},
-    {"url": "ergebnisse_stimmbezirk_08425020-005.html", "name": "005 Karl-Spohn-Realschule, Helfensteinerstrasse 12", "nr": "005", "ort": "Blaubeuren", "adresse": "Helfensteinerstrasse 12"},
+    {"url": "ergebnisse_stimmbezirk_08425020-005.html", "name": "005 Karl-Spohn-Realschule, Helfensteinerstrasse 12", "nr": "005", "ort": "Gerhausen", "adresse": "Helfensteinerstrasse 12"},
     {"url": "ergebnisse_stimmbezirk_08425020-006.html", "name": "006 Rathaus Asch, Bei der Hüle 1",       "nr": "006", "ort": "Asch",       "adresse": "Bei der Hüle 1"},
     {"url": "ergebnisse_stimmbezirk_08425020-007.html", "name": "007 Proberaum Musikverein Beiningen, Im Eichert 3", "nr": "007", "ort": "Beiningen",  "adresse": "Im Eichert 3"},
     {"url": "ergebnisse_stimmbezirk_08425020-008.html", "name": "008 Feuerwehrgerätehaus Pappelau, Ehemalige Molke, Römerstraße 22", "nr": "008", "ort": "Pappelau",   "adresse": "Römerstraße 22"},
