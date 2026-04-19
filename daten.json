@@ -482,13 +482,32 @@
       "nr": "014",
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "16:40",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 210,
+          "anteil": 84.0
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 26,
+          "anteil": 10.4
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 14,
+          "anteil": 5.6
+        }
+      ],
+      "beteiligung": "38,7 %",
+      "waehler": 251,
+      "berechtigt": 649,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-1.html",
@@ -642,5 +661,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:39:51.218784+00:00"
+  "fetchedAt": "2026-04-19T16:40:21.410531+00:00"
 }
