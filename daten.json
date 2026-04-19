@@ -1,38 +1,38 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 8,
+  "ausgezaehlt": 9,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 1113,
-      "anteil": 66.3
+      "stimmen": 1279,
+      "anteil": 65.4
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 355,
-      "anteil": 21.1
+      "stimmen": 417,
+      "anteil": 21.3
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 205,
-      "anteil": 12.2
+      "stimmen": 253,
+      "anteil": 12.9
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
       "stimmen": 6,
-      "anteil": 0.4
+      "anteil": 0.3
     }
   ],
   "globalStats": {
-    "beteiligung": "34,6 %",
-    "berechtigt": 4867,
-    "waehler": 1685,
-    "ungueltig": 6,
+    "beteiligung": "35,0 %",
+    "berechtigt": 5600,
+    "waehler": 1962,
+    "ungueltig": 7,
     "stichwahl": []
   },
   "bezirke": [
@@ -162,7 +162,7 @@
       "ort": "Gerhausen",
       "adresse": "Helfensteinerstrasse 12",
       "counted": true,
-      "time": "16:28",
+      "time": "18:27",
       "candidates": [
         {
           "name": "Menholz",
@@ -479,5 +479,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:28:20.699564+00:00"
+  "fetchedAt": "2026-04-19T16:28:48.994876+00:00"
 }
