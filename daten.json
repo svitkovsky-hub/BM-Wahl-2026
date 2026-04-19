@@ -516,13 +516,32 @@
       "nr": "BW2",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "16:34",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 286,
+          "anteil": 73.3
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 76,
+          "anteil": 19.5
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 28,
+          "anteil": 7.2
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 391,
       "berechtigt": 0,
-      "ungueltig": 0
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_briefwahlbezirk_08425020-999-3.html",
@@ -544,15 +563,40 @@
       "nr": "BW4",
       "ort": "Briefwahl",
       "adresse": "-",
-      "counted": false,
-      "time": null,
-      "candidates": [],
+      "counted": true,
+      "time": "16:34",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 305,
+          "anteil": 74.9
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 75,
+          "anteil": 18.4
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 26,
+          "anteil": 6.4
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.2
+        }
+      ],
       "beteiligung": "-",
-      "waehler": 0,
+      "waehler": 408,
       "berechtigt": 0,
-      "ungueltig": 0
+      "ungueltig": 1
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:33:47.678284+00:00"
+  "fetchedAt": "2026-04-19T16:34:21.529463+00:00"
 }
