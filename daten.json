@@ -1,37 +1,37 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 9,
+  "ausgezaehlt": 11,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 1279,
-      "anteil": 65.4
+      "stimmen": 1678,
+      "anteil": 67.0
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 417,
-      "anteil": 21.3
+      "stimmen": 519,
+      "anteil": 20.7
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 253,
-      "anteil": 12.9
+      "stimmen": 300,
+      "anteil": 12.0
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 6,
+      "stimmen": 8,
       "anteil": 0.3
     }
   ],
   "globalStats": {
-    "beteiligung": "35,0 %",
-    "berechtigt": 5600,
-    "waehler": 1962,
+    "beteiligung": "41,3 %",
+    "berechtigt": 6087,
+    "waehler": 2512,
     "ungueltig": 7,
     "stichwahl": []
   },
@@ -209,7 +209,7 @@
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
       "counted": true,
-      "time": "16:30",
+      "time": "18:29",
       "candidates": [
         {
           "name": "Menholz",
@@ -453,7 +453,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "16:30",
+      "time": "18:28",
       "candidates": [
         {
           "name": "Menholz",
@@ -529,5 +529,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:30:20.276589+00:00"
+  "fetchedAt": "2026-04-19T16:30:49.143498+00:00"
 }
