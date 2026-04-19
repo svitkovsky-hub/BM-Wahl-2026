@@ -1,37 +1,37 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 11,
+  "ausgezaehlt": 12,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 1678,
-      "anteil": 67.0
+      "stimmen": 1905,
+      "anteil": 68.3
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 519,
-      "anteil": 20.7
+      "stimmen": 556,
+      "anteil": 19.9
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 300,
-      "anteil": 12.0
+      "stimmen": 320,
+      "anteil": 11.5
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
-      "stimmen": 8,
+      "stimmen": 9,
       "anteil": 0.3
     }
   ],
   "globalStats": {
-    "beteiligung": "41,3 %",
-    "berechtigt": 6087,
-    "waehler": 2512,
+    "beteiligung": "41,5 %",
+    "berechtigt": 6742,
+    "waehler": 2797,
     "ungueltig": 7,
     "stichwahl": []
   },
@@ -313,12 +313,37 @@
       "nr": "010",
       "ort": "Seißen",
       "adresse": "Albstraße 74",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
+      "counted": true,
+      "time": "18:31",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 227,
+          "anteil": 79.6
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 37,
+          "anteil": 13.0
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 20,
+          "anteil": 7.0
+        },
+        {
+          "name": "Wähler benannte Personen",
+          "vorname": "",
+          "stimmen": 1,
+          "anteil": 0.4
+        }
+      ],
+      "beteiligung": "43,5 %",
+      "waehler": 285,
+      "berechtigt": 655,
       "ungueltig": 0
     },
     {
@@ -453,7 +478,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "18:28",
+      "time": "18:31",
       "candidates": [
         {
           "name": "Menholz",
@@ -529,5 +554,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:31:49.804320+00:00"
+  "fetchedAt": "2026-04-19T16:32:16.607287+00:00"
 }
