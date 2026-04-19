@@ -1,38 +1,38 @@
 {
   "datum": "19. April 2026",
-  "ausgezaehlt": 4,
+  "ausgezaehlt": 5,
   "gesamt": 18,
   "globalCandidates": [
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 424,
-      "anteil": 61.7
+      "stimmen": 582,
+      "anteil": 62.0
     },
     {
       "name": "Mikat",
       "vorname": "Mirijam",
-      "stimmen": 159,
+      "stimmen": 217,
       "anteil": 23.1
     },
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 101,
-      "anteil": 14.7
+      "stimmen": 136,
+      "anteil": 14.5
     },
     {
       "name": "Wähler benannte Personen",
       "vorname": "",
       "stimmen": 3,
-      "anteil": 0.4
+      "anteil": 0.3
     }
   ],
   "globalStats": {
-    "beteiligung": "31,3 %",
-    "berechtigt": 2196,
-    "waehler": 688,
-    "ungueltig": 1,
+    "beteiligung": "30,4 %",
+    "berechtigt": 3095,
+    "waehler": 940,
+    "ungueltig": 2,
     "stichwahl": []
   },
   "bezirke": [
@@ -95,13 +95,32 @@
       "nr": "003",
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
-      "counted": false,
-      "time": null,
-      "candidates": [],
-      "beteiligung": "-",
-      "waehler": 0,
-      "berechtigt": 0,
-      "ungueltig": 0
+      "counted": true,
+      "time": "18:20",
+      "candidates": [
+        {
+          "name": "Menholz",
+          "vorname": "Robin",
+          "stimmen": 158,
+          "anteil": 62.9
+        },
+        {
+          "name": "Mikat",
+          "vorname": "Mirijam",
+          "stimmen": 58,
+          "anteil": 23.1
+        },
+        {
+          "name": "Kaczmarek",
+          "vorname": "Viktor",
+          "stimmen": 35,
+          "anteil": 13.9
+        }
+      ],
+      "beteiligung": "28,0 %",
+      "waehler": 252,
+      "berechtigt": 899,
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-004.html",
@@ -372,5 +391,5 @@
     }
   ],
   "endErgebnis": false,
-  "fetchedAt": "2026-04-19T16:21:47.864499+00:00"
+  "fetchedAt": "2026-04-19T16:22:19.115651+00:00"
 }
