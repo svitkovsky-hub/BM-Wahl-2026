@@ -6,7 +6,7 @@
     {
       "name": "Menholz",
       "vorname": "Robin",
-      "stimmen": 3477,
+      "stimmen": 3476,
       "anteil": 70.6
     },
     {
@@ -18,21 +18,21 @@
     {
       "name": "Kaczmarek",
       "vorname": "Viktor",
-      "stimmen": 493,
+      "stimmen": 494,
       "anteil": 10.0
     },
     {
-      "name": "Wähler benannte Personen",
+      "name": "Sonstige",
       "vorname": "",
-      "stimmen": 13,
-      "anteil": 0.3
+      "stimmen": 10,
+      "anteil": 0.2
     }
   ],
   "globalStats": {
     "beteiligung": "52,4 %",
     "berechtigt": 9412,
     "waehler": 4936,
-    "ungueltig": 12,
+    "ungueltig": 15,
     "stichwahl": []
   },
   "bezirke": [
@@ -43,37 +43,31 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
           "vorname": "Robin",
           "stimmen": 183,
-          "anteil": 69.3
+          "anteil": 70.1
         },
         {
           "name": "Mikat",
           "vorname": "Mirijam",
           "stimmen": 41,
-          "anteil": 15.5
+          "anteil": 15.7
         },
         {
           "name": "Kaczmarek",
           "vorname": "Viktor",
           "stimmen": 37,
-          "anteil": 14.0
-        },
-        {
-          "name": "Wähler benannte Personen",
-          "vorname": "",
-          "stimmen": 3,
-          "anteil": 1.1
+          "anteil": 14.2
         }
       ],
       "beteiligung": "28,7 %",
       "waehler": 264,
       "berechtigt": 920,
-      "ungueltig": 0
+      "ungueltig": 3
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-002.html",
@@ -82,7 +76,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -115,7 +109,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -148,7 +142,7 @@
       "ort": "Gerhausen",
       "adresse": "Schulstraße 26",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -181,13 +175,13 @@
       "ort": "Gerhausen",
       "adresse": "Helfensteinerstrasse 12",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
           "vorname": "Robin",
-          "stimmen": 166,
-          "anteil": 60.1
+          "stimmen": 165,
+          "anteil": 59.8
         },
         {
           "name": "Mikat",
@@ -198,8 +192,8 @@
         {
           "name": "Kaczmarek",
           "vorname": "Viktor",
-          "stimmen": 48,
-          "anteil": 17.4
+          "stimmen": 49,
+          "anteil": 17.8
         }
       ],
       "beteiligung": "37,8 %",
@@ -214,7 +208,7 @@
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -235,7 +229,7 @@
           "anteil": 6.0
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
           "stimmen": 1,
           "anteil": 0.3
@@ -253,7 +247,7 @@
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -274,7 +268,7 @@
           "anteil": 6.8
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
           "stimmen": 1,
           "anteil": 0.5
@@ -292,7 +286,7 @@
       "ort": "Pappelau",
       "adresse": "Römerstraße 22",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -325,7 +319,7 @@
       "ort": "Erstetten",
       "adresse": "Schleichtalstraße 32",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -358,7 +352,7 @@
       "ort": "Seißen",
       "adresse": "Albstraße 74",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -379,7 +373,7 @@
           "anteil": 7.0
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
           "stimmen": 1,
           "anteil": 0.4
@@ -397,37 +391,37 @@
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
           "vorname": "Robin",
           "stimmen": 176,
-          "anteil": 68.0
+          "anteil": 67.7
         },
         {
           "name": "Mikat",
           "vorname": "Mirijam",
           "stimmen": 65,
-          "anteil": 25.1
+          "anteil": 25.0
         },
         {
           "name": "Kaczmarek",
           "vorname": "Viktor",
           "stimmen": 17,
-          "anteil": 6.6
+          "anteil": 6.5
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
-          "stimmen": 1,
-          "anteil": 0.4
+          "stimmen": 2,
+          "anteil": 0.8
         }
       ],
       "beteiligung": "47,9 %",
       "waehler": 261,
       "berechtigt": 545,
-      "ungueltig": 2
+      "ungueltig": 1
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-012.html",
@@ -436,7 +430,7 @@
       "ort": "Weiler",
       "adresse": "Siedlungsstraße 1",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -469,19 +463,19 @@
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
           "vorname": "Robin",
           "stimmen": 207,
-          "anteil": 75.3
+          "anteil": 75.5
         },
         {
           "name": "Mikat",
           "vorname": "Mirijam",
           "stimmen": 43,
-          "anteil": 15.6
+          "anteil": 15.7
         },
         {
           "name": "Kaczmarek",
@@ -490,16 +484,16 @@
           "anteil": 8.4
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
-          "stimmen": 2,
-          "anteil": 0.7
+          "stimmen": 1,
+          "anteil": 0.4
         }
       ],
       "beteiligung": "39,7 %",
       "waehler": 276,
       "berechtigt": 695,
-      "ungueltig": 1
+      "ungueltig": 2
     },
     {
       "url": "ergebnisse_stimmbezirk_08425020-014.html",
@@ -508,7 +502,7 @@
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -541,7 +535,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -562,7 +556,7 @@
           "anteil": 9.6
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
           "stimmen": 1,
           "anteil": 0.3
@@ -580,7 +574,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -613,7 +607,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -634,7 +628,7 @@
           "anteil": 9.1
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
           "stimmen": 2,
           "anteil": 0.5
@@ -652,7 +646,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "11:22",
+      "time": "14:00",
       "candidates": [
         {
           "name": "Menholz",
@@ -673,7 +667,7 @@
           "anteil": 6.4
         },
         {
-          "name": "Wähler benannte Personen",
+          "name": "Sonstige",
           "vorname": "",
           "stimmen": 1,
           "anteil": 0.2
@@ -686,5 +680,5 @@
     }
   ],
   "endErgebnis": true,
-  "fetchedAt": "2026-05-11T11:22:15.795695+00:00"
+  "fetchedAt": "2026-05-11T14:00:28.655571+00:00"
 }
