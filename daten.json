@@ -43,7 +43,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 2",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -76,7 +76,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -109,7 +109,7 @@
       "ort": "Blaubeuren",
       "adresse": "Karlstraße 53",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -142,7 +142,7 @@
       "ort": "Gerhausen",
       "adresse": "Schulstraße 26",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -175,7 +175,7 @@
       "ort": "Gerhausen",
       "adresse": "Helfensteinerstrasse 12",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -208,7 +208,7 @@
       "ort": "Asch",
       "adresse": "Bei der Hüle 1",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -247,7 +247,7 @@
       "ort": "Beiningen",
       "adresse": "Im Eichert 3",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -286,7 +286,7 @@
       "ort": "Pappelau",
       "adresse": "Römerstraße 22",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -319,7 +319,7 @@
       "ort": "Erstetten",
       "adresse": "Schleichtalstraße 32",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -352,7 +352,7 @@
       "ort": "Seißen",
       "adresse": "Albstraße 74",
       "counted": true,
-      "time": "15:13",
+      "time": "17:23",
       "candidates": [
         {
           "name": "Menholz",
@@ -391,7 +391,7 @@
       "ort": "Sonderbuch",
       "adresse": "Blaubeurer Str. 12",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -430,7 +430,7 @@
       "ort": "Weiler",
       "adresse": "Siedlungsstraße 1",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -463,7 +463,7 @@
       "ort": "Blaubeuren",
       "adresse": "Alberstraße 3",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -502,7 +502,7 @@
       "ort": "Seißen",
       "adresse": "Flurstraße 55",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -535,7 +535,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -574,7 +574,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -607,7 +607,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -646,7 +646,7 @@
       "ort": "Briefwahl",
       "adresse": "-",
       "counted": true,
-      "time": "15:13",
+      "time": "17:24",
       "candidates": [
         {
           "name": "Menholz",
@@ -680,5 +680,5 @@
     }
   ],
   "endErgebnis": true,
-  "fetchedAt": "2026-05-12T15:13:57.733967+00:00"
+  "fetchedAt": "2026-05-12T17:24:03.498061+00:00"
 }
